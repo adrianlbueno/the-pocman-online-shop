@@ -4,7 +4,7 @@ function App() {
 
   return (
     <h1 className=" text-blue-400 text-3xl font-bold underline">
-      Hello world!
+      Happy New year!
     </h1>
   )
 }
