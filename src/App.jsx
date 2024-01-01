@@ -1,11 +1,10 @@
 import './App.css'
-
-function App() {
-
+import Footer from './components/common/Footer'
+const App = () => {
   return (
-    <h1 className=" text-blue-400 text-3xl font-bold underline">
-      Happy New year!
-    </h1>
+    <>
+      <Footer />
+    </>
   )
 }
 
