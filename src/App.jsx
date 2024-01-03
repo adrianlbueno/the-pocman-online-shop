@@ -3,6 +3,7 @@ import Footer from './components/common/Footer'
 const App = () => {
   return (
     <>
+      
       <Footer />
     </>
   )
