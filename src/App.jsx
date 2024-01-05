@@ -6,9 +6,6 @@ import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
-
-
-
 import SignUpPage from "./pages/SignUpPage";
 
 const App = () => {
@@ -21,8 +18,11 @@ const App = () => {
         <Route path="signUp" element={<SignUpPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Header />
-      <Footer />
+      <div className="">
+        <Header />
+        <Footer />
+
+      </div >
     </>
   )
 }

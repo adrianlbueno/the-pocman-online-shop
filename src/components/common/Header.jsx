@@ -1,5 +1,5 @@
 
-import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -13,18 +13,6 @@ const Header = () => {
         { id: 3, label: 'Contact', path: '/contact' },
     ];
 
-    // const linkedinLink = (
-    //     <Link href="https://www.linkedin.com/in/prabeshikakoirala/" target="_blank">
-    //         <FontAwesomeIcon className="w-[25px]" icon={faLinkedin} />
-    //     </Link>
-    // )
-
-    // const githubLink = (
-    //     <Link href="https://github.com/Prabeshikak" target="_blank">
-    //         <FontAwesomeIcon className="w-[25px]" icon={faGithub} />
-    //     </Link>
-    // )
-
     return (
         <>
             <header className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
@@ -36,18 +24,17 @@ const Header = () => {
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                 </div>
-                <form className="hidden h-9 w-2/5 items-center border md:flex">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                {/* <form className="hidden border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none md:flex">
 
                     <input
                         className="hidden w-11/12 outline-none md:block"
                         type="search"
                         placeholder="Search"
                     />
-                    <button className="ml-auto h-full bg-amber-400 px-4 hover:bg-yellow-300">
-                        Search
+                    <button className="ml-auto h-full px-4">
+                        <FontAwesomeIcon className='text-gray-600 h-4 w-4 fill-current' icon={faMagnifyingGlass} />
                     </button>
-                </form>
+                </form> */}
 
                 <div className="hidden gap-3 md:!flex">
                     {links.map((link) => (
