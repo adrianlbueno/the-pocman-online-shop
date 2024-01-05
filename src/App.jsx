@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import './App.css';
 import Footer from './components/common/Footer';
 import Header from "./components/common/Header";
 import AboutPage from "./pages/AboutPage";
@@ -18,7 +17,8 @@ const App = () => {
         <Route path="signUp" element={<SignUpPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <div className="">
+
+      <div className="w-full">
         <Header />
         <Footer />
 
