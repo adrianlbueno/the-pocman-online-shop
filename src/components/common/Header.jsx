@@ -24,28 +24,16 @@ const Header = () => {
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                 </div>
-                {/* <form className="hidden border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none md:flex">
-
-                    <input
-                        className="hidden w-11/12 outline-none md:block"
-                        type="search"
-                        placeholder="Search"
-                    />
-                    <button className="ml-auto h-full px-4">
-                        <FontAwesomeIcon className='text-gray-600 h-4 w-4 fill-current' icon={faMagnifyingGlass} />
-                    </button>
-                </form> */}
 
                 <div className="hidden gap-3 md:!flex">
                     {links.map((link) => (
-                        <a
+                        <Link
                             key={link.id}
-                            href={link.path}
+                            to={link.path}
                             className="flex cursor-pointer flex-col items-center justify-center"
                         >
-                            {link.icon}
                             <p className="text-xs">{link.label}</p>
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </header>
@@ -55,37 +43,10 @@ const Header = () => {
                         }`}
                 >
                     <div className="mx-auto">
-                        <div className="mx-auto flex w-full justify-center gap-3 py-4">
-                            {/* {iconLinks.map ((link, index) => (
-                                <a
-                                    key={index}
-                                    href={link.href}
-                                    className="flex cursor-pointer flex-col items-center justify-center"
-                                >
-                                    {link.icon}
-                                    <p className="text-xs">{link.text}</p>
-                                </a>
-                            ))} */}
-                        </div>
-                        <form className="my-4 mx-5 flex h-9 items-center border">
-                            {/* <CiSearch className="mx-3 h-4 w-4" /> */}
-
-                            <input
-                                className="hidden w-11/12 outline-none md:block"
-                                type="search"
-                                placeholder="Search"
-                            />
-                            <button
-                                type="submit"
-                                className="ml-auto h-full bg-amber-400 px-4 hover:bg-yellow-300"
-                            >
-                                Search
-                            </button>
-                        </form>
                         <ul className="text-center font-medium">
-                            {links.map((link, index) => (
-                                <li key={index} className="py-2">
-                                    <a href={link.url}>{link.text}</a>
+                            {links.map((link) => (
+                                <li key={link.id} className="py-2">
+                                    <Link to={link.path}>{link.label}</Link>
                                 </li>
                             ))}
                         </ul>

@@ -18,11 +18,8 @@ const App = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
-      <div className="w-full">
-        <Header />
-        <Footer />
-
-      </div >
+      <Header />
+      <Footer />
     </>
   )
 }
