@@ -1,5 +1,5 @@
 
-import { faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
@@ -40,6 +40,11 @@ const Header = () => {
                             <p className="text-xs">{link.label}</p>
                         </Link>
                     ))}
+                </div>
+                <div >
+                    <Link to="login">
+                        <FontAwesomeIcon icon={faUser} />
+                    </Link>
                 </div>
                 <div >
                     <FontAwesomeIcon icon={faCartShopping} />
