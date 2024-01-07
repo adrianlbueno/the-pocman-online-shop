@@ -19,11 +19,11 @@ const AboutPage = () => {
                         In my spare time I create stickers and do illustration.
                     </p>
                 </div>
-                <div className="about-img">
+                <div>
                     <img
                         src={AboutImg}
-                        alt="coding illustration"
-                        className="lgw-[80%] md:ml-auto"
+                        alt="Profile picture"
+                        className="rounded-full w-96 h-96"
                     />
                 </div>
             </div>
