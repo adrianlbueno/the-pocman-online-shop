@@ -16,7 +16,7 @@ const AboutPage = () => {
                     </p>
                     <p>In backend I know Node.js</p>
                     <p>
-                        In my spare time I create stickers and illustration.
+                        In my spare time I create stickers and do illustration.
                     </p>
                 </div>
                 <div className="about-img">
