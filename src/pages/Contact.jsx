@@ -66,14 +66,15 @@ const Contact = () => {
                         </div>
                         <div>
                             <button
-                                className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
+                                className="hover:shadow-form rounded-md bg-blue-500 font-bold py-3 px-8 text-base font-semibold text-white outline-none"
                             >
                                 Submit
                             </button>
                         </div>
                     </form>
                 </div>
-            </div></>
+            </div>
+        </>
 
     );
 }
