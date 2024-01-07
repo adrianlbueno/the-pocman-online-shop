@@ -1,17 +1,23 @@
 
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false)
 
     const links = [
-        { id: 1, label: 'Home', path: '/' },
-        { id: 2, label: 'About Us', path: '/about' },
-        { id: 3, label: 'Contact', path: '/contact' },
+        { id: "Home", label: 'Home', path: '/' },
+        { id: "About", label: 'About Us', path: '/about' },
+        { id: "Contact", label: 'Contact', path: '/contact' },
     ];
+
+    const handleClick = useCallback(() => {
+        setOpenMenu((prevState) => {
+            return !prevState;
+        });
+    }, []);
 
     return (
         <>
@@ -20,7 +26,7 @@ const Header = () => {
                     <h1 className="cursor-pointer sm:h-auto sm:w-auto">The Pocman</h1>
                 </Link>
                 <div className="md:hidden">
-                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                    <button onClick={handleClick}>
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                 </div>
@@ -37,9 +43,9 @@ const Header = () => {
                     ))}
                 </div>
             </header>
-            {mobileMenuOpen && (
+            {openMenu && (
                 <section
-                    className={`block md:hidden absolute left-0 right-0 z-50 h-screen w-full bg-white ${mobileMenuOpen ? "none" : "block"
+                    className={`block md:hidden absolute left-0 right-0 z-50 h-screen w-full bg-white ${openMenu ? "none" : "block"
                         }`}
                 >
                     <div className="mx-auto">
