@@ -3,8 +3,10 @@ import { faBars, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
+import CartModal from './CartModal';
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
+    const [show, setShow] = useState(false);
 
     const menuLinks = [
         { id: "Home", label: 'Home', path: '/' },
@@ -17,6 +19,8 @@ const Header = () => {
             return !prevState;
         });
     }, []);
+
+    const handleShow = (() => { setShow(!show) })
 
     return (
         <>
@@ -46,11 +50,14 @@ const Header = () => {
                     </Link>
                 </div>
                 <div >
-                    <FontAwesomeIcon icon={faCartShopping} />
+                    <button onClick={handleShow}>
+                        <FontAwesomeIcon icon={faCartShopping} />
+                    </button>
+                    {show ? (
+                        <CartModal open={show} setOpen={setShow} />
+                    ) : null
+                    }
                 </div>
-                {/* <div>
-                    <CartModal />
-                </div> */}
             </header>
 
             {openMenu && (
