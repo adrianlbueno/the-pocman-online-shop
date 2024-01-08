@@ -3,7 +3,6 @@ import { faBars, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
 
@@ -49,6 +48,9 @@ const Header = () => {
                 <div >
                     <FontAwesomeIcon icon={faCartShopping} />
                 </div>
+                {/* <div>
+                    <CartModal />
+                </div> */}
             </header>
 
             {openMenu && (
