@@ -20,7 +20,11 @@ const Header = () => {
         });
     }, []);
 
-    const handleShow = (() => { setShow(!show) })
+    const handleShow = useCallback(() => {
+        setShow((prevState) => {
+            return !prevState;
+        });
+    }, [])
 
     return (
         <>
