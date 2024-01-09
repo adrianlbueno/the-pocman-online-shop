@@ -9,7 +9,7 @@ const Header = () => {
                     style={{ backgroundImage: `url(${headerImage})` }}
                 >
                     <h1 className="text-4xl font-bold text-white">
-                        Hello, I am Adrian Bueno
+                        Welcome!!
                     </h1>
                 </div>
             </header>
