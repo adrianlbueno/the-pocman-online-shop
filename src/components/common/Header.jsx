@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import CartModal from './CartModal';
+
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const [show, setShow] = useState(false);
@@ -62,6 +63,15 @@ const Header = () => {
                     ) : null
                     }
                 </div>
+                {/* <div
+                    id="Home"
+                    className="flex flex-col justify-center items-center  max-w-full h-screen bg-cover"
+                    style={{ backgroundImage: `url(${headImage})` }}
+                >
+                    <h1 className="text-4xl font-bold text-white">
+                        Hello, I am Adrian Bueno
+                    </h1>
+                </div> */}
             </header>
 
             {openMenu && (
