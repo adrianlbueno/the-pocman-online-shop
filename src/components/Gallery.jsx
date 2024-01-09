@@ -9,9 +9,14 @@ const Gallery = () => {
                         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">The Pocman Illustration</h1>
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Are you who you want to be?</p>
                     </div>
-                    <EcommerceCard />
+                    <div className="flex flex-wrap -m-4">
+                        <EcommerceCard />
+                        <EcommerceCard />
+                        <EcommerceCard />
+                    </div>
+
                 </div>
-            </section>
+            </section >
         </>);
 }
 
