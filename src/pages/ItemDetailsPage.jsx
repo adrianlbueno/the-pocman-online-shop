@@ -9,8 +9,8 @@ const ItemDetailsPage = () => {
             <h2 className="text-sm title-font text-gray-500 tracking-widest">Illustration Name</h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">Random Text</h1>
             <p className="leading-relaxed">Description goes here </p>
-            <div className="flex">
-              <span className="title-font font-medium text-2xl text-gray-900">$58.00</span>
+            <div className="flex flex-col md:flex-row justify-between items-center text-gray-900">
+              <span className="font-bold text-xl">$58.00</span>
               <button
                 className="px-6 py-2 transition ease-in duration-200 uppercase  hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">Add
                 to cart</button>
