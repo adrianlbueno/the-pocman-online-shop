@@ -11,8 +11,6 @@ const Gallery = () => {
                     </div>
                     <div className="flex flex-wrap -m-4">
                         <EcommerceCard />
-                        <EcommerceCard />
-                        <EcommerceCard />
                     </div>
 
                 </div>
