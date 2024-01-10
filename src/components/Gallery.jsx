@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useFetchIllustrations } from "../hooks/useFetchIllustrations";
 import EcommerceCard from "./EcommerCard";
-
 const Gallery = () => {
-
-    const URL_API = "http://localhost:3000/illustrations"
-    const [illustrations, setIllustrations] = useState([]);
-
-    const fetchIllustrations = async () => {
-        return await fetch(URL_API)
-            .then((response) => response.json())
-            .then((data) => {
-                setIllustrations(data);
-                // console.log("data", data)
-            })
-            .catch((error) => console.log(error));
-    };
-    useEffect(
-        () => { fetchIllustrations() }, []);
+    const illustrations = useFetchIllustrations();
 
     return (
         <>
@@ -29,7 +15,9 @@ const Gallery = () => {
                     <div className="flex flex-wrap -m-4">
                         {illustrations.map((illustration) => (
                             <div key={illustration.id}>
-                                <EcommerceCard title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
+                                <Link to={`/illustrations/${illustration.id}`}>
+                                    <EcommerceCard title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
+                                </Link>
                             </div>
                         ))}
                     </div>
