@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
 import EcommerceCard from "./EcommerCard";
 
 const Gallery = () => {
+    const URLAPI = "localhost:3000/illustrations"
+    const [illustrations, setIllustrations] = useState(null);
+
+    const fetchIllustrations = async () => {
+        return await fetch(URLAPI)
+            .then((response) => response.json())
+            .then((data) => {
+                setIllustrations(data);
+                console.log("data", data)
+            })
+            .catch((error) => console.log(error));
+    };
+
+    useEffect(
+        () => { fetchIllustrations() }, []);
+
     return (
         <>
             <section className="text-gray-600 body-font">
@@ -10,12 +27,17 @@ const Gallery = () => {
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Are you who you want to be?</p>
                     </div>
                     <div className="flex flex-wrap -m-4">
-                        <EcommerceCard />
+                        {illustrations.map((illustration) => (
+                            <div key={illustration.id}>
+                                <EcommerceCard title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.url} />
+                            </div>
+                        ))}
                     </div>
 
                 </div>
             </section >
         </>);
+
 }
 
 export default Gallery;
