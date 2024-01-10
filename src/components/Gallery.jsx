@@ -15,7 +15,6 @@ const Gallery = () => {
             })
             .catch((error) => console.log(error));
     };
-
     useEffect(
         () => { fetchIllustrations() }, []);
 
@@ -30,7 +29,7 @@ const Gallery = () => {
                     <div className="flex flex-wrap -m-4">
                         {illustrations.map((illustration) => (
                             <div key={illustration.id}>
-                                <EcommerceCard title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.url} />
+                                <EcommerceCard title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
                             </div>
                         ))}
                     </div>
