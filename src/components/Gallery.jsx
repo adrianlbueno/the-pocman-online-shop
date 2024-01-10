@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import EcommerceCard from "./EcommerCard";
 
 const Gallery = () => {
-    const URLAPI = "localhost:3000/illustrations"
-    const [illustrations, setIllustrations] = useState(null);
+
+    const URL_API = "http://localhost:3000/illustrations"
+    const [illustrations, setIllustrations] = useState([]);
 
     const fetchIllustrations = async () => {
-        return await fetch(URLAPI)
+        return await fetch(URL_API)
             .then((response) => response.json())
             .then((data) => {
                 setIllustrations(data);
-                console.log("data", data)
+                // console.log("data", data)
             })
             .catch((error) => console.log(error));
     };
