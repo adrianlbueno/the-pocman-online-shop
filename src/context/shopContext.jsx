@@ -2,17 +2,19 @@ import { createContext, useContext, useState } from "react";
 import { IllustrationsContext } from "./apiContext";
 
 export const ShopContext = createContext(null);
-const illustrations = useContext(IllustrationsContext);
-const getDefaultCart = () => {
-
-    let cart = {};
-    for (let i = 1; i < illustrations.length + 1; i++) {
-        cart[i] = 0;
-    }
-    return cart;
-};
 
 export const ShopContextProvider = (props) => {
+
+    const illustrations = useContext(IllustrationsContext);
+    const getDefaultCart = () => {
+
+        let cart = {};
+        for (let i = 1; i < illustrations.length + 1; i++) {
+            cart[i] = 0;
+        }
+        return cart;
+    };
+
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
     const getTotalCartAmount = () => {
