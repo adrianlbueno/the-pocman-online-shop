@@ -3,16 +3,19 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Shop from '../components/Shop';
 import { APIContextProvider } from '../context/apiContext';
+import { ShopContextProvider } from '../context/shopContext';
 
 const HomePage = () => {
     return (
         <div >
-            <APIContextProvider>
-                <Navbar />
-                <Header />
-                <Shop />
-                <Footer />
-            </APIContextProvider>
+            <ShopContextProvider>
+                <APIContextProvider>
+                    <Navbar />
+                    <Header />
+                    <Shop />
+                    <Footer />
+                </APIContextProvider>
+            </ShopContextProvider>
         </div >
     );
 };
