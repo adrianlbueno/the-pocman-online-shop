@@ -2,7 +2,7 @@ import { faBars, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-import CartModal from './CartModal';
+import CartModal from "./CartModal.1";
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
 

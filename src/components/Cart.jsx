@@ -1,8 +1,13 @@
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
+import { IllustrationsContext } from "../context/apiContext";
+import { ShopContext } from "../context/shopContext";
+import CartItem from "./CardItem";
 
-const CartModal = ({ open, setOpen }) => {
-
+export const CartModal = ({ open, setOpen }) => {
+    const { cartItems } = useContext(ShopContext);
+    const { illustrations } = useContext(IllustrationsContext);
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
@@ -28,7 +33,13 @@ const CartModal = ({ open, setOpen }) => {
                                 <div className="mt-8">
                                     <div className="flow-root">
                                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                            {/* <!-- More products... --> */}
+                                            {illustrations.map((illustration) => {
+                                                if (cartItems[illustration.id] !== 0) {
+                                                    <div key={illustration.id}>
+                                                        return <CartItem data={illustration} />
+                                                    </div>
+                                                }
+                                            })}
                                         </ul>
                                     </div>
                                 </div>
@@ -57,8 +68,6 @@ const CartModal = ({ open, setOpen }) => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
-}
-
-export default CartModal;
+};
