@@ -6,7 +6,7 @@ const ItemDetailsPage = () => {
   const { illustrationId } = useParams();
   const illustrationDetail = illustrations.find((illustration) => illustration.id === +illustrationId);
 
-  if (!illustrationDetail) return null;
+  if (!illustrationDetail) return;
 
   return (
     <>
