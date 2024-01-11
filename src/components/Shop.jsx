@@ -19,7 +19,7 @@ const Shop = () => {
                         {illustrations && illustrations.map((illustration) => (
                             <div key={illustration.id}>
                                 <Link to={`/illustrations/${illustration.id}`}>
-                                    <EcommerceCard title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
+                                    <EcommerceCard id={illustration.id} title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
                                 </Link>
                             </div>
                         ))}
