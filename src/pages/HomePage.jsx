@@ -1,15 +1,18 @@
 import Footer from '../components/Footer';
-import Gallery from '../components/Gallery';
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
+import Shop from '../components/Shop';
+import { APIContextProvider } from '../context/apiContext';
 
 const HomePage = () => {
     return (
         <div >
-            <Navbar />
-            <Header />
-            <Gallery />
-            <Footer />
+            <APIContextProvider>
+                <Navbar />
+                <Header />
+                <Shop />
+                <Footer />
+            </APIContextProvider>
         </div >
     );
 };

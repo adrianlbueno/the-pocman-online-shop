@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { useFetchIllustrations } from "../hooks/useFetchIllustrations";
+import { IllustrationsContext } from "../context/apiContext";
 import EcommerceCard from "./EcommerCard";
-const Gallery = () => {
-    const illustrations = useFetchIllustrations();
+
+const Shop = () => {
+    const { illustrations } = useContext(IllustrationsContext);
+    console.log(illustrations);
 
     return (
         <>
@@ -13,7 +16,7 @@ const Gallery = () => {
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Are you who you want to be?</p>
                     </div>
                     <div className="flex flex-wrap -m-4">
-                        {illustrations.map((illustration) => (
+                        {illustrations && illustrations.map((illustration) => (
                             <div key={illustration.id}>
                                 <Link to={`/illustrations/${illustration.id}`}>
                                     <EcommerceCard title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
@@ -28,4 +31,4 @@ const Gallery = () => {
 
 }
 
-export default Gallery;
+export default Shop;
