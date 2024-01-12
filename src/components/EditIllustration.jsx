@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/globalStateContext';
-
-export const EditIllustration = (route) => {
+export const EditIllustration = () => {
     let history = useNavigate();
 
     const { illustrations, editIllustration } = useContext(GlobalContext);
@@ -15,15 +14,15 @@ export const EditIllustration = (route) => {
         image: "",
     });
 
-    const currentIllustrationId = route.match.params.id;
+    const { id } = useParams();
 
     useEffect(() => {
-        const illustrationId = currentIllustrationId;
+        const illustrationId = id;
         const selectedIllustration = illustrations.find(
             (currentIllustration) => currentIllustration.id === parseInt(illustrationId)
         );
         setSelectedIllustration(selectedIllustration);
-    }, [currentIllustrationId, illustrations]);
+    }, [id, illustrations]);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -103,13 +102,22 @@ export const EditIllustration = (route) => {
                         />
                     </div>
                     <div className="flex items-center justify-between">
-                        <button className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
-                            Edit Illustration
-                        </button>
+
+                        <Link to="/admin">
+                            <button className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
+                                Done
+                            </button>
+                        </Link>
+                        <Link to="/">
+                            <button className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
+                                Cancel
+                            </button>
+                        </Link>
                     </div>
-                    <div className="text-center mt-4 text-gray-500">
-                        <Link to="/">Cancel</Link>
-                    </div>
+
+
+
+
                 </form>
             </div>
         </React.Fragment>
