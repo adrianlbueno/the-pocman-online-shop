@@ -50,12 +50,11 @@ const Navbar = () => {
                         </Link>
                     ))}
                 </div>
-                <div >
+                <div className="flex items-center space-x-6 rtl:space-x-reverse">
                     <Link to="login">
                         <FontAwesomeIcon icon={faUser} />
                     </Link>
-                </div>
-                <div >
+
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping} />
                     </button>
