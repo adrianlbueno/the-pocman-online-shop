@@ -54,7 +54,7 @@ const Navbar = () => {
                     ))}
                 </div>
                 <div className="flex items-center space-x-6 rtl:space-x-reverse">
-                    <Link to="login">
+                    <Link to="admin">
                         <FontAwesomeIcon icon={faUser} />
                     </Link>
 
