@@ -5,7 +5,7 @@ import { IllustrationsContext } from "../context/apiContext";
 import { ShopContext } from "../context/shopContext";
 import CartItem from "./CardItem";
 
-export const CartModal = ({ open, setOpen }) => {
+const Cart = ({ open, setOpen }) => {
     const { cartItems } = useContext(ShopContext);
     const { illustrations } = useContext(IllustrationsContext);
     return (
@@ -34,7 +34,8 @@ export const CartModal = ({ open, setOpen }) => {
                                     <div className="flow-root">
                                         <ul role="list" className="-my-6 divide-y divide-gray-200">
                                             {illustrations.map((illustration) => {
-                                                if (cartItems[illustration.id] !== 0) {
+                                                console.log(illustration)
+                                                if (cartItems[illustration.id] === 0) {
                                                     <div key={illustration.id}>
                                                         return <CartItem data={illustration} />
                                                     </div>
@@ -71,3 +72,5 @@ export const CartModal = ({ open, setOpen }) => {
         </div>
     );
 };
+
+export default Cart;

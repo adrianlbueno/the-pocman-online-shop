@@ -2,7 +2,7 @@ import { faBars, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-import CartModal from "./CartModal.1";
+import Cart from "./Cart";
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
 
@@ -60,7 +60,7 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faCartShopping} />
                     </button>
                     {show ? (
-                        <CartModal open={show} setOpen={setShow} />
+                        <Cart open={show} setOpen={setShow} />
                     ) : null
                     }
                 </div>
