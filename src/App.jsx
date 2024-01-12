@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AddIllustration } from "./components/AddIllustration";
+import { EditIllustration } from "./components/EditIllustration";
 import AboutPage from "./pages/AboutPage";
+import AdminPape from "./pages/AdminPage";
 import Contact from "./pages/Contact";
 import HomePage from "./pages/HomePage";
 import ItemDetailsPage from "./pages/ItemDetailsPage";
@@ -17,6 +20,9 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<LogInPage />} />
           <Route path="signUp" element={<SignUpPage />} />
+          <Route path="/admin" element={<AdminPape />} />
+          <Route path="/add" element={<AddIllustration />} />
+          <Route path="/edit/:id" component={<EditIllustration />} />
           <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
