@@ -2,6 +2,7 @@ import { faBars, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
+import pocmanLogo from "../assets/logo-pocman.png";
 import Cart from "./Cart";
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
@@ -32,7 +33,9 @@ const Navbar = () => {
         <>
             <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
                 <Link to="/" className="w-24">
-                    <h1 className="cursor-pointer sm:h-auto sm:w-auto">The Pocman</h1>
+                    <div className="cursor-pointer sm:h-auto sm:w-auto">
+                        <img src={pocmanLogo} />
+                    </div>
                 </Link>
                 <div className="md:hidden">
                     <button onClick={handleClick}>
