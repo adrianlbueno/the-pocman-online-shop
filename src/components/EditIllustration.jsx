@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
-import { GlobalContext } from '../context/GlobalState';
+import { Link, useNavigate } from 'react-router-dom';
+import { GlobalContext } from '../context/globalStateContext';
 
 export const EditIllustration = (route) => {
-    let history = useHistory();
+    let history = useNavigate();
 
     const { illustrations, editIllustration } = useContext(GlobalContext);
 

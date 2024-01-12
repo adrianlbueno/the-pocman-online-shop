@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { GlobalContext } from '../context/GlobalState';
+import { GlobalContext } from '../context/globalStateContext';
 
-export const IllustrationList = () => {
+const IllustrationList = () => {
     const { illustrations, removeIllustration } = useContext(GlobalContext);
 
     return (
@@ -52,3 +52,4 @@ export const IllustrationList = () => {
         </React.Fragment>
     );
 };
+export default IllustrationList;

@@ -1,5 +1,5 @@
 import { Heading } from "../components/AdminHeading";
-import EmployeeList from "../components/IllustrationList";
+import IllustrationList from "../components/IllustrationList";
 import { GlobalProvider } from '../context/globalStateContext';
 const AdminPape = () => {
     return (
@@ -7,7 +7,7 @@ const AdminPape = () => {
             <GlobalProvider>
                 <div>
                     <Heading />
-                    <EmployeeList />
+                    <IllustrationList />
                 </div>
             </GlobalProvider>
         </>
