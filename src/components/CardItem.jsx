@@ -1,7 +1,8 @@
 const CartItem = (props) => {
     const { id, title, price, image } = props.data;
+    console.log("image:", image);
     return (
-        <div className="flex py-6">
+        <div className="flex py-6 ">
             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                 <img
                     src={image}

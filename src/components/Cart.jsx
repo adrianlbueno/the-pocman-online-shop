@@ -8,12 +8,11 @@ import CartItem from "./CardItem";
 const Cart = ({ open, setOpen }) => {
     const { cartItems } = useContext(ShopContext);
     const { illustrations } = useContext(IllustrationsContext);
+
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
-
             </div>
-
             <div className="fixed inset-0 overflow-hidden">
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
@@ -34,12 +33,14 @@ const Cart = ({ open, setOpen }) => {
                                     <div className="flow-root">
                                         <ul role="list" className="-my-6 divide-y divide-gray-200">
                                             {illustrations.map((illustration) => {
-                                                console.log(illustration)
-                                                if (cartItems[illustration.id] === 0) {
-                                                    <div key={illustration.id}>
-                                                        return <CartItem data={illustration} />
-                                                    </div>
+                                                if (cartItems[illustration.id] && Number(cartItems[illustration.id]) !== 0) {
+                                                    return (
+                                                        <div key={illustration.id}>
+                                                            <CartItem data={illustration} />
+                                                        </div>
+                                                    );
                                                 }
+                                                return null;
                                             })}
                                         </ul>
                                     </div>
