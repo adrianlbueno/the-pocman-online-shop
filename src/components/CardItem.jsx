@@ -1,3 +1,4 @@
+
 const CartItem = (props) => {
     const { id, title, price, image } = props.data;
 
@@ -20,8 +21,7 @@ const CartItem = (props) => {
                     </div>
                 </div>
                 <div className="flex flex-1 items-end justify-between text-sm">
-                    <p className="text-gray-500">Qty 1</p>
-
+                    <p className="text-gray-500">Qty: 1</p>
                     <div className="flex">
                         <button
                             type="button"
