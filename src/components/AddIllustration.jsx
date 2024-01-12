@@ -6,6 +6,7 @@ export const AddIllustration = () => {
     let history = useNavigate();
 
     const { addIllustration, illustrations } = useContext(GlobalContext);
+    console.log('illustrations', illustrations);
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");

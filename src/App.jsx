@@ -16,13 +16,13 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="login" element={<LogInPage />} />
-          <Route path="signUp" element={<SignUpPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<LogInPage />} />
+          <Route path="/signUp" element={<SignUpPage />} />
           <Route path="/admin" element={<AdminPape />} />
           <Route path="/add" element={<AddIllustration />} />
-          <Route path="/edit/:id" component={<EditIllustration />} />
+          <Route path="/edit/:id" element={<EditIllustration />} />
           <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage />} />
 
           <Route path="*" element={<NotFoundPage />} />

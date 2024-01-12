@@ -16,7 +16,7 @@ const initialState = {
 
 export const GlobalContext = createContext(initialState);
 
-export const GlobalProvider = ({ children }) => {
+export const GlobalContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(appReducer, initialState);
 
     function addIllustration(illustration) {
@@ -26,14 +26,14 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
-    function editillustration(illustration) {
+    function editIllustration(illustration) {
         dispatch({
             type: "EDIT_ILLUSTRATION",
             payload: illustration
         });
     }
 
-    function removeillustration(id) {
+    function removeIllustration(id) {
         dispatch({
             type: "REMOVE_ILLUSTRATION",
             payload: id
@@ -45,8 +45,8 @@ export const GlobalProvider = ({ children }) => {
             value={{
                 illustrations: state.illustrations,
                 addIllustration,
-                editillustration,
-                removeillustration
+                editIllustration,
+                removeIllustration
             }}
         >
             {children}
