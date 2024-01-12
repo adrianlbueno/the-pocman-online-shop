@@ -18,7 +18,7 @@ const ItemDetailsPage = () => {
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">Random Text</h1>
             <p className="leading-relaxed">{illustrationDetail.description}</p>
             <div className="flex flex-col md:flex-row justify-between items-center text-gray-900">
-              <span className="font-bold text-xl">{illustrationDetail.price}</span>
+              <span className="font-bold text-xl">€{illustrationDetail.price}</span>
               <button
                 type="button"
                 className="px-6 py-2 transition ease-in duration-200 uppercase  hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none" onClick={() => { console.log("Hello world") }}>Add

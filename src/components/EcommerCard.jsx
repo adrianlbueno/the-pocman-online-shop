@@ -23,7 +23,7 @@ const EcommerceCard = ({ id, title, description, price, url }) => {
                             {title}
                         </p>
                         <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-                            {price}
+                            €{price}
                         </p>
                     </div>
                     <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
