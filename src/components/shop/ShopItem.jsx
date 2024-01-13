@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
-const EcommerceCard = ({ id, title, description, price, url }) => {
+const ShopItem = ({ id, title, description, price, url }) => {
     const { addToCart } = useContext(ShopContext);
 
     const handleAddToCart = (event) => {
@@ -44,4 +44,4 @@ const EcommerceCard = ({ id, title, description, price, url }) => {
     );
 }
 
-export default EcommerceCard;
+export default ShopItem;

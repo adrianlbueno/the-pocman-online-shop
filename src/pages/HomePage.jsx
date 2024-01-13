@@ -1,7 +1,7 @@
-import Footer from '../components/Footer';
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
-import Shop from '../components/Shop';
+import Footer from '../components/common/Footer';
+import Header from "../components/common/Header";
+import Navbar from "../components/common/Navbar";
+import Shop from '../components/shop/Shop';
 import { APIContextProvider } from '../context/apiContext';
 import { ShopContextProvider } from '../context/shopContext';
 

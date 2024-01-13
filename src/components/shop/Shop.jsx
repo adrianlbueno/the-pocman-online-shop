@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { IllustrationsContext } from "../../context/apiContext";
-import EcommerceCard from "./EcommerCard";
+import ShopItem from "./ShopItem";
 
 const Shop = () => {
     const { illustrations } = useContext(IllustrationsContext);
@@ -18,7 +18,7 @@ const Shop = () => {
                     {illustrations && illustrations.map((illustration) => (
                         <div key={illustration.id}>
                             <Link to={`/illustrations/${illustration.id}`}>
-                                <EcommerceCard id={illustration.id} title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
+                                <ShopItem id={illustration.id} title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
                             </Link>
                         </div>
                     ))}

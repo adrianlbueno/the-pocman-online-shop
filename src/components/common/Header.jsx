@@ -1,4 +1,4 @@
-import headerImage from "../assets/bg-illustration-pocmam.jpg";
+import headerImage from "../../assets/bg-illustration-pocmam.jpg";
 const Header = () => {
     return (
         <>
