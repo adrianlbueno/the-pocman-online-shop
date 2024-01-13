@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import pocmanLogo from "../assets/logo-pocman.png";
-import Cart from "./Cart";
+import Cart from '../cart/Cart';
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
 

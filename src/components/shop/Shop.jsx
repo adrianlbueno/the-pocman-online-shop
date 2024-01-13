@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { IllustrationsContext } from "../context/apiContext";
+import { IllustrationsContext } from "../../context/apiContext";
 import EcommerceCard from "./EcommerCard";
 
 const Shop = () => {

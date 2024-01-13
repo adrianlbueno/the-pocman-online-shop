@@ -1,8 +1,8 @@
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { IllustrationsContext } from "../context/apiContext";
-import { ShopContext } from "../context/shopContext";
+import { IllustrationsContext } from "../../context/apiContext";
+import { ShopContext } from "../../context/shopContext";
 import CartItem from "./CardItem";
 
 const Cart = ({ open, setOpen }) => {
