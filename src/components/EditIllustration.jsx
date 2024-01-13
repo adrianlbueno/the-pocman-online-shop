@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/globalStateContext';
 export const EditIllustration = () => {
@@ -24,7 +24,7 @@ export const EditIllustration = () => {
         setSelectedIllustration(selectedIllustration);
     }, [id, illustrations]);
 
-    const onSubmit = (e) => {
+    const handleOnSubmit = (e) => {
         e.preventDefault();
         editIllustration(selectedIllustration);
         history.push("/");
@@ -38,9 +38,9 @@ export const EditIllustration = () => {
     }
 
     return (
-        <React.Fragment>
+        <>
             <div className="w-full max-w-sm container mt-20 mx-auto">
-                <form onSubmit={onSubmit}>
+                <form onSubmit={handleOnSubmit}>
                     <div className="w-full mb-5">
                         <label
                             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -114,12 +114,8 @@ export const EditIllustration = () => {
                             </button>
                         </Link>
                     </div>
-
-
-
-
                 </form>
             </div>
-        </React.Fragment>
+        </>
     );
 };
