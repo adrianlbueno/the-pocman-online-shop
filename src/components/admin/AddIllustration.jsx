@@ -1,12 +1,10 @@
 import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { GlobalContext } from '../../context/globalStateContext';
 
 export const AddIllustration = () => {
-    let history = useNavigate();
 
     const { addIllustration, illustrations } = useContext(GlobalContext);
-    console.log('illustrations', illustrations);
 
     const [form, setForm] = useState({
         title: "",
@@ -15,19 +13,20 @@ export const AddIllustration = () => {
         image: ""
     });
 
+    const [illustration, setIllustration] = useState(illustrations)
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const newIllustration = {
-            form
+            ...form
         };
-        addIllustration(newIllustration);
-        history.push("/");
+        setIllustration([...illustration, addIllustration(newIllustration)])
     };
 
     const handleChange = (e) => {
         setForm(prev => ({
             ...prev,
-            [e.target.name]: e.target.value, e
+            [e.target.name]: e.target.value,
         }))
     }
 
