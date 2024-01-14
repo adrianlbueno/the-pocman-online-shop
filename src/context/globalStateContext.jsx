@@ -1,23 +1,15 @@
 import { createContext, useReducer } from 'react';
-
+import { useFetchIllustrations } from '../hooks/useFetchIllustrations';
 import appReducer from './appReducer';
 
-const initialState = {
-    illustrations: [
-        {
-            "id": 1,
-            "title": "The Pocman Artwork ",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "price": 100,
-            "image": "https://i.imgur.com/GvEoeXp.jpg"
-        },
-    ]
-};
 
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext({});
 
 export const GlobalContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(appReducer, initialState);
+    const illustrations = useFetchIllustrations();
+
+    console.log("illustration", illustrations)
+    const [state, dispatch] = useReducer(appReducer, { illustrations });
 
     function addIllustration(illustration) {
         dispatch({

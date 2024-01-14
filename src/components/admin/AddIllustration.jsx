@@ -21,6 +21,7 @@ export const AddIllustration = () => {
             ...form
         };
         setIllustration([...illustration, addIllustration(newIllustration)])
+        setForm("")
     };
 
     const handleChange = (e) => {
