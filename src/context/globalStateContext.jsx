@@ -1,15 +1,27 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
 import { useFetchIllustrations } from '../hooks/useFetchIllustrations';
 import appReducer from './appReducer';
 
+const initialState = {
+    illustrations: []
+}
 
-export const GlobalContext = createContext({});
+export const GlobalContext = createContext(initialState);
 
 export const GlobalContextProvider = ({ children }) => {
-    const illustrations = useFetchIllustrations();
 
-    console.log("illustration", illustrations)
-    const [state, dispatch] = useReducer(appReducer, { illustrations });
+    const illustrations = useFetchIllustrations();
+    const [state, dispatch] = useReducer(appReducer, initialState);
+
+    useEffect(() => {
+        console.log("before dispatch:", illustrations)
+        if (illustrations) {
+            dispatch({
+                type: "SET_ILLUSTRATIONS",
+                payload: illustrations
+            });
+        }
+    }, [illustrations]);
 
     function addIllustration(illustration) {
         dispatch({
