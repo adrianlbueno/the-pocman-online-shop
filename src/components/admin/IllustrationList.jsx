@@ -5,6 +5,8 @@ import { GlobalContext } from '../../context/globalStateContext';
 const IllustrationList = () => {
     const { illustrations, removeIllustration } = useContext(GlobalContext);
 
+    console.log("illustrations", illustrations)
+
     return (
         <>
             {!illustrations || illustrations.length === 0 ? (
