@@ -14,7 +14,6 @@ export const GlobalContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(appReducer, initialState);
 
     useEffect(() => {
-        console.log("before dispatch:", illustrations)
         if (illustrations) {
             dispatch({
                 type: "SET_ILLUSTRATIONS",
