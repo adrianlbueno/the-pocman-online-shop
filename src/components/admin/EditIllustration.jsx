@@ -15,15 +15,15 @@ export const EditIllustration = () => {
         image: "",
     });
 
-    const { id } = useParams();
+    const { editId } = useParams();
 
     useEffect(() => {
-        const illustrationId = id;
+        const illustrationId = editId;
         const selectedIllustration = illustrations.find(
             (currentIllustration) => currentIllustration.id === parseInt(illustrationId)
         );
         setSelectedIllustration(selectedIllustration);
-    }, [id, illustrations]);
+    }, [editId, illustrations]);
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
