@@ -7,8 +7,10 @@ export const useFetchIllustrations = () => {
     const fetchData = async () => {
         try {
             const response = await fetch(URL_API);
-            const json = await response.json();
-            setIllustrations(json);
+            if (response.ok) {
+                const json = await response.json();
+                setIllustrations(json);
+            }
         } catch (error) {
             console.error("Error fetching illustrations:", error);
         }
