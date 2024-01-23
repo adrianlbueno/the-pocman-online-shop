@@ -1,12 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { GlobalContext } from '../../context/globalStateContext';
+
 export const EditIllustration = () => {
-    let history = useNavigate();
 
     const { illustrations, editIllustration } = useContext(GlobalContext);
-
-
     const [selectedIllustration, setSelectedIllustration] = useState({
         id: null,
         title: "",
@@ -16,19 +14,18 @@ export const EditIllustration = () => {
     });
 
     const { editId } = useParams();
+    const illustrationId = editId;
+    const illustrationToUpDate = illustrations.find(
+        (currentIllustration) => currentIllustration.id === parseInt(illustrationId)
+    );
 
     useEffect(() => {
-        const illustrationId = editId;
-        const selectedIllustration = illustrations.find(
-            (currentIllustration) => currentIllustration.id === parseInt(illustrationId)
-        );
-        setSelectedIllustration(selectedIllustration);
-    }, [editId, illustrations]);
+        setSelectedIllustration(illustrationToUpDate);
+    }, []);
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
         editIllustration(selectedIllustration);
-        history.push("/");
     };
 
     const handleOnChange = (illustrationKey, newValue) =>
