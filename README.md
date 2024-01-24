@@ -1,2 +1,1 @@
-Welcome
-Currently working on the pocman online shop.
+Work in Progress
