@@ -5,13 +5,13 @@ import { GlobalContext } from '../../context/globalStateContext';
 export const AddIllustration = () => {
 
     const { addIllustration, illustrations } = useContext(GlobalContext);
-
-    const [form, setForm] = useState({
+    const initialValues = {
         title: "",
         description: "",
         price: "",
         image: ""
-    });
+    }
+    const [form, setForm] = useState(initialValues);
 
     const [illustration, setIllustration] = useState(illustrations)
 
