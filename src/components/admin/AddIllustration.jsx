@@ -48,6 +48,8 @@ export const AddIllustration = () => {
                             onChange={handleChange}
                             type="text"
                             placeholder="Enter title"
+                            name="title"
+
                         />
                     </div>
                     <div className="w-full mb-5">
@@ -63,6 +65,7 @@ export const AddIllustration = () => {
                             onChange={handleChange}
                             type="text"
                             placeholder="Enter description"
+                            name="description"
                         />
                     </div>
                     <div className="w-full mb-5">
@@ -78,6 +81,7 @@ export const AddIllustration = () => {
                             onChange={handleChange}
                             type="text"
                             placeholder="Enter price"
+                            name="price"
                         />
                     </div>
                     <div className="w-full mb-5">
@@ -93,6 +97,7 @@ export const AddIllustration = () => {
                             onChange={handleChange}
                             type="text"
                             placeholder="Enter image URL"
+                            name="image"
                         />
                     </div>
                     <div className="flex items-center justify-between">
