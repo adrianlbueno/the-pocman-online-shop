@@ -15,8 +15,8 @@ export const AddIllustration = () => {
 
     const [illustration, setIllustration] = useState(illustrations)
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
         const newIllustration = {
             ...form
         };
@@ -24,10 +24,10 @@ export const AddIllustration = () => {
         setForm("")
     };
 
-    const handleChange = (e) => {
+    const handleChange = (event) => {
         setForm(prev => ({
             ...prev,
-            [e.target.name]: e.target.value,
+            [event.target.name]: event.target.value,
         }))
     }
 
