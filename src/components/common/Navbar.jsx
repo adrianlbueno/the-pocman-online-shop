@@ -15,7 +15,6 @@ const Navbar = () => {
         { id: "Contact", label: 'Contact', path: '/contact' },
     ];
 
-
     const handleShow = useCallback(() => {
         setShow((prevState) => {
             return !prevState;
@@ -34,7 +33,7 @@ const Navbar = () => {
             <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
                 <Link to="/" className="w-24">
                     <div className="cursor-pointer sm:h-auto sm:w-auto">
-                        <img src={pocmanLogo} />
+                        <img src={pocmanLogo} alt="The pocman logo" />
                     </div>
                 </Link>
                 <div className="md:hidden">
