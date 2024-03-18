@@ -1,11 +1,11 @@
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
+import {useContext} from "react";
 import { IllustrationsContext } from "../../context/apiContext";
 import { ShopContext } from "../../context/shopContext";
 import CartItem from "./CardItem";
 
-const Cart = ({ open, setOpen }) => {
+const Cart = () => {
     const { cartItems } = useContext(ShopContext);
     const { illustrations } = useContext(IllustrationsContext);
 
@@ -21,26 +21,21 @@ const Cart = ({ open, setOpen }) => {
                                 <div className="flex items-start justify-between">
                                     <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Shopping Cart</h2>
                                     <div className="ml-3 flex h-7 items-center">
-                                        <button type="button" onClick={() => setOpen(!open)} className="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
                                             <span className="absolute -inset-0.5"></span>
                                             <span className="sr-only">Close panel</span>
-                                            <FontAwesomeIcon className="h-6 w-6 " icon={faX} />
-                                        </button>
+                                            <FontAwesomeIcon className="h-6 w-6" icon={faX} />
                                     </div>
                                 </div>
 
                                 <div className="mt-8">
                                     <div className="flow-root">
                                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                            {illustrations.map((illustration) => {
+                                            {illustrations.length !== 0 && illustrations.map((illustration) => {
                                                 if (cartItems[illustration.id] && Number(cartItems[illustration.id]) !== 0) {
                                                     return (
-                                                        <div key={illustration.id}>
-                                                            <CartItem data={illustration} />
-                                                        </div>
+                                                            <CartItem key={illustration.id} data={illustration} />
                                                     );
                                                 }
-                                                return null;
                                             })}
                                         </ul>
                                     </div>
