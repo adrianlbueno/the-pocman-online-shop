@@ -5,7 +5,7 @@ export const IllustrationsContext = createContext({});
 
 export const APIContextProvider = ({ children }) => {
     const illustrations = useFetchIllustrations();
-    console.log(illustrations);
+    console.log("illustrations", illustrations);
 
     return (
         <IllustrationsContext.Provider value={{ illustrations }}>

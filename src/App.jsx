@@ -9,11 +9,15 @@ import ItemDetailsPage from "./pages/ItemDetailsPage";
 import LogInPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage";
+import Navbar from "./components/common/Navbar.jsx";
+import Footer from "./components/common/Footer.jsx";
 
 const App = () => {
   return (
     <>
+        <div>
       <BrowserRouter>
+          <Navbar/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -24,10 +28,11 @@ const App = () => {
           <Route path="/add" element={<AddIllustration />} />
           <Route path="/edit/:editId" element={<EditIllustration />} />
           <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage />} />
-
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+          <Footer/>
       </BrowserRouter>
+        </div>
 
     </>
   )

@@ -9,10 +9,8 @@ const HomePage = () => {
     return (
         <ShopContextProvider>
             <APIContextProvider>
-                <Navbar />
                 <Header />
                 <Shop />
-                <Footer />
             </APIContextProvider>
         </ShopContextProvider>
     );
