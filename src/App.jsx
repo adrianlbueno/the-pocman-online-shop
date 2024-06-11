@@ -16,22 +16,24 @@ const App = () => {
   return (
     <>
         <div>
-      <BrowserRouter>
-          <Navbar/>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<LogInPage />} />
-          <Route path="/signUp" element={<SignUpPage />} />
-          <Route path="/admin" element={<AdminPape />} />
-          <Route path="/add" element={<AddIllustration />} />
-          <Route path="/edit/:editId" element={<EditIllustration />} />
-          <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-          <Footer/>
-      </BrowserRouter>
+          <BrowserRouter>
+            <Navbar/>
+            <div className="flex flex-col h-screen justify-between">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/login" element={<LogInPage />} />
+                <Route path="/signUp" element={<SignUpPage />} />
+                <Route path="/admin" element={<AdminPape />} />
+                <Route path="/add" element={<AddIllustration />} />
+                <Route path="/edit/:editId" element={<EditIllustration />} />
+                <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            <Footer/>
+            </div>
+        </BrowserRouter>
         </div>
 
     </>
