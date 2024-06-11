@@ -32,7 +32,7 @@ const Cart = () => {
                                 <div className="mt-8">
                                     <div className="flow-root">
                                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                            {illustrations.length !== 0 && illustrations.map((illustration) => {
+                                            {!illustrations && illustrations.map((illustration) => {
                                                 if (cartItems[illustration.id] && Number(cartItems[illustration.id]) !== 0) {
                                                     return (
                                                             <CartItem key={illustration.id} data={illustration} />
