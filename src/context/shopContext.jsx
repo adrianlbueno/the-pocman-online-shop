@@ -10,7 +10,7 @@ export const ShopContextProvider = (props) => {
 
     const getDefaultCart = () => {
 
-        let cart = {};
+        let cart = [];
         for (let i = 1; i < illustrations.length + 1; i++) {
             cart[i] = 0;
         }
