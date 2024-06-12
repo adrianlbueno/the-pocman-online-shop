@@ -9,8 +9,7 @@ export const ShopContextProvider = (props) => {
     const illustrations = useContext(IllustrationsContext);
 
     const getDefaultCart = () => {
-
-        let cart = [];
+        let cart = {};
         for (let i = 1; i < illustrations.length + 1; i++) {
             cart[i] = 0;
         }
@@ -32,21 +31,10 @@ export const ShopContextProvider = (props) => {
     };
 
     const addToCart = (item) => {
-        const isItemInCart = cartItems.find(cartItem =>( cartItem.id === item.id) )
-
-        if (isItemInCart){
-            console.log(true)
-            setCartItems(
-                cartItems.map((cartItem) =>
-                cartItem.id === item.id
-                ? { ...cartItem, quantity:cartItem.quantity + 1 } : cartItem
-                )
-            );
-        }
-        else   {
-            console.log(false)
-            setCartItems([...cartItems, {...item, quantity: 1}]);
-        }
+        setCartItems(prev =>({
+            ...prev,
+            [item] : (prev[item] || 0) +1
+        }))
     };
 
     const removeFromCart = (item) => {

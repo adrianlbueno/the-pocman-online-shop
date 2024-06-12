@@ -6,11 +6,10 @@ import { ShopContext } from "../../context/shopContext";
 import CartItem from "./CardItem";
 
 const Cart = () => {
-    const contextValue = useContext(ShopContext);
-    const {cartItems} = contextValue;
+    const {cartItems} = useContext(ShopContext);
     console.log({cartItems})
     const { illustrations } = useContext(IllustrationsContext);
-    console.log({illustrations})
+
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">

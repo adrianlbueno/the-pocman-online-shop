@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
+
 const ShopItem = ({ id, title, description, price, url }) => {
-    const { addToCart, cartItems } = useContext(ShopContext);
-    const cartItemCount = cartItems[id];
+    const { addToCart } = useContext(ShopContext);
 
     const handleAddToCart = (event) => {
         event.preventDefault();
@@ -10,13 +10,10 @@ const ShopItem = ({ id, title, description, price, url }) => {
     };
 
     return (
-        < div className="lg:w-1/3 sm:w-1/2 p-4" >
+        <div className="lg:w-1/3 sm:w-1/2 p-4">
             <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
-                    <img
-                        src={url}
-                        className="h-full w-full object-cover"
-                    />
+                    <img src={url} className="h-full w-full object-cover" />
                 </div>
                 <div className="p-6">
                     <div className="mb-2 flex items-center justify-between">
@@ -37,12 +34,12 @@ const ShopItem = ({ id, title, description, price, url }) => {
                         type="button"
                         onClick={handleAddToCart}
                     >
-                        Add to Cart {cartItemCount > 0 && <> ({cartItemCount}) </>}
+                        Add to Cart
                     </button>
                 </div>
             </div>
-        </div >
+        </div>
     );
-}
+};
 
 export default ShopItem;

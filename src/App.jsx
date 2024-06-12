@@ -11,12 +11,13 @@ import NotFoundPage from "./pages/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage";
 import Navbar from "./components/common/Navbar.jsx";
 import Footer from "./components/common/Footer.jsx";
+import {ShopContextProvider} from "./context/shopContext.jsx";
 
 const App = () => {
   return (
     <>
         <div>
-          <BrowserRouter>
+            <BrowserRouter>
             <Navbar/>
             <div className="flex flex-col h-screen justify-between">
               <Routes>
@@ -33,7 +34,7 @@ const App = () => {
               </Routes>
             <Footer/>
             </div>
-        </BrowserRouter>
+           </BrowserRouter>
         </div>
 
     </>
