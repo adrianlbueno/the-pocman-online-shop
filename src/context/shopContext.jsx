@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { IllustrationsContext } from "./apiContext";
 import illustrationList from "../components/admin/IllustrationList.jsx";
 
-export const ShopContext = createContext("");
+export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
 
@@ -31,19 +31,16 @@ export const ShopContextProvider = (props) => {
         return total;
     };
 
-    const addToCart = (itemId) => {
-        setCartItems((prev) => ({
-            ...prev,
-            [itemId]: (typeof prev[itemId] === 'number' ? prev[itemId] : 0) + 1,
-        }));
+    const addToCart = (item) => {
+        setCartItems((prev) => ({ ...prev, [item]: prev[item] + 1 }));
     };
 
-    const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    const removeFromCart = (item) => {
+        setCartItems((prev) => ({ ...prev, [item]: prev[item] - 1 }));
     };
 
-    const updateCartItemCount = (newAmount, itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+    const updateCartItemCount = (newAmount, item) => {
+        setCartItems((prev) => ({ ...prev, [item]: newAmount }));
     };
 
     const checkout = () => {

@@ -1,7 +1,10 @@
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 const ShopItem = ({ id, title, description, price, url }) => {
-    const { addToCart } = useContext(ShopContext);
+    const { addToCart, cartItems } = useContext(ShopContext);
+    const cartItemCount = cartItems[id];
+
+    console.log(cartItems)
     const handleAddToCart = (event) => {
         event.preventDefault();
         addToCart(id);
@@ -35,7 +38,7 @@ const ShopItem = ({ id, title, description, price, url }) => {
                         type="button"
                         onClick={handleAddToCart}
                     >
-                        Add to Cart
+                        Add to Cart {cartItemCount > 0 && <> ({cartItemCount}) </>}
                     </button>
                 </div>
             </div>
