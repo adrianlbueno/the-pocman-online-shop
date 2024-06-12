@@ -4,7 +4,6 @@ const ShopItem = ({ id, title, description, price, url }) => {
     const { addToCart, cartItems } = useContext(ShopContext);
     const cartItemCount = cartItems[id];
 
-    console.log(cartItems)
     const handleAddToCart = (event) => {
         event.preventDefault();
         addToCart(id);

@@ -32,7 +32,21 @@ export const ShopContextProvider = (props) => {
     };
 
     const addToCart = (item) => {
-        setCartItems((prev) => ({ ...prev, [item]: prev[item] + 1 }));
+        const isItemInCart = cartItems.find(cartItem =>( cartItem.id === item.id) )
+
+        if (isItemInCart){
+            console.log(true)
+            setCartItems(
+                cartItems.map((cartItem) =>
+                cartItem.id === item.id
+                ? { ...cartItem, quantity:cartItem.quantity + 1 } : cartItem
+                )
+            );
+        }
+        else   {
+            console.log(false)
+            setCartItems([...cartItems, {...item, quantity: 1}]);
+        }
     };
 
     const removeFromCart = (item) => {
