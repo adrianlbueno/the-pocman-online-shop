@@ -5,8 +5,6 @@ import ShopItem from "./ShopItem";
 
 const Shop = () => {
     const { illustrations } = useContext(IllustrationsContext);
-    console.log(illustrations);
-
     return (
         <>
             <div className="container px-5 py-24 mx-auto">

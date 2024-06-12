@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 const ShopItem = ({ id, title, description, price, url }) => {
     const { addToCart } = useContext(ShopContext);
-
     const handleAddToCart = (event) => {
         event.preventDefault();
         addToCart(id);
