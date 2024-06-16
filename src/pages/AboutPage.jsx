@@ -9,12 +9,11 @@ const AboutPage = () => {
                         About Me
                     </h2>
                     <p className="pb-5">
-                        Hi, My Name is Adrian Bueno everyone calls me Abu or the pocman. I am an Artist.
+                        Hi, my name is Adrian.
                     </p>
                     <p className="pb-5">
-                        I am proficient in Frontend skills like React.js, Tailwind CSS, TypeScript Css3 and many more.
+                        am proficient in frontend skills such as React.js, Tailwind CSS, TypeScript, CSS3, and many more.
                     </p>
-                    <p>In backend I know Node.js</p>
                     <p>
                         In my spare time I create stickers and do illustration.
                     </p>
