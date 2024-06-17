@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { AddIllustration } from "./components/admin/AddIllustration";
 import { EditIllustration } from "./components/admin/EditIllustration";
 import AboutPage from "./pages/AboutPage";
@@ -11,12 +11,18 @@ import NotFoundPage from "./pages/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage";
 import Navbar from "./components/common/Navbar.jsx";
 import Footer from "./components/common/Footer.jsx";
+import {ShopContextProvider} from "./context/shopContext.jsx";
+import {GlobalContextProvider} from "./context/globalStateContext.jsx";
+import {APIContextProvider} from "./context/apiContext.jsx";
+
 
 const App = () => {
   return (
     <>
         <div>
-            <BrowserRouter>
+            <GlobalContextProvider>
+                <APIContextProvider>
+            <ShopContextProvider>
             <Navbar/>
             <div className="flex flex-col h-screen justify-between">
               <Routes>
@@ -33,9 +39,10 @@ const App = () => {
               </Routes>
             <Footer/>
             </div>
-           </BrowserRouter>
+            </ShopContextProvider>
+                </APIContextProvider>
+            </GlobalContextProvider>
         </div>
-
     </>
   )
 }
