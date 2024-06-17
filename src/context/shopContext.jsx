@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import { IllustrationsContext } from "./apiContext";
+import {createContext, useContext, useState} from "react";
+import {IllustrationsContext} from "./apiContext";
 
 export const ShopContext = createContext(null);
 
@@ -23,7 +23,7 @@ export const ShopContextProvider = (props) => {
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 const initialValue = 0;
-                 total = illustrations.reduce((accumulator,current) => accumulator + current.price * current.quantity, initialValue)
+                total = illustrations.reduce((accumulator, current) => accumulator + current.price * current.quantity, initialValue)
             }
         }
         return total;
@@ -31,20 +31,20 @@ export const ShopContextProvider = (props) => {
 
     const addToCart = (item) => {
 
-        console.log("item:", item )
+        console.log("item:", item)
 
-        setCartItems(prev =>({
+        setCartItems(prev => ({
             ...prev,
-            [item] : (prev[item] || 0) +1
+            [item]: (prev[item] || 0) + 1
         }))
     };
 
     const removeFromCart = (item) => {
-        setCartItems((prev) => ({ ...prev, [item]: prev[item] - 1 }));
+        setCartItems((prev) => ({...prev, [item]: prev[item] - 1}));
     };
 
     const updateCartItemCount = (newAmount, item) => {
-        setCartItems((prev) => ({ ...prev, [item]: newAmount }));
+        setCartItems((prev) => ({...prev, [item]: newAmount}));
     };
 
     const checkout = () => {
@@ -58,7 +58,8 @@ export const ShopContextProvider = (props) => {
             updateCartItemCount,
             removeFromCart,
             getTotalCartAmount,
-            checkout}}>
+            checkout
+        }}>
             {props.children}
         </ShopContext.Provider>
     );
