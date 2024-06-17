@@ -1,12 +1,13 @@
-import { Heading } from "../components/admin/AdminHeading";
+import {Heading} from "../components/admin/AdminHeading";
 import IllustrationList from "../components/admin/IllustrationList";
-const AdminPape = () => {
+
+const AdminPage = () => {
     return (
         <>
-            <Heading />
-            <IllustrationList />
+            <Heading/>
+            <IllustrationList/>
         </>
     );
 }
 
-export default AdminPape;
+export default AdminPage;
