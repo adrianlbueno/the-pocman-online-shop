@@ -15,10 +15,7 @@ export const ShopContextProvider = (props) => {
         return cart;
     };
 
-    const testing = getDefaultCart();
-    console.log(testing)
-    const [cartItems, setCartItems] = useState(testing);
-
+    const [cartItems, setCartItems] = useState(getDefaultCart);
 
     console.log({cartItems})
     const getTotalCartAmount = () => {
