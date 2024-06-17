@@ -1,6 +1,5 @@
-
 const CartItem = (props) => {
-    const { id, title, price, image, quantiy} = props.data;
+    const {title, price, image, quantiy} = props.data;
 
     return (
         <div className="flex py-6 ">
@@ -8,7 +7,7 @@ const CartItem = (props) => {
                 <img
                     src={image}
                     alt={title}
-                    className="h-full w-full object-cover object-center" />
+                    className="h-full w-full object-cover object-center"/>
             </div>
 
             <div className="ml-4 flex flex-1 flex-col">
@@ -32,8 +31,7 @@ const CartItem = (props) => {
                     </div>
                 </div>
             </div>
-        </div >
-
+        </div>
     );
 }
 

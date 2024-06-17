@@ -1,14 +1,13 @@
-import { faX } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faX} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useContext} from "react";
-import { IllustrationsContext } from "../../context/apiContext";
-import { ShopContext } from "../../context/shopContext";
+import {IllustrationsContext} from "../../context/apiContext";
+import {ShopContext} from "../../context/shopContext";
 import CartItem from "./CardItem";
 
 const Cart = () => {
     const {cartItems} = useContext(ShopContext);
-    console.log("Cart", {cartItems})
-    const { illustrations } = useContext(IllustrationsContext);
+    const {illustrations} = useContext(IllustrationsContext);
 
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
@@ -20,11 +19,12 @@ const Cart = () => {
                         <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                             <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                                 <div className="flex items-start justify-between">
-                                    <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Shopping Cart</h2>
+                                    <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Shopping
+                                        Cart</h2>
                                     <div className="ml-3 flex h-7 items-center">
-                                            <span className="absolute -inset-0.5"></span>
-                                            <span className="sr-only">Close panel</span>
-                                            <FontAwesomeIcon className="h-6 w-6" icon={faX} />
+                                        <span className="absolute -inset-0.5"></span>
+                                        <span className="sr-only">Close panel</span>
+                                        <FontAwesomeIcon className="h-6 w-6" icon={faX}/>
                                     </div>
                                 </div>
 
@@ -34,7 +34,7 @@ const Cart = () => {
                                             {!illustrations && illustrations.map((illustration) => {
                                                 if (cartItems[illustration.id] !== 0) {
                                                     return (
-                                                            <CartItem key={illustration.id} data={illustration} />
+                                                        <CartItem key={illustration.id} data={illustration}/>
                                                     );
                                                 }
                                             })}
@@ -48,14 +48,17 @@ const Cart = () => {
                                     <p>Subtotal</p>
                                     <p>0</p>
                                 </div>
-                                <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at
+                                    checkout.</p>
                                 <div className="mt-6">
-                                    <a href="#" className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                                    <a href="#"
+                                       className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
                                 </div>
                                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                                     <p>
                                         or
-                                        <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">
+                                        <button type="button"
+                                                className="font-medium text-indigo-600 hover:text-indigo-500">
                                             Continue Shopping
                                             <span aria-hidden="true"> &rarr;</span>
                                         </button>
