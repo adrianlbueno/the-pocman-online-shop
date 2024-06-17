@@ -1,18 +1,19 @@
-import { faBars, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback, useState } from "react";
-import { Link } from "react-router-dom";
+import {faBars, faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {useCallback, useState} from "react";
+import {Link} from "react-router-dom";
 import pocmanLogo from "../../assets/logo-pocman.png";
 import Cart from '../cart/Cart';
+
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
 
     const [show, setShow] = useState(false);
 
     const menuLinks = [
-        { id: "Home", label: 'Home', path: '/' },
-        { id: "About", label: 'About Us', path: '/about' },
-        { id: "Contact", label: 'Contact', path: '/contact' },
+        {id: "Home", label: 'Home', path: '/'},
+        {id: "About", label: 'About Us', path: '/about'},
+        {id: "Contact", label: 'Contact', path: '/contact'},
     ];
 
     const handleShow = useCallback(() => {
@@ -33,12 +34,12 @@ const Navbar = () => {
             <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
                 <Link to="/" className="w-24">
                     <div className="cursor-pointer sm:h-auto sm:w-auto">
-                        <img src={pocmanLogo} alt="The pocman logo" />
+                        <img src={pocmanLogo} alt="The pocman logo"/>
                     </div>
                 </Link>
                 <div className="md:hidden">
                     <button onClick={handleClick}>
-                        <FontAwesomeIcon icon={faBars} />
+                        <FontAwesomeIcon icon={faBars}/>
                     </button>
                 </div>
                 <div className="hidden gap-3 md:!flex">
@@ -54,14 +55,14 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center space-x-6 rtl:space-x-reverse">
                     <Link to="admin">
-                        <FontAwesomeIcon icon={faUser} />
+                        <FontAwesomeIcon icon={faUser}/>
                     </Link>
 
                     <button onClick={handleShow}>
-                        <FontAwesomeIcon icon={faCartShopping} />
+                        <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
                     {show ? (
-                        <Cart open={show} setOpen={setShow} />
+                        <Cart open={show} setOpen={setShow}/>
                     ) : null
                     }
                 </div>
