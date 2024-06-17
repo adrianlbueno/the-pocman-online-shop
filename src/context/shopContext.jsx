@@ -1,12 +1,11 @@
 import { createContext, useContext, useState } from "react";
 import { IllustrationsContext } from "./apiContext";
-import illustrationList from "../components/admin/IllustrationList.jsx";
 
 export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
 
-    const illustrations = useContext(IllustrationsContext);
+    const {illustrations} = useContext(IllustrationsContext);
 
     const getDefaultCart = () => {
         let cart = {};
@@ -16,7 +15,10 @@ export const ShopContextProvider = (props) => {
         return cart;
     };
 
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    const testing = getDefaultCart();
+    console.log(testing)
+    const [cartItems, setCartItems] = useState(testing);
+
 
     console.log({cartItems})
     const getTotalCartAmount = () => {
@@ -24,13 +26,16 @@ export const ShopContextProvider = (props) => {
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 const initialValue = 0;
-                 total = illustrationList.reduce((accumulator,current) => accumulator + current.price * current.quantity, initialValue)
+                 total = illustrations.reduce((accumulator,current) => accumulator + current.price * current.quantity, initialValue)
             }
         }
         return total;
     };
 
     const addToCart = (item) => {
+
+        console.log("item:", item )
+
         setCartItems(prev =>({
             ...prev,
             [item] : (prev[item] || 0) +1
