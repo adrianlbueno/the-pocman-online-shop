@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { IllustrationsContext } from "../../context/IllustrationsContext.jsx";
 import ShopItem from "./ShopItem";
+import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 
 const Shop = () => {
-    const { illustrations } = useContext(IllustrationsContext);
+    const illustrations = useFetchIllustrations()
     return (
         <>
             <div className="container px-5 py-24 mx-auto">
