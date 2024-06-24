@@ -1,11 +1,11 @@
 import {createContext, useContext, useState} from "react";
-import {IllustrationsContext} from "./apiContext";
+import {useFetchIllustrations} from "../hooks/useFetchIllustrations.js";
 
 export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
 
-    const {illustrations} = useContext(IllustrationsContext);
+    const illustrations= useFetchIllustrations()
 
     const getDefaultCart = () => {
         let cart = [];

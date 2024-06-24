@@ -1,14 +1,15 @@
 import {faX} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useContext} from "react";
-import {IllustrationsContext} from "../../context/apiContext";
 import {ShopContext} from "../../context/shopContext";
 import CartItem from "./CardItem";
+import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 
 const Cart = () => {
     const {cartItems} = useContext(ShopContext);
+    const illustrations = useFetchIllustrations()
     console.log("cartItems",cartItems);
-    const {illustrations} = useContext(IllustrationsContext);
+
 
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
