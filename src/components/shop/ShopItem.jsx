@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { ShopContext } from "../../context/shopContext";
+import {MultiContext} from "../../utils/MultiContext.jsx";
 
 const ShopItem = ({ id, title, description, price, url }) => {
-    const { addToCart } = useContext(ShopContext);
+    const hellp = useContext(MultiContext);
+    console.log({hellp});
 
     const handleAddToCart = (event) => {
         event.preventDefault();

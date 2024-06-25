@@ -8,12 +8,9 @@ export const MultiContextProvider = memo(
 
     function({ map, children }) {
         const contextMap = {};
-        console.log(map)
         for (const i in map) {
-             console.log({i})
             contextMap[i] = useContext(map[i]);
         }
-
 
         return (
             <MultiContext.Provider value={contextMap}>

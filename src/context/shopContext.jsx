@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useState} from "react";
 import {useFetchIllustrations} from "../hooks/useFetchIllustrations.js";
 
 export const ShopContext = createContext(null);
