@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import {useContext} from "react";
 import {MultiContext} from "../../utils/MultiContext.jsx";
 
-const ShopItem = ({ id, title, description, price, url }) => {
-    const hellp = useContext(MultiContext);
-    console.log({hellp});
+const ShopItem = ({id, title, description, price, url}) => {
+    const {ShopContext: shopContextValue} = useContext(MultiContext);
 
+    const addToCart = shopContextValue?.addToCart;
     const handleAddToCart = (event) => {
         event.preventDefault();
         addToCart(id);
@@ -13,8 +13,9 @@ const ShopItem = ({ id, title, description, price, url }) => {
     return (
         <div className="lg:w-1/3 sm:w-1/2 p-4">
             <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
-                    <img src={url} className="h-full w-full object-cover" />
+                <div
+                    className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
+                    <img src={url} className="h-full w-full object-cover"/>
                 </div>
                 <div className="p-6">
                     <div className="mb-2 flex items-center justify-between">

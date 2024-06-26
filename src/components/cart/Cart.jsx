@@ -4,11 +4,13 @@ import {useContext} from "react";
 import {ShopContext} from "../../context/shopContext";
 import CartItem from "./CardItem";
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
+import {MultiContext} from "../../utils/MultiContext.jsx";
 
 const Cart = () => {
-    const {cartItems} = useContext(ShopContext);
+    const {ShopContext: shopContextValue} = useContext(MultiContext);
     const illustrations = useFetchIllustrations()
-    console.log("cartItems",cartItems);
+    const cartItems = shopContextValue?.cartItems
+    console.log("cartItems", cartItems);
 
 
     return (
