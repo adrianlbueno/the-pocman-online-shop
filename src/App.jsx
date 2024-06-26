@@ -15,14 +15,14 @@ import {ShopContext} from "./context/shopContext.jsx";
 import {GlobalContext} from "./context/globalStateContext.jsx";
 import {MultiContextProvider} from "./utils/MultiContext.jsx";
 
-const multiContextMap =     {GlobalContext,ShopContext}
+const multiContextMap = {GlobalContext, ShopContext}
 const App = () => {
     return (
         <>
             <div>
+                <MultiContextProvider map={multiContextMap}>
                     <Navbar/>
                     <div className="flex flex-col h-screen justify-between">
-                     <MultiContextProvider map={multiContextMap}>
                         <Routes>
                             <Route path="/" element={<HomePage/>}/>
                             <Route path="/about" element={<AboutPage/>}/>
@@ -35,9 +35,9 @@ const App = () => {
                             <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage/>}/>
                             <Route path="*" element={<NotFoundPage/>}/>
                         </Routes>
-                    </MultiContextProvider>
                         <Footer/>
                     </div>
+                </MultiContextProvider>
             </div>
         </>
     )
