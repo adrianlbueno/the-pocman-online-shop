@@ -1,9 +1,11 @@
 import headerImage from "../../assets/bg-illustration-pocmam.jpg";
+import Navbar from "./Navbar.jsx";
 
 const Header = () => {
     return (
         <>
             <header>
+                <Navbar/>
                 <div id="Home"
                      className="flex flex-col justify-center items-center  max-w-full h-screen bg-cover"
                      style={{backgroundImage: `url(${headerImage})`}}

@@ -1,16 +1,15 @@
 import {faX} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useContext} from "react";
-import {ShopContext} from "../../context/shopContext";
 import CartItem from "./CardItem";
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import {MultiContext} from "../../utils/MultiContext.jsx";
 
 const Cart = () => {
-    const {ShopContext: shopContextValue} = useContext(MultiContext);
     const illustrations = useFetchIllustrations()
-    const cartItems = shopContextValue?.cartItems
-    console.log("cartItems", cartItems);
+    const {shopContext : ShopContext} = useContext(MultiContext);
+    const {cartItems} = ShopContext;
+    console.log("cartItems",cartItems);
 
 
     return (
