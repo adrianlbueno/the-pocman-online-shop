@@ -13,6 +13,8 @@ import Footer from "./components/common/Footer.jsx";
 import {MultiContextProvider} from "./utils/MultiContext.jsx";
 import {GlobalContext} from "./context/globalStateContext.jsx";
 import {ShopContext} from "./context/shopContext.jsx";
+import Header from "./components/common/Header.jsx";
+import Navbar from "./components/common/Navbar.jsx";
 
 
 
@@ -26,6 +28,8 @@ const App = () => {
                     <div className="flex flex-col h-screen justify-between">
                         <BrowserRouter>
                             <MultiContextProvider map={multiContextMap}>
+                               <div>
+                                <Navbar/>
                                 <Routes>
                                     <Route path="/" element={<HomePage/>}/>
                                     <Route path="/about" element={<AboutPage/>}/>
@@ -38,6 +42,7 @@ const App = () => {
                                     <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage/>}/>
                                     <Route path="*" element={<NotFoundPage/>}/>
                             </Routes>
+                               </div>
                             </MultiContextProvider>
                         <Footer/>
                         </BrowserRouter>
