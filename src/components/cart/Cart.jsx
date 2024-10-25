@@ -8,7 +8,7 @@ import {MultiContext} from "../../utils/MultiContext.jsx";
 const Cart = () => {
     const illustrations = useFetchIllustrations()
     const {shopContext : ShopContext} = useContext(MultiContext);
-    const {cartItyyems} = ShopContext;
+    const {cartItems} = ShopContext;
     console.log("cartItems",cartItems);
 
 
