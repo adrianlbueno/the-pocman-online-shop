@@ -5,12 +5,15 @@ const Header = () => {
         <>
             <header>
                 <div id="Home"
-                     className="flex flex-col justify-center items-center  max-w-full h-screen bg-cover"
+                     className="flex items-center justify-center h-screen mb-12 bg-fixed bg-center bg-cover"
                      style={{backgroundImage: `url(${headerImage})`}}
                 >
-                    <h1 className="text-4xl font-bold text-white">
-                        Welcome!!
-                    </h1>
+                    <div className="text-white">
+                        <h1 className="text-4xl font-bold ">
+                            Welcome
+                        </h1>
+                    </div>
+
                 </div>
             </header>
         </>
