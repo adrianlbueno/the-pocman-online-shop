@@ -7,7 +7,6 @@ import Cart from '../cart/Cart';
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
-
     const [show, setShow] = useState(false);
 
     const menuLinks = [

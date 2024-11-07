@@ -13,9 +13,7 @@ import Footer from "./components/common/Footer.jsx";
 import {MultiContextProvider} from "./utils/MultiContext.jsx";
 import {GlobalContext} from "./context/globalStateContext.jsx";
 import {ShopContext} from "./context/shopContext.jsx";
-import Header from "./components/common/Header.jsx";
 import Navbar from "./components/common/Navbar.jsx";
-
 
 
 const multiContextMap =     {GlobalContext,ShopContext}
