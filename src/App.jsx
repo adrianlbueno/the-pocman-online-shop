@@ -18,7 +18,6 @@ import Navbar from "./components/common/Navbar.jsx";
 
 const multiContextMap =     {GlobalContext,ShopContext}
 
-
 const App = () => {
     return (
         <>

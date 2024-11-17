@@ -1,5 +1,3 @@
-import AboutImg from "../assets/the-pocman-img.jpg";
-
 const AboutPage = () => {
     return (
             <div className="flex items-center justify-center p-12" id="about">
