@@ -4,7 +4,6 @@ import { useFetchIllustrations } from "../hooks/useFetchIllustrations";
 const ItemDetailsPage = () => {
   const illustrations = useFetchIllustrations();
   const { illustrationId } = useParams();
-  console.log("+illustrationId", typeof illustrationId);
   const illustrationDetail = illustrations.find((illustration) => illustration.id === +illustrationId);
 
   if (!illustrationDetail) return;
