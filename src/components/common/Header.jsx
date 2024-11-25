@@ -5,8 +5,7 @@ const Header = () => {
     return (
         <>
             <header>
-                <div id="Home">
-                    <div className="w-full h-screen'">
+                <div id="Home" className="flex items-center">
                     <picture>
                         <source srcSet={headerImage} media="(min-width: 1240px)"/>
                         <img src={pocmanImage} alt="image of girl seated on bed"/>
@@ -19,7 +18,6 @@ const Header = () => {
                         </div>
 
                     </div>
-                </div>
             </header>
         </>
     );
