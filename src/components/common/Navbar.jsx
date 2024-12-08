@@ -74,7 +74,7 @@ const Navbar = () => {
                         <ul className="text-center font-medium">
                             {menuLinks.map((link) => (
                                 <li key={link.id} className="py-2">
-                                    <Link to={link.path}>{link.label}</Link>
+                                    <Link to={link.path} onClick={handleClick}>{link.label}</Link>
                                 </li>
                             ))}
                         </ul>
