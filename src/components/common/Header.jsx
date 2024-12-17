@@ -18,7 +18,6 @@ const Header = () => {
                                 Welcome
                             </h1>
                         </div>
-
                     </div>
             </header>
         </>
