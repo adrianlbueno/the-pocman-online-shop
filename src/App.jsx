@@ -16,7 +16,6 @@ import {ShopContext} from "./context/shopContext.jsx";
 import Navbar from "./components/common/Navbar.jsx";
 
 
-const multiContextMap =     {GlobalContext,ShopContext}
 
 const App = () => {
     return (
@@ -24,7 +23,7 @@ const App = () => {
             <div>
                     <div className="flex flex-col h-screen justify-between">
                         <BrowserRouter>
-                            <MultiContextProvider map={multiContextMap}>
+                            <MultiContextProvider map={{GlobalContext, ShopContext}}>
                                <div>
                                 <Navbar/>
                                 <Routes>
