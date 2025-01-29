@@ -1,6 +1,6 @@
 import {useFetchIllustrations} from "../hooks/useFetchIllustrations.js";
 import {useReducer} from "react";
-import {useIllustrations, useTasksDispatch} from "./IllustrationsContext.jsx";
+import {useIllustrations, useIllustrationsDispatch} from "./IllustrationsContext.jsx";
 import illustrationsReducer from "./illustrationsReducer.jsx";
 
 export const IllustrationsProvider = ({ children }) => {
@@ -10,9 +10,9 @@ export const IllustrationsProvider = ({ children }) => {
 
     return (
         <useIllustrations.Provider value={illustrations}>
-            <useTasksDispatch.Provider value={dispatch}>
+            <useIllustrationsDispatch.Provider value={dispatch}>
                 {children}
-            </useTasksDispatch.Provider>
+            </useIllustrationsDispatch.Provider>
         </useIllustrations.Provider>
     );
 };

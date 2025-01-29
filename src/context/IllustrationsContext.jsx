@@ -8,6 +8,6 @@ export function useIllustrations() {
     return useContext(IllustrationsContext);
 }
 
-export function useTasksDispatch() {
+export function useIllustrationsDispatch() {
     return useContext(IllustrationsDispatchContext);
 }

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {useTasksDispatch} from "../../context/IllustrationsContext.jsx";
+import {useIllustrationsDispatch} from "../../context/IllustrationsContext.jsx";
 import {useContext, useState} from "react";
 
 export const AddIllustration = () => {
@@ -11,7 +11,7 @@ export const AddIllustration = () => {
     }
     const [form, setForm] = useState(initialValues);
 
-    const dispatch = useContext(useTasksDispatch);
+    const dispatch = useContext(useIllustrationsDispatch);
 
 
 
