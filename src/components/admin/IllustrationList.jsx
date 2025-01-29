@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useIllustrations } from '../../context/IllustrationsContext.jsx';
 
 const IllustrationList = () => {
-    const { illustrations, removeIllustration } = useContext(useIllustrations);
+    const illustrations = useContext(useIllustrations);
 
     return (
         <>
