@@ -1,10 +1,8 @@
-import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useIllustrations } from '../../context/IllustrationsContext.jsx';
+import {useTasksDispatch} from "../../context/IllustrationsContext.jsx";
+import {useContext, useState} from "react";
 
 export const AddIllustration = () => {
-
-    const { addIllustration, illustrations } = useContext(useIllustrations);
     const initialValues = {
         title: "",
         description: "",
@@ -13,16 +11,9 @@ export const AddIllustration = () => {
     }
     const [form, setForm] = useState(initialValues);
 
-    const [illustration, setIllustration] = useState(illustrations)
+    const dispatch = useContext(useTasksDispatch);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const newIllustration = {
-            ...form
-        };
-        setIllustration([...illustration, addIllustration(newIllustration)])
-        setForm("")
-    };
+
 
     const handleChange = (event) => {
         setForm(prev => ({
@@ -34,7 +25,7 @@ export const AddIllustration = () => {
     return (
         <>
             <div className="w-full max-w-sm container mt-20 mx-auto">
-                <form onSubmit={handleSubmit}>
+                <form >
                     <div className="w-full mb-5">
                         <label
                             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -101,7 +92,13 @@ export const AddIllustration = () => {
                         />
                     </div>
                     <div className="flex items-center justify-between">
-                        <button className="mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        <button onClick={()=> {
+                            setForm(initialValues);
+                            dispatch({
+                                type: "ADD_TASK",
+                                payload: form
+                            });
+                        }} className="mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             Add Illustration
                         </button>
                     </div>
@@ -112,4 +109,4 @@ export const AddIllustration = () => {
             </div>
         </>
     );
-};
+}
