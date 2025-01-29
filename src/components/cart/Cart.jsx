@@ -9,8 +9,6 @@ const Cart = () => {
     const illustrations = useFetchIllustrations()
     const {shopContext : ShopContext} = useContext(MultiContext);
     const {cartItems} = ShopContext;
-    console.log("cartItems",cartItems);
-
 
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">

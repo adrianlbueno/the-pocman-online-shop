@@ -7,7 +7,7 @@ import PocmanLogo from "./PocmanLogo.jsx";
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
-    const [show, setShow] = useState(false);
+    const [showIcon, setShow] = useState(false);
 
     const menuLinks = [
         {id: "Home", label: 'Home', path: '/'},
@@ -47,6 +47,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                 </div>
+
                 <div className="flex items-center space-x-6 rtl:space-x-reverse">
                     <Link to="admin">
                         <FontAwesomeIcon icon={faUser}/>
@@ -55,8 +56,8 @@ const Navbar = () => {
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
-                    {show ? (
-                        <Cart open={show} setOpen={setShow}/>
+                    {showIcon ? (
+                        <Cart open={showIcon} setOpen={setShow}/>
                     ) : null
                     }
                 </div>
