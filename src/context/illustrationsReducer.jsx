@@ -1,4 +1,4 @@
-const appReducer = (state, action) => {
+const illustrationsReducer = (state, action) => {
     let updatedIllustration, updatedIllustrations;
 
     switch (action.type) {
@@ -37,4 +37,4 @@ const appReducer = (state, action) => {
     }
 };
 
-export default appReducer;
+export default illustrationsReducer;

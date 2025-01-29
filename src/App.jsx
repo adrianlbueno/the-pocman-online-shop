@@ -11,8 +11,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage";
 import Footer from "./components/common/Footer.jsx";
 import {MultiContextProvider} from "./utils/MultiContext.jsx";
-import {GlobalContext} from "./context/globalStateContext.jsx";
-import {ShopContext} from "./context/shopContext.jsx";
+import {ShopProvider} from "./context/ShopProvider.jsx";
+import {IllustrationsProvider} from "./context/IllustrationsProvider.jsx";
 import Navbar from "./components/common/Navbar.jsx";
 
 
@@ -23,7 +23,7 @@ const App = () => {
             <div>
                     <div className="flex flex-col h-screen justify-between">
                         <BrowserRouter>
-                            <MultiContextProvider map={{GlobalContext, ShopContext}}>
+                            <MultiContextProvider map={{IllustrationsProvider, ShopProvider}}>
                                <div>
                                 <Navbar/>
                                 <Routes>

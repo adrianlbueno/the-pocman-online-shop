@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GlobalContext } from '../../context/globalStateContext';
+import { useIllustrations } from '../../context/IllustrationsContext.jsx';
 
 export const AddIllustration = () => {
 
-    const { addIllustration, illustrations } = useContext(GlobalContext);
+    const { addIllustration, illustrations } = useContext(useIllustrations);
     const initialValues = {
         title: "",
         description: "",

@@ -7,8 +7,8 @@ import {MultiContext} from "../../utils/MultiContext.jsx";
 
 const Cart = () => {
     const illustrations = useFetchIllustrations()
-    const {shopContext : ShopContext} = useContext(MultiContext);
-    const {cartItems} = ShopContext;
+    const shopContext  = useContext(MultiContext);
+    console.log("shopContext", Object.keys(shopContext));
 
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">

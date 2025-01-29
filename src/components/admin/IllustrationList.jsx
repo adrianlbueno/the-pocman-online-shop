@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { GlobalContext } from '../../context/globalStateContext';
+import { useIllustrations } from '../../context/IllustrationsContext.jsx';
 
 const IllustrationList = () => {
-    const { illustrations, removeIllustration } = useContext(GlobalContext);
+    const { illustrations, removeIllustration } = useContext(useIllustrations);
 
     return (
         <>

@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { GlobalContext } from '../../context/globalStateContext';
+import { useIllustrations } from '../../context/IllustrationsContext.jsx';
 
 export const EditIllustration = () => {
 
-    const { illustrations, editIllustration } = useContext(GlobalContext);
+    const { illustrations, editIllustration } = useContext(useIllustrations);
     const [selectedIllustration, setSelectedIllustration] = useState({
         id: null,
         title: "",
