@@ -11,8 +11,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage";
 import Footer from "./components/common/Footer.jsx";
 import {MultiContextProvider} from "./utils/MultiContext.jsx";
-import {CartProvider} from "./context/CartProvider.jsx";
-import {IllustrationsProvider} from "./context/IllustrationsProvider.jsx";
+import {CartProvider} from "./context/cart/CartProvider.jsx";
+import {IllustrationsProvider} from "./context/admin/IllustrationsProvider.jsx";
 import Navbar from "./components/common/Navbar.jsx";
 
 const App = () => {

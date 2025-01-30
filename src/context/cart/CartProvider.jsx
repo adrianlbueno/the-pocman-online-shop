@@ -1,4 +1,4 @@
-import {useFetchIllustrations} from "../hooks/useFetchIllustrations.js";
+import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import {useState} from "react";
 import {CartContext} from "./CartContext.jsx";
 

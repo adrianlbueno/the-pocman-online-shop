@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useIllustrations } from '../../context/IllustrationsContext.jsx';
+import { useIllustrations } from '../../context/admin/IllustrationsContext.jsx';
 
 export const EditIllustration = () => {
 

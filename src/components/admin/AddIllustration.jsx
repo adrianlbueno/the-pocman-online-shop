@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {useIllustrationsDispatch} from "../../context/IllustrationsContext.jsx";
+import {useIllustrationsDispatch} from "../../context/admin/IllustrationsContext.jsx";
 import {useContext, useState} from "react";
 
 export const AddIllustration = () => {

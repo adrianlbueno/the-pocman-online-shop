@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { useIllustrations } from '../../context/IllustrationsContext.jsx';
+import { useIllustrations } from '../../context/admin/IllustrationsContext.jsx';
 
 const IllustrationList = () => {
     const illustrations = useContext(useIllustrations);
