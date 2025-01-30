@@ -1,8 +1,8 @@
 import {useFetchIllustrations} from "../hooks/useFetchIllustrations.js";
 import {useState} from "react";
-import {ShopContext} from "./shopContext.jsx";
+import {CartContext} from "./CartContext.jsx";
 
-export const ShopProvider = (props) => {
+export const CartProvider = (props) => {
 
     const illustrations= useFetchIllustrations()
 
@@ -16,7 +16,6 @@ export const ShopProvider = (props) => {
 
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
-    console.log({cartItems})
     const getTotalCartAmount = () => {
         let total = 0;
         for (const item in cartItems) {
@@ -29,8 +28,6 @@ export const ShopProvider = (props) => {
     };
 
     const addToCart = (item) => {
-
-        console.log("item:", item)
         setCartItems(prev => [...prev, item] + 1 )
     };
 
@@ -47,7 +44,7 @@ export const ShopProvider = (props) => {
     };
 
     return (
-        <ShopContext.Provider value={{
+        <CartContext.Provider value={{
             cartItems,
             addToCart,
             updateCartItemCount,
@@ -56,6 +53,6 @@ export const ShopProvider = (props) => {
             checkout
         }}>
             {props.children}
-        </ShopContext.Provider>
+        </CartContext.Provider>
     );
 };

@@ -13,8 +13,6 @@ export const AddIllustration = () => {
 
     const dispatch = useContext(useIllustrationsDispatch);
 
-
-
     const handleChange = (event) => {
         setForm(prev => ({
             ...prev,
