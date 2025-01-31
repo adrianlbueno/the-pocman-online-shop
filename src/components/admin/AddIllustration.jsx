@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import {useIllustrationsDispatch} from "../../context/admin/IllustrationsContext.jsx";
-import {useContext, useState} from "react";
+import {useState} from "react";
 
 export const AddIllustration = () => {
     const initialValues = {
@@ -11,7 +11,7 @@ export const AddIllustration = () => {
     }
     const [form, setForm] = useState(initialValues);
 
-    const dispatch = useContext(useIllustrationsDispatch);
+    const dispatch = useIllustrationsDispatch();
 
     const handleChange = (event) => {
         setForm(prev => ({

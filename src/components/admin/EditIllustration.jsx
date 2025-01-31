@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useIllustrations } from '../../context/admin/IllustrationsContext.jsx';
+import {useIllustrations} from "../../context/admin/IllustrationsContext.jsx";
 
 export const EditIllustration = () => {
 
-    const { illustrations, editIllustration } = useContext(useIllustrations);
+    const illustrations = useIllustrations();
+
     const [selectedIllustration, setSelectedIllustration] = useState({
         id: null,
         title: "",
@@ -25,7 +26,6 @@ export const EditIllustration = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        editIllustration(selectedIllustration);
     };
 
     const handleOnChange = (illustrationKey, newValue) =>
