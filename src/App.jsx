@@ -1,5 +1,4 @@
 import {Route, Routes,  BrowserRouter} from "react-router-dom";
-import {AddIllustration} from "./components/admin/AddIllustration";
 import {EditIllustration} from "./components/admin/EditIllustration";
 import AboutPage from "./pages/AboutPage";
 import AdminPage from "./pages/AdminPage";
@@ -14,6 +13,7 @@ import {MultiContextProvider} from "./utils/MultiContext.jsx";
 import {CartProvider} from "./context/cart/CartProvider.jsx";
 import {IllustrationsProvider} from "./context/admin/IllustrationsProvider.jsx";
 import Navbar from "./components/common/Navbar.jsx";
+import AddIllustration from "./components/admin/AddIllustration.jsx";
 
 const App = () => {
     return (
