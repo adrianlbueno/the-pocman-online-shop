@@ -5,10 +5,10 @@ import {useState} from "react";
  const AddIllustration = () => {
 
     const initialValues = {
-        name: "",
+        title: "",
         description: "",
         price: "",
-        quantity: "",
+        image: ""
     }
 
     const [form, setForm] = useState(initialValues);
