@@ -1,14 +1,16 @@
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
-import {useState} from "react";
-import {CartContext} from "./CartContext.jsx";
+import {useState, useReducer} from "react";
+import {CartContext, CartDispatachContext} from "./CartContext.jsx";
 
-export const CartProvider = (props) => {
+export const CartProvider = ({children}) => {
+    const initialItems= useFetchIllustrations()
+    const itemsReducer = itemsReducer();
 
-    const illustrations= useFetchIllustrations()
+    const [items, dispatch] = useReducer(itemsReducer, initialItems);
 
     const getDefaultCart = () => {
         let cart = [];
-        for (let i = 1; i < illustrations.length + 1; i++) {
+        for (let i = 1; i < items.length + 1; i++) {
             cart[i] = 0;
         }
         return cart;
@@ -21,7 +23,7 @@ export const CartProvider = (props) => {
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 const initialValue = 0;
-                total = illustrations.reduce((accumulator, current) => accumulator + current.price * current.quantity, initialValue)
+                total = items.reduce((accumulator, current) => accumulator + current.price * current.quantity, initialValue)
             }
         }
         return total;
@@ -44,15 +46,10 @@ export const CartProvider = (props) => {
     };
 
     return (
-        <CartContext.Provider value={{
-            cartItems,
-            addToCart,
-            updateCartItemCount,
-            removeFromCart,
-            getTotalCartAmount,
-            checkout
-        }}>
-            {props.children}
+        <CartContext.Provider value={items}>
+            <CartDispatachContext.Provider value={dispatch()}>
+            {children}
+            </CartDispatachContext.Provider>
         </CartContext.Provider>
     );
 };
