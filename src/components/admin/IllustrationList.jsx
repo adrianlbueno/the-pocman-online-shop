@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useIllustrations } from '../../context/admin/IllustrationsContext.jsx';
+import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 
 const IllustrationList = () => {
-    const illustrations = useIllustrations();
+    const illustrations = useFetchIllustrations();
 
     return (
         <>
