@@ -1,8 +1,7 @@
 import { createContext, useContext} from 'react';
 
-
-const IllustrationsContext = createContext(null);
-const IllustrationsDispatchContext = createContext(null);
+export const IllustrationsContext = createContext(null);
+export const IllustrationsDispatchContext = createContext(null);
 
 export function useIllustrations() {
     return useContext(IllustrationsContext);
