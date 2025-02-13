@@ -11,12 +11,14 @@ import SignUpPage from "./pages/SignUpPage";
 import Footer from "./components/common/Footer.jsx";
 import Navbar from "./components/common/Navbar.jsx";
 import AddIllustration from "./components/admin/AddIllustration.jsx";
+import {CartProvider} from "./context/cart/CartProvider.jsx";
 
 const App = () => {
     return (
         <>
             <div>
                     <div className="flex flex-col h-screen justify-between">
+                                    <CartProvider>
                         <BrowserRouter>
                                <div>
                                 <Navbar/>
@@ -35,6 +37,7 @@ const App = () => {
                                </div>
                         <Footer/>
                         </BrowserRouter>
+                                    </CartProvider>
                     </div>
             </div>
         </>

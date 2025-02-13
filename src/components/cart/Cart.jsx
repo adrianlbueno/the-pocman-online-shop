@@ -1,17 +1,13 @@
 import {faX} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CartItem from "./CardItem";
+import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import {useCartItems} from "../../context/cart/CartContext.jsx";
 
-
 const Cart = () => {
-    const items = useCartItems()
-    const cartItems =  []
-
-    if(!cartItems.length) {
-        return;
-    }
-
+    const items = useFetchIllustrations();
+    const {cartItems} = useCartItems()
+    console.log("items", items)
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
@@ -34,13 +30,13 @@ const Cart = () => {
                                 <div className="mt-8">
                                     <div className="flow-root">
                                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                            {!items && items.map((illustration) => {
-                                                if (cartItems[illustration.id] !== 0) {
+                                            {items ? items.map((item) => {
+                                                if (cartItems[item.id] !== 0) {
                                                     return (
-                                                        <CartItem key={illustration.id} data={illustration}/>
+                                                        <CartItem key={item.id} data={item}/>
                                                     );
                                                 }
-                                            })}
+                                            }) : <p>No items in cart</p>}
                                         </ul>
                                     </div>
                                 </div>
