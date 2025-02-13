@@ -7,7 +7,7 @@ import {useCartItems} from "../../context/cart/CartContext.jsx";
 const Cart = () => {
     const items = useFetchIllustrations();
     const {cartItems} = useCartItems()
-    console.log("items", items)
+
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
