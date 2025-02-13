@@ -1,13 +1,10 @@
 import {CartContext} from "./CartContext.jsx";
 import { useState} from "react";
-import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
-
 export const CartProvider = ({children}) => {
-    const items = useFetchIllustrations()
 
     const getDefaultCart = () => {
         let cart = [];
-        for (let i = 1; i < items.length + 1; i++) {
+        for (let i = 1; i < cart.length + 1; i++) {
             cart[i] = 0;
         }
         return cart;

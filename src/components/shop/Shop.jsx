@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 import ShopItem from "./ShopItem";
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
