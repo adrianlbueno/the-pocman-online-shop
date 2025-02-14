@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useFetchIllustrations = () => {
-    const URL_API = "https://thepocman.adaptable.app/Illustrations";
+    const URL_API = "";
     const [illustrations, setIllustrations] = useState([]);
 
     const fetchData = async () => {
