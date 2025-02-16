@@ -9,7 +9,6 @@ const ShoppingCart = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOpen = () => {
-        console.log("clicked")
          setIsOpen(prevState => !prevState)
     }
 

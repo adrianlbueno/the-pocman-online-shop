@@ -7,7 +7,7 @@ import PocmanLogo from "./PocmanLogo.jsx";
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
-    const [showIcon, setShow] = useState(false);
+    const [openShoppingCart, setOpenShoppingCart] = useState(false);
 
     const menuLinks = [
         {id: "Home", label: 'Home', path: '/'},
@@ -16,7 +16,7 @@ const Navbar = () => {
     ];
 
     const handleShow = useCallback(() => {
-        setShow((prevState) => {
+        setOpenShoppingCart((prevState) => {
             return !prevState;
         });
     }, [])
@@ -56,8 +56,9 @@ const Navbar = () => {
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
-                    {showIcon ? (
-                        <ShoppingCart open={showIcon} setOpen={setShow}/>
+                    {openShoppingCart
+                        ? (
+                        <ShoppingCart/>
                     ) : null
                     }
                 </div>
