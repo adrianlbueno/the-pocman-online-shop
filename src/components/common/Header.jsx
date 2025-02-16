@@ -6,7 +6,7 @@ const Header = () => {
         <>
             <header>
                 <div id="Home" className="flex items-center">
-                    <div className="relative w-max before:absolute before:left-0 before:right-0 before:top-0 before:z-10 before:h-full before:w-full before:bg-gray-800 before:opacity-30">
+                    <div className="relative w-max">
                     <picture>
                         <source srcSet={headerImage} media="(min-width: 1240px)"/>
                         <img src={pocmanImage} alt="image of girl seated on bed"/>
