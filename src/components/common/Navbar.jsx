@@ -2,7 +2,7 @@ import {faBars, faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useCallback, useState} from "react";
 import {Link} from "react-router-dom";
-import Cart from '../cart/Cart';
+import ShoppingCart from '../cart/ShoppingCart.jsx';
 import PocmanLogo from "./PocmanLogo.jsx";
 
 const Navbar = () => {
@@ -57,7 +57,7 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
                     {showIcon ? (
-                        <Cart open={showIcon} setOpen={setShow}/>
+                        <ShoppingCart open={showIcon} setOpen={setShow}/>
                     ) : null
                     }
                 </div>

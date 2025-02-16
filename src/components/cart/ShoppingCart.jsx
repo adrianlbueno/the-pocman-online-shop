@@ -3,16 +3,25 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CartItem from "./CardItem";
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import {useCartItems} from "../../context/cart/CartContext.jsx";
+import {useState} from "react";
 
-const Cart = () => {
+const ShoppingCart = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpen = () => {
+        console.log("clicked")
+         setIsOpen(prevState => !prevState)
+    }
+
+    console.log("isOpen", isOpen)
+
     const items = useFetchIllustrations();
     const {cartItems} = useCartItems()
 
+    console.log("cartItems", cartItems)
+
     return (
         <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
-            </div>
-            <div className="fixed inset-0 overflow-hidden">
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
                         <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
@@ -23,7 +32,7 @@ const Cart = () => {
                                     <div className="ml-3 flex h-7 items-center">
                                         <span className="absolute -inset-0.5"></span>
                                         <span className="sr-only">Close panel</span>
-                                        <FontAwesomeIcon className="h-6 w-6" icon={faX}/>
+                                        <FontAwesomeIcon onClick={handleOpen} className="h-6 w-6" icon={faX}/>
                                     </div>
                                 </div>
 
@@ -67,9 +76,8 @@ const Cart = () => {
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     );
 };
 
-export default Cart;
+export default ShoppingCart;
