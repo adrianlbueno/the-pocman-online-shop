@@ -30,12 +30,12 @@ const Navbar = () => {
     return (
         <>
             <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
-                <PocmanLogo/>
                 <div className="md:hidden">
                     <button onClick={handleClick}>
                         <FontAwesomeIcon icon={faBars}/>
                     </button>
                 </div>
+                <PocmanLogo/>
                 <div className="hidden gap-3 md:!flex">
                     {menuLinks.map((link) => (
                         <Link
