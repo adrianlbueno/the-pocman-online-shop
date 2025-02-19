@@ -1,53 +1,21 @@
 import {faX} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import CartItem from "./CardItem";
-import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
-import {useCartItems} from "../../context/cart/CartContext.jsx";
-import {useState} from "react";
-
+import ItemList from "./ItemsList.jsx";
 const ShoppingCart = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleOpen = () => {
-         setIsOpen(prevState => !prevState)
-    }
-
-    console.log("isOpen", isOpen)
-
-    const items = useFetchIllustrations();
-    const {cartItems} = useCartItems()
-
-    console.log("cartItems", cartItems)
 
     return (
-        <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div className="relative z-10" aria-labelledby="slide-over-title" aria-modal="true">
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
                         <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                             <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-                                <div className="flex items-start justify-between">
-                                    <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Shopping
-                                        Cart</h2>
-                                    <div className="ml-3 flex h-7 items-center">
-                                        <span className="absolute -inset-0.5"></span>
-                                        <span className="sr-only">Close panel</span>
-                                        <FontAwesomeIcon onClick={handleOpen} className="h-6 w-6" icon={faX}/>
+                                <div className="flex items-start justify-between text-lg font-medium text-gray-900 ">
+                                    <h2 className="" id="slide-over-title">Shopping Cart</h2>
+                                    <div className="ml-3 flex items-center h-6 w-6">
+                                        <FontAwesomeIcon className="" icon={faX}/>
                                     </div>
                                 </div>
-
-                                <div className="mt-8">
-                                    <div className="flow-root">
-                                        <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                            {items ? items.map((item) => {
-                                                if (cartItems[item.id] !== 0) {
-                                                    return (
-                                                        <CartItem key={item.id} data={item}/>
-                                                    );
-                                                }
-                                            }) : <p>No items in cart</p>}
-                                        </ul>
-                                    </div>
-                                </div>
+                            <ItemList/>
                             </div>
 
                             <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
