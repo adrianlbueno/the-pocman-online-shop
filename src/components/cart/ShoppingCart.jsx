@@ -1,6 +1,6 @@
 import {faX} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import ItemList from "./ItemsList.jsx";
+import ItemsInCartList from "././ItemsInCartList.jsx";
 const ShoppingCart = () => {
 
     return (
@@ -15,7 +15,7 @@ const ShoppingCart = () => {
                                         <FontAwesomeIcon className="" icon={faX}/>
                                     </div>
                                 </div>
-                            <ItemList/>
+                            <ItemsInCartList/>
                             </div>
 
                             <div className="border-t border-gray-200 px-4 py-6 sm:px-6">

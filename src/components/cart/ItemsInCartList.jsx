@@ -2,7 +2,7 @@ import CartItem from "./CardItem.jsx";
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import {useCartItems} from "../../context/cart/CartContext.jsx";
 
-const ItemsList = () => {
+const ItemsInCartList = () => {
     const items = useFetchIllustrations();
     const {cartItems} = useCartItems()
 
@@ -22,4 +22,4 @@ const ItemsList = () => {
 
 }
 
-export default ItemsList;
+export default ItemsInCartList;
