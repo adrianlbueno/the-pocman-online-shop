@@ -1,21 +1,30 @@
 import {faX} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import ItemsInCartList from "././ItemsInCartList.jsx";
-const ShoppingCart = () => {
+import {useState} from "react";
+const CartSidebar = () => {
+    const [open, setOpen] = useState(false);
+    const handleClick = (event) => {
+        console.log("inside handleClick", event)
+        event.preventDefault()
+        setOpen(!open)
+    }
 
     return (
-        <div className="relative z-10" aria-labelledby="slide-over-title" aria-modal="true">
-                <div className="absolute inset-0 overflow-hidden">
-                    <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+        <div className={open ? "absolute inset-0 md:hidden" : "relative z-10" } aria-labelledby="slide-over-title" aria-modal="true">
+                    <div className="fixed inset-y-0 right-0 flex max-w-full pl-10">
                         <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                             <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                                 <div className="flex items-start justify-between text-lg font-medium text-gray-900 ">
-                                    <h2 className="" id="slide-over-title">Shopping Cart</h2>
-                                    <div className="ml-3 flex items-center h-6 w-6">
-                                        <FontAwesomeIcon className="" icon={faX}/>
-                                    </div>
+                                    <h2 id="slide-over-title">Shopping Cart</h2>
+                                    <button  onClick={(e)=>  handleClick(e)
+                                    } className="relative ml-3 flex items-center justify-center h-6 w-6">
+                                        <FontAwesomeIcon   icon={faX} className="w-5 h-5 cursor-pointer" />
+                                    </button>
                                 </div>
-                            <ItemsInCartList/>
+                                <div className="mt-8">
+                                 <ItemsInCartList/>
+                                </div>
                             </div>
 
                             <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
@@ -36,15 +45,14 @@ const ShoppingCart = () => {
                                                 className="font-medium text-indigo-600 hover:text-indigo-500">
                                             Continue Shopping
                                             <span aria-hidden="true"> &rarr;</span>
-                                        </button>
+                                        </button>e
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
         </div>
     );
 };
 
-export default ShoppingCart;
+export default CartSidebar;

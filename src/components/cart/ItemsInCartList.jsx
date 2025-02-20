@@ -7,7 +7,6 @@ const ItemsInCartList = () => {
     const {cartItems} = useCartItems()
 
     return(
-       <div className="mt-8">
         <ul>
             {!items ? items.map((item) => {
                 if (cartItems[item.id] !== 0) {
@@ -17,7 +16,6 @@ const ItemsInCartList = () => {
                 }
             }) : <p>No items in cart</p>}
         </ul>
-       </div>
     );
 
 }

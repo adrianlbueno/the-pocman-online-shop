@@ -2,7 +2,7 @@ import {faBars, faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useCallback, useState} from "react";
 import {Link} from "react-router-dom";
-import ShoppingCart from '../cart/ShoppingCart.jsx';
+import CartSidebar from '../cart/CartSidebar.jsx';
 import PocmanLogo from "./PocmanLogo.jsx";
 
 const Navbar = () => {
@@ -58,7 +58,7 @@ const Navbar = () => {
                     </button>
                     {openShoppingCart
                         ? (
-                        <ShoppingCart/>
+                        <CartSidebar/>
                     ) : null
                     }
                 </div>
