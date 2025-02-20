@@ -56,11 +56,7 @@ const Navbar = () => {
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
-                    {openShoppingCart
-                        ? (
-                        <CartSidebar/>
-                    ) : null
-                    }
+                        <CartSidebar open={openShoppingCart} toggleCart={handleShow}/>
                 </div>
             </nav>
 
