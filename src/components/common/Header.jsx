@@ -5,13 +5,11 @@ const Header = () => {
     return (
         <>
             <header>
-                <div id="Home" className="flex items-center">
-                    <div className="w-full">
+                <div id="Home">
                         <picture>
                             <source srcSet={headerImage} media="(min-width: 1240px)"/>
                             <img className="bg-center bg-cover" src={pocmanImage} alt="image of girl seated on bed"/>
                         </picture>
-                    </div>
                 </div>
             </header>
         </>
