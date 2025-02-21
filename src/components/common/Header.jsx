@@ -8,7 +8,7 @@ const Header = () => {
                 <div id="Home">
                         <picture>
                             <source srcSet={headerImage} media="(min-width: 1240px)"/>
-                            <img className="bg-center bg-cover" src={pocmanImage} alt="image of girl seated on bed"/>
+                            <img className="bg-center bg-cover" src={pocmanImage} alt="Girl seated on the bed"/>
                         </picture>
                 </div>
             </header>

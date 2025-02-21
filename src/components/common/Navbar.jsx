@@ -35,7 +35,13 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faBars}/>
                     </button>
                 </div>
-                <PocmanLogo/>
+
+                <div className="cursor-pointer">
+                    <Link to="/">
+                        <PocmanLogo/>
+                    </Link>
+                </div>
+
                 <div className="hidden gap-3 md:!flex">
                     {menuLinks.map((link) => (
                         <Link
@@ -67,7 +73,7 @@ const Navbar = () => {
                     <div className="mx-auto">
                         <ul className="text-center font-medium">
                             {menuLinks.map((link) => (
-                                <li key={link.id} className="py-2">
+                                <li key={link.id} className="py-2 cursor-pointer">
                                     <Link to={link.path} onClick={handleClick}>{link.label}</Link>
                                 </li>
                             ))}
