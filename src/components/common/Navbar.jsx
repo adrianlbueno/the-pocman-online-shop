@@ -4,16 +4,11 @@ import {useCallback, useState} from "react";
 import {Link} from "react-router-dom";
 import CartSidebar from '../cart/CartSidebar.jsx';
 import PocmanLogo from "./PocmanLogo.jsx";
+import {menuLinks} from "./MenuLinks.jsx";
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const [openShoppingCart, setOpenShoppingCart] = useState(false);
-
-    const menuLinks = [
-        {id: "Home", label: 'Home', path: '/'},
-        {id: "About", label: 'About Me', path: '/about'},
-        {id: "Contact", label: 'Contact', path: '/contact'},
-    ];
 
     const handleShow = useCallback(() => {
         setOpenShoppingCart((prevState) => {
