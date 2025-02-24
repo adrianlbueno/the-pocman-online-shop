@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 export const useFetchIllustrations = () => {
     const URL_API = "https://the-pocman-backend.onrender.com/illustrations";
     const [illustrations, setIllustrations] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchData = async () => {
         try {
+            setIsLoading(true)
             const response = await fetch(URL_API);
             if (response.ok) {
-                const json = await response.json();
-                setIllustrations(json);
+                const data = await response.json();
+                setIsLoading(false)
+                setIllustrations(data);
             }
         } catch (error) {
             console.error("Error fetching illustrations:", error);
