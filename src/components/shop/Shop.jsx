@@ -5,12 +5,12 @@ import {useRef} from "react";
 
 const Shop = () => {
     const illustrations = useFetchIllustrations()
-
     const illustrationViewRef = useRef(null);
+
     const handleScrollIllustrations = () => {
         illustrationViewRef.current.scrollIntoView({ behavior: "smooth", block: "end" })
-
     }
+
     return (
         <>
             <div ref={illustrationViewRef} className="container px-5 py-24 mx-auto">
