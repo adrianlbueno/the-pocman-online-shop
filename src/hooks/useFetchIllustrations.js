@@ -23,5 +23,5 @@ export const useFetchIllustrations = () => {
         fetchData();
     }, []);
 
-    return illustrations;
+    return [illustrations, isLoading];
 };

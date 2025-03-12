@@ -4,12 +4,8 @@ import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import {useRef} from "react";
 
 const Shop = () => {
-    const illustrations = useFetchIllustrations()
+    const [illustrations, isLoading] = useFetchIllustrations()
     const illustrationViewRef = useRef(null);
-
-    const handleScrollIllustrations = () => {
-        illustrationViewRef.current.scrollIntoView({ behavior: "smooth", block: "end" })
-    }
 
     return (
         <>
@@ -19,6 +15,7 @@ const Shop = () => {
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Are you who you want to be?</p>
                 </div>
                 <div className="flex flex-wrap -m-4 justify-center" >
+                    {isLoading  && <p className='text-[30px]'>Loding...</p>}
                     {illustrations && illustrations.map((illustration) => (
                         <div key={illustration.id}>
                             <Link to={`/illustrations/${illustration.id}`}>

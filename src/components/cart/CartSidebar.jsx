@@ -1,9 +1,8 @@
 import {faX} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import ItemsInCartList from "././ItemsInCartList.jsx";
+
 const CartSidebar = ({open, toggleCart}) => {
-
-
     return (
         <div className={`fixed inset-0 ${open ? "block" : "hidden"}`} aria-labelledby="slide-over-title" aria-modal="true">
                     <div className="fixed inset-y-0 right-0 flex max-w-full pl-10">
