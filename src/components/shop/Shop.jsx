@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-import ShopItem from "./ShopItem";
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import {useRef} from "react";
+import IllustrationData from "./IllustrationData.jsx";
 
 const Shop = () => {
     const [illustrations, isLoading] = useFetchIllustrations()
@@ -16,13 +15,7 @@ const Shop = () => {
                 </div>
                 <div className="flex flex-wrap -m-4 justify-center" >
                     {isLoading  && <p className='text-[30px]'>Loding...</p>}
-                    {illustrations && illustrations.map((illustration) => (
-                        <div key={illustration.id}>
-                            <Link to={`/illustrations/${illustration.id}`}>
-                                <ShopItem id={illustration.id} title={illustration.title} description={illustration.description} price={illustration.price} url={illustration.image} />
-                            </Link>
-                        </div>
-                    ))}
+                    <IllustrationData data={illustrations} />
                 </div>
 
             </div>
