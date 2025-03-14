@@ -14,7 +14,7 @@ const Shop = () => {
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Are you who you want to be?</p>
                 </div>
                 <div className="flex flex-wrap -m-4 justify-center" >
-                    {isLoading  && <p className='text-[30px]'>Loding...</p>}
+                    {isLoading  && <p className='text-[30px]'>Loading...</p>}
                     <IllustrationData data={illustrations} />
                 </div>
 
