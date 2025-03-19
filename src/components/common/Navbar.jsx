@@ -44,7 +44,7 @@ const Navbar = () => {
                             to={link.path}
                             className="flex cursor-pointer flex-col items-center justify-center"
                         >
-                            <a className="font-bold text-lg hover:text-[#C265A7]">{link.label}</a>
+                            <p className="font-bold text-lg hover:text-[#C265A7]">{link.label}</p>
                         </Link>
                     ))}
                 </div>

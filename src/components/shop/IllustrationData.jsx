@@ -1,7 +1,7 @@
 import ShopItem from "./ShopItem";
 import { Link } from "react-router-dom";
 
-const IllustrationData = ({data}) => {
+    const IllustrationData = ({data}) => {
     return (
             <>
                 {data && data.map((illustration) => (
