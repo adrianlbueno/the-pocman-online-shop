@@ -5,7 +5,6 @@ const ItemDetailsPage = () => {
   const [illustrations]= useFetchIllustrations();
   const { illustrationId } = useParams();
   const illustrationDetail = illustrations.find((illustration) => illustration.id === +illustrationId);
-  console.log("illustrationDetail", illustrationDetail);
   if (!illustrationDetail) return;
 
   return (
