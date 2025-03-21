@@ -7,6 +7,7 @@ import PocmanLogo from "./PocmanLogo.jsx";
 import {menuLinks} from "./MenuLinks.jsx";
 
 const Navbar = () => {
+
     const [openMenu, setOpenMenu] = useState(false)
     const [openShoppingCart, setOpenShoppingCart] = useState(false);
 
@@ -21,7 +22,7 @@ const Navbar = () => {
             return !prevState;
         });
     }, []);
-
+    
     return (
         <>
             <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
@@ -57,7 +58,7 @@ const Navbar = () => {
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
-                        <CartSidebar open={openShoppingCart} toggleCart={handleShow}/>
+                    <CartSidebar open={openShoppingCart} toggleCart={handleShow}/>
                 </div>
             </nav>
 
