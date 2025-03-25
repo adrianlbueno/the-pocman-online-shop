@@ -22,7 +22,7 @@ const Navbar = () => {
             return !prevState;
         });
     }, []);
-    
+
     return (
         <>
             <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
@@ -45,7 +45,7 @@ const Navbar = () => {
                             to={link.path}
                             className="flex cursor-pointer flex-col items-center justify-center"
                         >
-                            <p className="font-bold text-lg hover:text-[#C265A7]">{link.label}</p>
+                            <p className="font-bold text-lg hover:text-[#C025D3] no-underline hover:underline">{link.label}</p>
                         </Link>
                     ))}
                 </div>
