@@ -2,17 +2,15 @@ import {Link} from 'react-router-dom';
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 
 const IllustrationList = () => {
-    const illustrations = useFetchIllustrations();
-    const illustrationList = illustrations[0];
-
+    const [illustrations] = useFetchIllustrations();
     return (
         <>
-            {!illustrationList || illustrationList.length === 0 ? (
+            {!illustrations || illustrations.length === 0 ? (
                 <p className="text-center bg-gray-100 text-gray-500 py-5">
                     No illustrations available.
                 </p>
             ) : (
-                illustrationList.map((illustration) => (
+                illustrations.map((illustration) => (
 
                     <div
                         className="flex items-center bg-gray-100 mb-10 shadow"
