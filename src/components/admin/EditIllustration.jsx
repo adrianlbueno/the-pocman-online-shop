@@ -5,7 +5,6 @@ import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 export const EditIllustration = () => {
 
     const [illustrations] = useFetchIllustrations();
-    console.log(illustrations)
     const [selectedIllustration, setSelectedIllustration] = useState({
         id: null,
         title: "",
