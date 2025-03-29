@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import {useIllustrations} from "../../context/admin/IllustrationsContext.jsx";
+import {useEffect, useState} from 'react';
+import {Link, useParams} from 'react-router-dom';
+import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 
 export const EditIllustration = () => {
 
-    const illustrations = useIllustrations();
+    const [illustrations] = useFetchIllustrations();
+    console.log("illustrations", illustrations);
 
     const [selectedIllustration, setSelectedIllustration] = useState({
         id: null,
@@ -14,7 +15,7 @@ export const EditIllustration = () => {
         image: "",
     });
 
-    const { editId } = useParams();
+    const {editId} = useParams();
     const illustrationId = editId;
     const illustrationToUpDate = illustrations.find(
         (currentIllustration) => currentIllustration.id === parseInt(illustrationId)
@@ -29,7 +30,7 @@ export const EditIllustration = () => {
     };
 
     const handleOnChange = (illustrationKey, newValue) =>
-        setSelectedIllustration({ ...selectedIllustration, [illustrationKey]: newValue });
+        setSelectedIllustration({...selectedIllustration, [illustrationKey]: newValue});
 
     if (!selectedIllustration || !selectedIllustration.id) {
         return <div>Invalid Illustration ID.</div>;
@@ -102,12 +103,14 @@ export const EditIllustration = () => {
                     <div className="flex items-center justify-between">
 
                         <Link to="/admin">
-                            <button className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
+                            <button
+                                className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
                                 Done
                             </button>
                         </Link>
                         <Link to="/">
-                            <button className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
+                            <button
+                                className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
                                 Cancel
                             </button>
                         </Link>

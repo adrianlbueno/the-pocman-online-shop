@@ -1,4 +1,4 @@
-import {Route, Routes,  BrowserRouter} from "react-router-dom";
+import {Route, Routes, BrowserRouter} from "react-router-dom";
 import {EditIllustration} from "./components/admin/EditIllustration";
 import AboutPage from "./pages/AboutPage";
 import AdminPage from "./pages/AdminPage";
@@ -12,33 +12,36 @@ import Footer from "./components/common/Footer.jsx";
 import Navbar from "./components/common/Navbar.jsx";
 import AddIllustration from "./components/admin/AddIllustration.jsx";
 import {CartProvider} from "./context/cart/CartProvider.jsx";
+import {IllustrationsProvider} from "./context/admin/IllustrationsProvider.jsx";
 
 const App = () => {
     return (
         <>
             <div>
-                    <div className="flex flex-col h-screen justify-between">
-                                    <CartProvider>
-                        <BrowserRouter>
-                               <div>
-                                <Navbar/>
-                                <Routes>
-                                    <Route path="/" element={<HomePage/>}/>
-                                    <Route path="/about" element={<AboutPage/>}/>
-                                    <Route path="/contact" element={<Contact/>}/>
-                                    <Route path="/login" element={<LogInPage/>}/>
-                                    <Route path="/signUp" element={<SignUpPage/>}/>
-                                    <Route path="/admin" element={<AdminPage/>}/>
-                                    <Route path="/add" element={<AddIllustration/>}/>
-                                    <Route path="/edit/:editId" element={<EditIllustration/>}/>
-                                    <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage/>}/>
-                                    <Route path="*" element={<NotFoundPage/>}/>
-                            </Routes>
-                               </div>
-                        <Footer/>
-                        </BrowserRouter>
-                                    </CartProvider>
-                    </div>
+                <div className="flex flex-col h-screen justify-between">
+                    <IllustrationsProvider>
+                        <CartProvider>
+                            <BrowserRouter>
+                                <div>
+                                    <Navbar/>
+                                    <Routes>
+                                        <Route path="/" element={<HomePage/>}/>
+                                        <Route path="/about" element={<AboutPage/>}/>
+                                        <Route path="/contact" element={<Contact/>}/>
+                                        <Route path="/login" element={<LogInPage/>}/>
+                                        <Route path="/signUp" element={<SignUpPage/>}/>
+                                        <Route path="/admin" element={<AdminPage/>}/>
+                                        <Route path="/add" element={<AddIllustration/>}/>
+                                        <Route path="/edit/:editId" element={<EditIllustration/>}/>
+                                        <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage/>}/>
+                                        <Route path="*" element={<NotFoundPage/>}/>
+                                    </Routes>
+                                </div>
+                                <Footer/>
+                            </BrowserRouter>
+                        </CartProvider>
+                    </IllustrationsProvider>
+                </div>
             </div>
         </>
     )

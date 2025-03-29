@@ -1,9 +1,10 @@
-    const illustrationsReducer = (state, action) => {
+const illustrationsReducer = (state, action) => {
+
     let updatedIllustration, updatedIllustrations;
 
     switch (action.type) {
         case "SET_ILLUSTRATIONS":
-            return { ...state, illustrations: action.payload };
+            return {...state, illustrations: action.payload};
 
         case "ADD_ILLUSTRATION":
             return {
