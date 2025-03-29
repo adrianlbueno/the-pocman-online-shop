@@ -5,8 +5,7 @@ import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 export const EditIllustration = () => {
 
     const [illustrations] = useFetchIllustrations();
-    console.log("illustrations", illustrations);
-
+    console.log(illustrations)
     const [selectedIllustration, setSelectedIllustration] = useState({
         id: null,
         title: "",
@@ -16,14 +15,14 @@ export const EditIllustration = () => {
     });
 
     const {editId} = useParams();
-    const illustrationId = editId;
+    const illustrationId = editId * 1;
     const illustrationToUpDate = illustrations.find(
-        (currentIllustration) => currentIllustration.id === parseInt(illustrationId)
+        (illustration) => illustration.id === illustrationId
     );
 
     useEffect(() => {
         setSelectedIllustration(illustrationToUpDate);
-    }, []);
+    }, [illustrations, illustrationId]);
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
