@@ -5,7 +5,7 @@ import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 export const EditIllustration = () => {
 
     const [illustrations] = useFetchIllustrations();
-    const [selectedIllustration, setSelectedIllustration] = useState({
+    const [seletedIllustration, setSelectedIllustration] = useState({
         id: null,
         title: "",
         description: "",
@@ -28,9 +28,9 @@ export const EditIllustration = () => {
     };
 
     const handleOnChange = (illustrationKey, newValue) =>
-        setSelectedIllustration({...selectedIllustration, [illustrationKey]: newValue});
+        setSelectedIllustration({...seletedIllustration, [illustrationKey]: newValue});
 
-    if (!selectedIllustration || !selectedIllustration.id) {
+    if (!seletedIllustration || !seletedIllustration.id) {
         return <div>Invalid Illustration ID.</div>;
     }
 
@@ -47,7 +47,7 @@ export const EditIllustration = () => {
                         </label>
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline"
-                            value={selectedIllustration.title}
+                            value={seletedIllustration.title}
                             onChange={(e) => handleOnChange("title", e.target.value)}
                             type="text"
                             placeholder="Enter title"
@@ -62,7 +62,7 @@ export const EditIllustration = () => {
                         </label>
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline"
-                            value={selectedIllustration.description}
+                            value={seletedIllustration.description}
                             onChange={(e) => handleOnChange("description", e.target.value)}
                             type="text"
                             placeholder="Enter description"
@@ -77,7 +77,7 @@ export const EditIllustration = () => {
                         </label>
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline"
-                            value={selectedIllustration.price}
+                            value={seletedIllustration.price}
                             onChange={(e) => handleOnChange("price", parseFloat(e.target.value))}
                             type="text"
                             placeholder="Enter price"
@@ -92,7 +92,7 @@ export const EditIllustration = () => {
                         </label>
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline"
-                            value={selectedIllustration.image}
+                            value={seletedIllustration.image}
                             onChange={(e) => handleOnChange("image", e.target.value)}
                             type="text"
                             placeholder="Enter image URL"
