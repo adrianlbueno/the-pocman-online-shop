@@ -34,9 +34,7 @@ export const EditIllustration = () => {
             , [illustrationKey]: newValue
         });
 
-    if (!selectedIllustration
-        || !selectedIllustration
-            .id) {
+    if (!selectedIllustration || !selectedIllustration.id) {
         return <div>Invalid Illustration ID.</div>;
     }
 
