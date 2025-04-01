@@ -26,6 +26,8 @@ export const EditIllustration = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
+        if (!selectedIllustration) return;
+        const response = fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration}`);
     };
 
     const handleOnChange = (illustrationKey, newValue) =>
