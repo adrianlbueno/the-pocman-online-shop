@@ -27,7 +27,13 @@ export const EditIllustration = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         if (!selectedIllustration) return;
-        const response = fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration}`);
+        const response = fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(selectedIllustration),
+        });
     };
 
     const handleOnChange = (illustrationKey, newValue) =>
@@ -111,8 +117,8 @@ export const EditIllustration = () => {
                     <div className="flex items-center justify-between">
 
                         <Link to="/admin">
-                            <button
-                                className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
+                            <button onClick={handleOnSubmit}
+                                    className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
                                 Done
                             </button>
                         </Link>
