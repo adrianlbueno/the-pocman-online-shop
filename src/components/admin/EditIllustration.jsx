@@ -24,7 +24,7 @@ export const EditIllustration = () => {
         setSelectedIllustration(illustrationToUpDate);
     }, [illustrations, illustrationId]);
 
-    const resquestOptions = {
+    const requestOptions = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -36,8 +36,11 @@ export const EditIllustration = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         if (!selectedIllustration) return;
-        const response = fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration}`, resquestOptions);
+        fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration.id}`, requestOptions)
+            .then(res => res.json())
+            .then(json => setSelectedIllustration(json.user))
     };
+
 
     const handleOnChange = (illustrationKey, newValue) =>
         setSelectedIllustration({
