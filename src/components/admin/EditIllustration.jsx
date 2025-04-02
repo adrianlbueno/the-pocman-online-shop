@@ -24,16 +24,19 @@ export const EditIllustration = () => {
         setSelectedIllustration(illustrationToUpDate);
     }, [illustrations, illustrationId]);
 
+    const resquestOptions = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(selectedIllustration),
+    }
+
+
     const handleOnSubmit = (e) => {
         e.preventDefault();
         if (!selectedIllustration) return;
-        const response = fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(selectedIllustration),
-        });
+        const response = fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration}`, resquestOptions);
     };
 
     const handleOnChange = (illustrationKey, newValue) =>
