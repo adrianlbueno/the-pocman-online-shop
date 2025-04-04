@@ -32,15 +32,15 @@ export const EditIllustration = () => {
         body: JSON.stringify(selectedIllustration),
     }
 
+    const URL_API = "https://the-pocman-backend.onrender.com/illustrations";
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
         if (!selectedIllustration) return;
-        fetch(`https://the-pocman-backend.onrender.com/illustrations/${selectedIllustration.id}`, requestOptions)
+        fetch(`${URL_API}${selectedIllustration.id}`, requestOptions)
             .then(res => res.json())
             .then(json => setSelectedIllustration(json.user))
     };
-
 
     const handleOnChange = (illustrationKey, newValue) =>
         setSelectedIllustration({
