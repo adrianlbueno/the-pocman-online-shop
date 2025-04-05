@@ -13,7 +13,7 @@ export const EditIllustration = () => {
         price: 0,
         image: "",
     });
-
+    
     const {editId} = useParams();
     const illustrationId = editId * 1;
     const illustrationToUpDate = illustrations.find(
