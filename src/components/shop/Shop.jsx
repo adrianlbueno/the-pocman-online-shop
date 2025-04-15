@@ -1,17 +1,9 @@
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import IllustrationData from "./IllustrationData.jsx";
-import {SpinningCircles} from 'react-loading-icons';
+import Loading from "../common/Loading.jsx";
 
 const Shop = () => {
     const [illustrations, isLoading] = useFetchIllustrations()
-
-    const Loading = () => {
-        return (
-            <div className="flex justify-center items-center h-screen">
-                Loading <SpinningCircles/>
-            </div>
-        )
-    }
 
     return (
         <>
