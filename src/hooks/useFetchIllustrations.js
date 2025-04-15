@@ -7,11 +7,11 @@ export const useFetchIllustrations = () => {
 
     const fetchData = async () => {
         try {
-            setIsLoading(true)
+            setIsLoading(true);
             const response = await fetch(URL_API);
             if (response.ok) {
                 const data = await response.json();
-                setIsLoading(false)
+                setIsLoading(false);
                 setIllustrations(data);
             }
         } catch (error) {
