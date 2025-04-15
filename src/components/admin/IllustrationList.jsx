@@ -29,16 +29,11 @@ const IllustrationList = () => {
                         <div className="flex-auto text-right px-4 py-2 m-2">
                             <Link to={`/edit/${illustration.id}`} title="Edit Illustration">
                                 <div
-                                    className="hover:gb-gray-400 text-gray-800 font-semibold mr-3 py-2 px-4 rounded-full inline-flex items-center">
+                                    className="text-gray-800 font-bold text-lg mr-3 py-2 px-4 rounded-full inline-flex items-center">
                                     <FontAwesomeIcon icon={faEdit}/>
                                 </div>
                             </Link>
-                            <div
-                                className="hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-full inline-flex items-center"
-                                title="Remove Illustration"
-                            >
-                                <FontAwesomeIcon icon={faTrash}/>
-                            </div>
+                            <FontAwesomeIcon icon={faTrash}/>
                         </div>
                     </div>
                 ))
