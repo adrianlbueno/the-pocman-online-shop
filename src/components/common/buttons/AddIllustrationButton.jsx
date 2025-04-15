@@ -7,6 +7,7 @@ const AddIllustrationButton = ({initialValues}) => {
     const dispatch = useIllustrationsDispatch();
 
     let buttonStyle = "mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline";
+
     return (
         <>
             <button onClick={() => {

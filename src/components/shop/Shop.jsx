@@ -1,8 +1,17 @@
 import {useFetchIllustrations} from "../../hooks/useFetchIllustrations.js";
 import IllustrationData from "./IllustrationData.jsx";
+import {Bars} from 'react-loading-icons';
 
 const Shop = () => {
     const [illustrations, isLoading] = useFetchIllustrations()
+
+    const Loading = () => {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                loading<Bars/>
+            </div>
+        )
+    }
 
     return (
         <>
@@ -13,7 +22,7 @@ const Shop = () => {
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Are you who you want to be?</p>
                 </div>
                 <div className="flex flex-wrap -m-4 justify-center">
-                    {isLoading && <p className='text-[30px]'>Loading...</p>}
+                    {isLoading && <Loading/>}
                     <IllustrationData data={illustrations}/>
                 </div>
 
