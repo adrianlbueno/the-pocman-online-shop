@@ -12,9 +12,12 @@ const IllustrationList = () => {
                     No illustrations available.
                 </p>
             ) : (
-                illustrations.map(({id, title, description, price}) => (
-                    <div className="flex items-center bg-gray-100 mb-10 shadow" key={id}>
+                illustrations.map(({id, title, description, price, image}) => (
+                    <div className="flex items-center bg-gray-100 mb-10 shadow " key={id}>
                         <div className="flex-auto text-left px-4 py-2 m-2">
+                            <div className="w-full">
+                                <img src={image} alt={description} className="h-[100px] w-[100px]"/>
+                            </div>
                             <p className="text-gray-900 leading-none">
                                 {title}
                             </p>
@@ -25,12 +28,9 @@ const IllustrationList = () => {
                                 ${price}
                             </span>
                         </div>
-                        <div className="flex-auto text-right px-4 py-2 m-2">
+                        <div className="flex-auto text-gray-800 text-right px-4 py-2 m-2">
                             <Link to={`/edit/${id}`} title="Edit Illustration">
-                                <div
-                                    className="text-gray-800 font-bold text-lg mr-3 py-2 px-4 rounded-full inline-flex items-center">
-                                    <FontAwesomeIcon icon={faEdit}/>
-                                </div>
+                                <FontAwesomeIcon icon={faEdit}/>
                             </Link>
                             <FontAwesomeIcon icon={faTrash}/>
                         </div>
