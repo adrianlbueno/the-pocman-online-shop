@@ -51,10 +51,6 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center space-x-6 rtl:space-x-reverse">
-                    <Link to="admin">
-                        <FontAwesomeIcon icon={faUser}/>
-                    </Link>
-
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
