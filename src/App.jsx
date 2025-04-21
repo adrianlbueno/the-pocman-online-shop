@@ -1,7 +1,6 @@
 import {Route, Routes, BrowserRouter} from "react-router-dom";
 import {EditIllustration} from "./components/admin/EditIllustration";
 import AboutPage from "./pages/AboutPage";
-import AdminPage from "./pages/AdminPage";
 import Contact from "./pages/Contact";
 import HomePage from "./pages/HomePage";
 import ItemDetailsPage from "./pages/ItemDetailsPage";

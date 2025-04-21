@@ -1,4 +1,4 @@
-import {faBars, faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faBars, faCartShopping} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useCallback, useState} from "react";
 import {Link} from "react-router-dom";
