@@ -1,4 +1,4 @@
-import {faBars, faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import {faBars, faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useCallback, useState} from "react";
 import {Link} from "react-router-dom";
@@ -54,6 +54,11 @@ const Navbar = () => {
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
+                    <Link to="/admin">
+                        <button>
+                            < FontAwesomeIcon icon={faUser}/>
+                        </button>
+                    </Link>
                     <CartSidebar open={openShoppingCart} toggleCart={handleShow}/>
                 </div>
             </nav>

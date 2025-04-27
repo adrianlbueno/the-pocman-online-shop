@@ -12,6 +12,8 @@ import Navbar from "./components/common/Navbar.jsx";
 import AddIllustration from "./components/admin/AddIllustration.jsx";
 import {CartProvider} from "./context/cart/CartProvider.jsx";
 import {IllustrationsProvider} from "./context/admin/IllustrationsProvider.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
+import RequiredAuth from "./RequireAuth.jsx";
 
 const App = () => {
     return (
@@ -29,6 +31,11 @@ const App = () => {
                                         <Route path="/contact" element={<Contact/>}/>
                                         <Route path="/login" element={<LogInPage/>}/>
                                         <Route path="/signUp" element={<SignUpPage/>}/>
+                                        <Route path="/admin" element={
+                                            <RequiredAuth>
+                                                <AdminPage/>
+                                            </RequiredAuth>
+                                        }/>
                                         <Route path="/add" element={<AddIllustration/>}/>
                                         <Route path="/edit/:editId" element={<EditIllustration/>}/>
                                         <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage/>}/>

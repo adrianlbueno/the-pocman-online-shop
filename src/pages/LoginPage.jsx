@@ -1,8 +1,9 @@
 import SignInForm from "../components/form/SignInForm";
+
 const LogInPage = () => {
     return (
         <>
-            <SignInForm />
+            <SignInForm/>
         </>
     );
 }
