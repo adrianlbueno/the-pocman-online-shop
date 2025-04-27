@@ -6,6 +6,9 @@ const SignIn = () => {
             <div className="mx-auto w-full max-w-[550px]">
                 <h1 className="text-lg font-bold text-center">Welcome to the Pocman Store</h1>
                 <p className="text-center text-gray-600">Please enter your details</p>
+                <div className="flex justify-center mb-6">
+                    <img className="h-24 w-auto" src="/public/images/The-pocman-2024.png" alt="logo"/>
+                </div>
                 <form noValidate>
                     <div className="mb-5">
                         <label
