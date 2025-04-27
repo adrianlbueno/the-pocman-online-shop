@@ -1,64 +1,94 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const SignUp = () => {
     return (
-        <>
-            <div className="flex items-center justify-center p-12">
-                <div className="w-full max-w-xs">
-                    <form className="w-full max-w-sm">
-                        <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                            <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-                                <h1 className="mb-8 text-3xl text-center">Sign up</h1>
-                                <input
-                                    type="text"
-                                    className="block border border-gray-300 w-full p-3 rounded mb-4"
-                                    name="fullname"
-                                    placeholder="Full Name" />
+        <div className="flex min-h-screen items-center justify-center p-12">
+            <div className="mx-auto w-full max-w-[550px]">
+                <h1 className="text-lg font-bold text-center mb-2">Create your Pocman Account</h1>
+                <p className="text-center text-gray-600 mb-6">Please fill in your details below</p>
+                <form noValidate>
+                    <div className="mb-5">
+                        <label
+                            htmlFor="fullname"
+                            className="mb-3 block text-base font-medium text-[#07074D]"
+                        >
+                            Full Name
+                        </label>
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            placeholder="Enter your full name"
+                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        />
+                    </div>
 
-                                <input
-                                    type="text"
-                                    className="block border border-gray-300 w-full p-3 rounded mb-4"
-                                    name="email"
-                                    placeholder="Email" />
+                    <div className="mb-5">
+                        <label
+                            htmlFor="email"
+                            className="mb-3 block text-base font-medium text-[#07074D]"
+                        >
+                            Email Address
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        />
+                    </div>
 
-                                <input
-                                    type="password"
-                                    className="block border border-gray-300 w-full p-3 rounded mb-4"
-                                    name="password"
-                                    placeholder="Password" />
-                                <input
-                                    type="password"
-                                    className="block border border-gray-300 w-full p-3 rounded mb-4"
-                                    name="confirm_password"
-                                    placeholder="Confirm Password" />
+                    <div className="mb-5">
+                        <label
+                            htmlFor="password"
+                            className="mb-3 block text-base font-medium text-[#07074D]"
+                        >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        />
+                    </div>
 
-                                <button
-                                    type="submit"
-                                    className="w-full text-center py-3 rounded bg-blue-500 text-white font-bold  hover:bg-green-dark focus:shadow-outline my-1"
-                                >Create Account</button>
+                    <div className="mb-5">
+                        <label
+                            htmlFor="confirm_password"
+                            className="mb-3 block text-base font-medium text-[#07074D]"
+                        >
+                            Confirm Password
+                        </label>
+                        <input
+                            type="password"
+                            id="confirm_password"
+                            name="confirm_password"
+                            placeholder="Confirm your password"
+                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        />
+                    </div>
 
-                                <div className="text-center text-sm text-gray-dark mt-4">
-                                    By signing up, you agree to the
-                                    <span className="no-underline border-b border-gray-200 text-gray-600" href="#">
-                                        Terms of Service
-                                    </span> and
-                                    <span className="no-underline border-b border-gray-200 text-gray-600 " href="#">
-                                        Privacy Policy
-                                    </span>
-                                </div>
-                            </div>
+                    <div className="flex items-center justify-between mb-5">
+                        <button
+                            type="submit"
+                            className="hover:shadow-form rounded-md bg-blue-500 py-3 px-8 text-base font-normal text-white outline-none"
+                        >
+                            Sign Up
+                        </button>
+                    </div>
+                </form>
 
-                            <div className="text-gray-dark mt-6">
-                                Already have an account?
-                                <Link className="no-underline border-b border-blue text-blue" to="../login">
-                                    Log in
-                                </Link>.
-                            </div>
-                        </div>
-                    </form >
-                </div>
+                <p className="mt-8 text-center text-sm text-gray-500">
+                    Already have an account?{" "}
+                    <Link to="../login" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                        Log In
+                    </Link>
+                </p>
             </div>
-        </>
+        </div>
     );
 }
 
