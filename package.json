@@ -33,7 +33,7 @@
     "cypress": "^13.6.5",
     "eslint": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks": "^6.0.0-rc.1",
     "eslint-plugin-react-refresh": "^0.4.5",
     "globals": "^16.0.0",
     "postcss": "^8.4.32",
