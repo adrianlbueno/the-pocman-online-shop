@@ -14,6 +14,7 @@ import {CartProvider} from "./context/cart/CartProvider.jsx";
 import {IllustrationsProvider} from "./context/admin/IllustrationsProvider.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
 import RequiredAuth from "./RequireAuth.jsx";
+import ForgotPasswordForm from "./components/form/ForgotPasswordForm.jsx";
 
 const App = () => {
     return (
@@ -31,6 +32,7 @@ const App = () => {
                                         <Route path="/contact" element={<Contact/>}/>
                                         <Route path="/login" element={<LogInPage/>}/>
                                         <Route path="/signUp" element={<SignUpPage/>}/>
+                                        <Route path="/forgotPassword" element={<ForgotPasswordForm/>}/>
                                         <Route path="/admin" element={
                                             <RequiredAuth>
                                                 <AdminPage/>

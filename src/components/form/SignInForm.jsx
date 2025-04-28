@@ -44,12 +44,10 @@ const SignIn = () => {
                         >
                             Sign In
                         </button>
-                        <a
-                            href="#"
-                            className="text-sm font-normal text-blue-500 underline hover:text-blue-700"
-                        >
-                            Forgot Password?
-                        </a>
+                        <Link to="../forgotPassword"
+                              className="text-sm font-normal text-blue-500 underline hover:text-blue-700">
+                            Forgot Password
+                        </Link>
                     </div>
                 </form>
 
