@@ -21,7 +21,7 @@ export default function ComingSoon() {
 
     return (
         <div className="flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans">
-            <h2>The Pocman will be back soon.</h2>
+            <h2>Check back soon.</h2>
 
             {isLoading && <p>Loading today's Pocman drop...</p>}
 
