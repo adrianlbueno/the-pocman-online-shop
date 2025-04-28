@@ -15,8 +15,15 @@ import {IllustrationsProvider} from "./context/admin/IllustrationsProvider.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
 import RequiredAuth from "./RequireAuth.jsx";
 import ForgotPasswordForm from "./components/form/ForgotPasswordForm.jsx";
+import ComingSoon from "./components/common/ComingSoon.jsx";
+
+const comingSoon = true;
+
 
 const App = () => {
+    if (comingSoon) {
+        return <ComingSoon/>;
+    }
     return (
         <>
             <div>
