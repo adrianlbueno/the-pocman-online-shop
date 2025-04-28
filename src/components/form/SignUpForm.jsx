@@ -4,7 +4,7 @@ const SignUp = () => {
     return (
         <div className="flex min-h-screen items-center justify-center p-12">
             <div className="mx-auto w-full max-w-[550px]">
-                <h1 className="text-lg font-bold text-center mb-2">Create your Pocman Account</h1>
+                <h1 className="text-[32px] font-bold text-center mb-2">Create your Pocman Account</h1>
                 <p className="text-center text-gray-600 mb-6">Please fill in your details below</p>
                 <form noValidate>
                     <div className="mb-5">
