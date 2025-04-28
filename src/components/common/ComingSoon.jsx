@@ -20,8 +20,9 @@ export default function ComingSoon() {
     const dailyIllustration = getDailyIllustration();
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans">
-            <h2>Please check back soon.</h2>
+        <div
+            className="flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans bg-[#F406E6]">
+            <h2 className="text-white">Please check back soon.</h2>
 
             {isLoading && <p>Loading today's Pocman drop...</p>}
 
