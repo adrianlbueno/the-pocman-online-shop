@@ -1,22 +1,30 @@
 const AboutPage = () => {
     return (
-            <div className="flex items-center justify-center p-12" id="about">
-                <div className="about-info">
-                    <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[180px] border-fuchsia-600 pb-2">
-                        About Me
-                    </h2>
-                    <p className="pb-5">
-                        Hi, my name is Adrian.
-                    </p>
-                    <p className="pb-5">
-                         I am proficient in frontend skills such as React.js, Tailwind CSS, TypeScript, CSS3, and many more.
+        <div className="flex items-center justify-center p-12" id="about">
+            <div className="max-w-3xl text-center">
+                <div className="mt-8 space-y-6 text-lg leading-relaxed text-gray-700">
+                    <p>
+                        Digital design, street art, development, and illustration.For me, creativity has always been
+                        about shaping the world, expressing emotions, and telling stories without saying a word.
                     </p>
                     <p>
-                        In my spare time I create stickers and do illustration.
+                        Born in Ecuador and raised among rich colors and traditions, I later moved to New York, where
+                        the city’s raw energy and endless creativity pushed my vision further. Today, Münster, Germany
+                        is home, a beautiful place where I collaborate with other artists and continue growing my
+                        craft.
+                    </p>
+                    <p>
+                        Coffee in the morning, long conversations with friends, spontaneous laughter. Life’s simple
+                        moments inspire me as much as any canvas or code ever could. I see life itself as a story we are
+                        all constantly writing.
+                    </p>
+                    <p>
+                        Right now, I'm building toward a new chapter: founding my own animation studio, where art,
+                        stories, and technology will meet and move people in new ways.
                     </p>
                 </div>
-
             </div>
+        </div>
     );
 }
 
