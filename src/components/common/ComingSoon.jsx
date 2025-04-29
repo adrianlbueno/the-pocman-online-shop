@@ -28,7 +28,7 @@ export default function ComingSoon() {
             {dailyIllustration && (
                 <div className="aspect-w-16 aspect-h-9">
                     <img
-                        className="w-full"
+                        className=" w-96 object-cover"
                         src={dailyIllustration.image}
                         alt="Daily Pocman Drop"
                     />
