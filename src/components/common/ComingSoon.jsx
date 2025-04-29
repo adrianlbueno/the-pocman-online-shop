@@ -4,7 +4,6 @@ import {useFetchIllustrations} from "../../hooks/useFetchIllustrations";
 export default function ComingSoon() {
     const [illustrations, isLoading] = useFetchIllustrations();
 
-    // Pick one illustration based on today's date
     const getDailyIllustration = () => {
         if (illustrations.length === 0) return null;
 
@@ -24,14 +23,16 @@ export default function ComingSoon() {
             className="flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans bg-[#F406E6]">
             <h2 className="text-white">Please check back soon.</h2>
 
-            {isLoading && <p>Loading today's Pocman drop...</p>}
+            {isLoading && <p>Loading...</p>}
 
             {dailyIllustration && (
-                <img
-                    src={dailyIllustration.image} // 👈 or whatever the field is (maybe dailyIllustration.image?)
-                    alt="Daily Pocman Drop"
-                    style={{marginTop: "30px", maxWidth: "80%", borderRadius: "12px"}}
-                />
+                <div className="aspect-w-16 aspect-h-9">
+                    <img
+                        className="w-full"
+                        src={dailyIllustration.image}
+                        alt="Daily Pocman Drop"
+                    />
+                </div>
             )}
         </div>
     );
