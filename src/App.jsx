@@ -17,7 +17,7 @@ import RequiredAuth from "./RequireAuth.jsx";
 import ForgotPasswordForm from "./components/form/ForgotPasswordForm.jsx";
 import ComingSoon from "./components/common/ComingSoon.jsx";
 
-const comingSoon = true;
+const comingSoon = false;
 
 
 const App = () => {

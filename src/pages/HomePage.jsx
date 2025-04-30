@@ -4,7 +4,6 @@ import Shop from '../components/shop/Shop';
 const HomePage = () => {
     return (
         <>
-            <Header/>
             <Shop/>
         </>
     );
