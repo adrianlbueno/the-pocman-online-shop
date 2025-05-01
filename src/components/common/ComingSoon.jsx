@@ -23,10 +23,10 @@ export default function ComingSoon() {
         <div
             className="flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans bg-[#F406E6]">
             {isLoading && <p>Loading...</p>}
-            <h2 className="text-white">Please check back soon.</h2>
-            
+
             {dailyIllustration && (
                 <div className="aspect-w-16 aspect-h-9">
+                    <h2 className="text-white">Please check back soon.</h2>
                     <img
                         className=" w-96 object-cover"
                         src={dailyIllustration.image}
