@@ -6,9 +6,8 @@ const CartSidebar = ({open, toggleCart}) => {
     if (!open) return null;
     return (
         <div className="fixed inset-0 z-50" aria-labelledby="slide-over-title" aria-modal="true">
-
             <div
-                className="absolute inset-0 bg-black bg-opacity-50"
+                className="absolute inset-0"
                 onClick={toggleCart}
             ></div>
 
