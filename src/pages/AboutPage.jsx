@@ -4,7 +4,7 @@ const AboutPage = () => {
             <div className="max-w-3xl text-center">
                 <div className="mt-8 space-y-6 text-lg leading-relaxed text-gray-700">
                     <p>
-                        Digital design, street art, development, and illustration.For me, creativity has always been
+                        Digital design, street art, development, and illustration. For me, creativity has always been
                         about shaping the world, expressing emotions, and telling stories without saying a word.
                     </p>
                     <p>
@@ -15,8 +15,7 @@ const AboutPage = () => {
                     </p>
                     <p>
                         Coffee in the morning, long conversations with friends, spontaneous laughter. Life’s simple
-                        moments inspire me as much as any canvas or code ever could. I see life itself as a story we are
-                        all constantly writing.
+                        moments inspire me deeply. I see life itself as a story we are all constantly writing.
                     </p>
                     <p>
                         Right now, I'm building toward a new chapter: founding my own animation studio, where art,
