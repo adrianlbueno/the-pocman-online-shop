@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 export const useFetchIllustrations = () => {
-    const URL_API = "https://the-pocman-backend.onrender.com/illustrations";
+    const URL_API = "https://the-pocman-backend-1.onrender.com/illustrations";
     const [illustrations, setIllustrations] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 

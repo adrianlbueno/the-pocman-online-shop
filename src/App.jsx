@@ -19,7 +19,6 @@ import ComingSoon from "./components/common/ComingSoon.jsx";
 
 const comingSoon = true;
 
-
 const App = () => {
     if (comingSoon) {
         return <ComingSoon/>;
