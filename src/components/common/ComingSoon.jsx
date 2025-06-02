@@ -22,7 +22,7 @@ export default function ComingSoon() {
 
     return (
         <div
-            className="flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans bg-[#F406E6]">
+            className="flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans bg-[#F406E6] text-white">
             {isLoading && <p>Loading...</p>}
 
             {dailyIllustration && (
