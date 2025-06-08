@@ -16,13 +16,15 @@ import AdminPage from "./pages/AdminPage.jsx";
 import RequiredAuth from "./RequireAuth.jsx";
 import ForgotPasswordForm from "./components/form/ForgotPasswordForm.jsx";
 import ComingSoon from "./components/common/ComingSoon.jsx";
+import Page from "./components/navigation/Page.jsx";
 
-const comingSoon = true;
+const comingSoon = false;
 
 const App = () => {
     if (comingSoon) {
         return <ComingSoon/>;
     }
+
     return (
         <>
             <div>
@@ -33,21 +35,96 @@ const App = () => {
                                 <div>
                                     <Navbar/>
                                     <Routes>
-                                        <Route path="/" element={<HomePage/>}/>
-                                        <Route path="/about" element={<AboutPage/>}/>
-                                        <Route path="/contact" element={<Contact/>}/>
-                                        <Route path="/login" element={<LogInPage/>}/>
-                                        <Route path="/signUp" element={<SignUpPage/>}/>
-                                        <Route path="/forgotPassword" element={<ForgotPasswordForm/>}/>
-                                        <Route path="/admin" element={
-                                            <RequiredAuth>
-                                                <AdminPage/>
-                                            </RequiredAuth>
-                                        }/>
-                                        <Route path="/add" element={<AddIllustration/>}/>
-                                        <Route path="/edit/:editId" element={<EditIllustration/>}/>
-                                        <Route path="/illustrations/:illustrationId" element={<ItemDetailsPage/>}/>
-                                        <Route path="*" element={<NotFoundPage/>}/>
+                                        <Route
+                                            path="/"
+                                            element={
+                                                <Page>
+                                                    <HomePage/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/about"
+                                            element={
+                                                <Page>
+                                                    <AboutPage/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/contact"
+                                            element={
+                                                <Page>
+                                                    <Contact/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/login"
+                                            element={
+                                                <Page>
+                                                    <LogInPage/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/signUp"
+                                            element={
+                                                <Page>
+                                                    <SignUpPage/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/forgotPassword"
+                                            element={
+                                                <Page>
+                                                    <ForgotPasswordForm/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/admin"
+                                            element={
+                                                <Page>
+                                                    <RequiredAuth>
+                                                        <AdminPage/>
+                                                    </RequiredAuth>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/add"
+                                            element={
+                                                <Page>
+                                                    <AddIllustration/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/edit/:editId"
+                                            element={
+                                                <Page>
+                                                    <EditIllustration/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="/illustrations/:illustrationId"
+                                            element={
+                                                <Page>
+                                                    <ItemDetailsPage/>
+                                                </Page>
+                                            }
+                                        />
+                                        <Route
+                                            path="*"
+                                            element={
+                                                <Page>
+                                                    <NotFoundPage/>
+                                                </Page>
+                                            }
+                                        />
                                     </Routes>
                                 </div>
                                 <Footer/>

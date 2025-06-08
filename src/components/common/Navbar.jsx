@@ -54,7 +54,7 @@ const Navbar = () => {
                     <button onClick={handleShow}>
                         <FontAwesomeIcon icon={faCartShopping}/>
                     </button>
-                    <Link to="/admin">
+                    <Link to="/login">
                         <button>
                             < FontAwesomeIcon icon={faUser}/>
                         </button>
