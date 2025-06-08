@@ -52,7 +52,7 @@ const ForgotPasswordForm = () => {
                     <div className="flex items-center justify-center mb-5">
                         <button
                             type="submit"
-                            className="hover:shadow-form rounded-md bg-blue-500 py-3 px-8 text-base font-normal text-white outline-none disabled:opacity-50"
+                            className="hover:shadow-form rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-normal text-white outline-none disabled:opacity-50"
                             disabled={loading}
                         >
                             {loading ? "Submitting..." : "Submit"}

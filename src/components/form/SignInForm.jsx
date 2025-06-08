@@ -40,7 +40,7 @@ const SignIn = () => {
                     <div className="flex items-center justify-between mb-5">
                         <button
                             type="button"
-                            className="hover:shadow-form rounded-md bg-blue-500 py-3 px-8 text-base font-normal text-white outline-none"
+                            className="rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-normal text-white outline-none"
                         >
                             Sign In
                         </button>
