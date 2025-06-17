@@ -18,7 +18,7 @@ import ForgotPasswordForm from "./components/form/ForgotPasswordForm.jsx";
 import ComingSoon from "./components/common/ComingSoon.jsx";
 import Page from "./components/navigation/Page.jsx";
 
-const comingSoon = true;
+const comingSoon = false;
 
 const App = () => {
   if (comingSoon) {
