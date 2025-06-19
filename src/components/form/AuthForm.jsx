@@ -13,19 +13,21 @@ const AuthForm = ({ isLogin }) => {
   } = useForm();
   const navigate = useNavigate();
   const { saveToken } = useContext(AuthContext);
-  const { error, setError, isLoading, setIsLoading } = useState(null);
+  const { error, setError } = useState(null);
 
   const onSubmit = async (data) => {
     if (error) return;
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/auth/${isLogin ? "login" : "signup"}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      );
+      //todo: validate data before sending it to the server
+      const URL = `${import.meta.env.VITE_API_URL}/auth/${
+        isLogin ? "login" : "signup"
+      }`;
+
+      const response = await fetch(URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
       if (response.status === 201) {
         navigate("/login");
@@ -33,7 +35,6 @@ const AuthForm = ({ isLogin }) => {
 
       if (response.status === 200) {
         const parsed = await response.json();
-        console.log(parsed);
         saveToken(parsed.token);
       }
     } catch (error) {
