@@ -17,6 +17,7 @@ import RequiredAuth from "./RequireAuth.jsx";
 import ForgotPasswordForm from "./components/form/ForgotPasswordForm.jsx";
 import ComingSoon from "./components/common/ComingSoon.jsx";
 import Page from "./components/navigation/Page.jsx";
+import AuthContextProvider from "./context/Auth/AuthContext.jsx";
 
 const comingSoon = true;
 
@@ -29,108 +30,107 @@ const App = () => {
     <>
       <div>
         <div className="flex flex-col h-screen justify-between">
-          <IllustrationsProvider>
-            <CartProvider>
-              <BrowserRouter>
-                <div>
-                  <Navbar />
-                  <Routes>
-                    <Route
-                      path="/"
-                      element={
-                        <Page>
-                          <HomePage />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/about"
-                      element={
-                        <Page>
-                          <AboutPage />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/contact"
-                      element={
-                        <Page>
-                          <Contact />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/login"
-                      element={
-                        <Page>
-                          <LogInPage />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/signUp"
-                      element={
-                        <Page>
-                          <SignUpPage />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/forgotPassword"
-                      element={
-                        <Page>
-                          <ForgotPasswordForm />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/admin"
-                      element={
-                        <Page>
-                          <RequiredAuth>
-                            <AdminPage />
-                          </RequiredAuth>
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/add"
-                      element={
-                        <Page>
-                          <AddIllustration />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/edit/:editId"
-                      element={
-                        <Page>
-                          <EditIllustration />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="/illustrations/:illustrationId"
-                      element={
-                        <Page>
-                          <ItemDetailsPage />
-                        </Page>
-                      }
-                    />
-                    <Route
-                      path="*"
-                      element={
-                        <Page>
-                          <NotFoundPage />
-                        </Page>
-                      }
-                    />
-                  </Routes>
-                </div>
-                <Footer />
-              </BrowserRouter>
-            </CartProvider>
-          </IllustrationsProvider>
+          <CartProvider>
+            <BrowserRouter>
+              <div>
+                <Navbar />
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <Page>
+                        <HomePage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/about"
+                    element={
+                      <Page>
+                        <AboutPage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/contact"
+                    element={
+                      <Page>
+                        <Contact />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/login"
+                    element={
+                      <Page>
+                        <LogInPage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/signUp"
+                    element={
+                      <Page>
+                        <SignUpPage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/forgotPassword"
+                    element={
+                      <Page>
+                        <ForgotPasswordForm />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/admin"
+                    element={
+                      <Page>
+                        <RequiredAuth>
+                          <AdminPage />
+                        </RequiredAuth>
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/add"
+                    element={
+                      <Page>
+                        <AddIllustration />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/edit/:editId"
+                    element={
+                      <Page>
+                        <EditIllustration />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/illustrations/:illustrationId"
+                    element={
+                      <Page>
+                        <ItemDetailsPage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="*"
+                    element={
+                      <Page>
+                        <NotFoundPage />
+                      </Page>
+                    }
+                  />
+                </Routes>
+              </div>
+              <Footer />
+            </BrowserRouter>
+          </CartProvider>
+          <IllustrationsProvider></IllustrationsProvider>
         </div>
       </div>
     </>

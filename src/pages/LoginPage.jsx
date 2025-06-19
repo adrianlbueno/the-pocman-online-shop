@@ -1,11 +1,13 @@
-import SignInForm from "../components/form/SignInForm";
+import AuthForm from "../components/form/AuthForm.jsx";
 
 const LogInPage = () => {
-    return (
-        <>
-            <SignInForm/>
-        </>
-    );
-}
+  return (
+    <>
+      <div>
+        <AuthForm isLogin />
+      </div>
+    </>
+  );
+};
 
 export default LogInPage;
