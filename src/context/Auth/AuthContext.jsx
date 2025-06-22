@@ -14,6 +14,7 @@ const AuthContextProvider = ({ children }) => {
     setIsAuthenticated(true);
     window.localStorage.setItem("authToken", tokenFromLogin);
     const { userId } = jwtDecode(tokenFromLogin);
+
     setUserId(userId);
   };
 
@@ -52,7 +53,6 @@ const AuthContextProvider = ({ children }) => {
           method,
         }
       );
-      console.log(response);
       return response;
     } catch (error) {
       console.error(error);

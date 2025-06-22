@@ -19,7 +19,7 @@ import ComingSoon from "./components/common/ComingSoon.jsx";
 import Page from "./components/navigation/Page.jsx";
 import AuthContextProvider from "./context/Auth/AuthContext.jsx";
 
-const comingSoon = true;
+const comingSoon = false;
 
 const App = () => {
   if (comingSoon) {

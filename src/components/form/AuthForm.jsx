@@ -42,7 +42,7 @@ const AuthForm = ({ isLogin }) => {
     }
   };
 
-  return <div>{isLogin ? <SignUpForm /> : <SignInForm />}</div>;
+  return <div>{!isLogin ? <SignUpForm /> : <SignInForm />}</div>;
 };
 
 export default AuthForm;
