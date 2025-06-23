@@ -53,7 +53,7 @@ const Navbar = () => {
           <button onClick={handleShow}>
             <FontAwesomeIcon icon={faCartShopping} />
           </button>
-          <Link to="/login">
+          <Link to="/admin">
             <button>
               <FontAwesomeIcon icon={faUser} />
             </button>
