@@ -20,7 +20,7 @@ import Page from "./components/navigation/Page.jsx";
 import AuthContextProvider from "./context/Auth/AuthContext.jsx";
 import AuthForm from "./components/form/AuthForm.jsx";
 
-const comingSoon = true;
+const comingSoon = false;
 
 const App = () => {
   if (comingSoon) {
