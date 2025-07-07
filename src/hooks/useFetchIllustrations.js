@@ -22,6 +22,5 @@ export const useFetchIllustrations = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log("illustrations", illustrations);
   return [illustrations, isLoading];
 };
