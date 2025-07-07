@@ -19,7 +19,7 @@ const AuthForm = ({ isLogin }) => {
     if (error) return;
     try {
       //todo: validate data before sending it to the server
-      const URL = `${import.meta.env.VITE_API_URL}/auth/${
+      const URL = `${import.meta.env.REACT_APP_MONGODB_URI}/auth/${
         isLogin ? "login" : "signup"
       }`;
 
