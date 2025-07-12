@@ -7,9 +7,9 @@ const AboutPage = () => {
             Hi! My name is Adrian Bueno
           </h1>
           <p>
-            Digital design, street art, development, and illustration. For me,
-            creativity has always been about shaping the world, expressing
-            emotions, and telling stories without saying a word.
+            Digital design, street art, and illustration. For me, creativity has
+            always been about shaping the world, expressing emotions, and
+            telling stories without saying a word.
           </p>
           <p>
             Born in Ecuador and raised among rich colors and traditions, I later
