@@ -42,7 +42,7 @@ const Navbar = () => {
               to={link.path}
               className="flex cursor-pointer flex-col items-center justify-center"
             >
-              <p className="font-bold text-lg hover:text-[#C025D3] hover:border-b-[5px] border-fuchsia-600">
+              <p className=" font-nunito font-black  text-lg hover:text-[#C025D3] hover:border-b-[5px] border-fuchsia-600">
                 {link.label}
               </p>
             </Link>

@@ -1,6 +1,9 @@
 const AboutPage = () => {
   return (
-    <div className="flex items-center justify-center p-12" id="about">
+    <div
+      className="font-nunito flex items-center justify-center p-12"
+      id="about"
+    >
       <div className="max-w-3xl text-center">
         <div className="mt-8 space-y-6 text-lg leading-relaxed text-gray-700">
           <h1 className="text-3xl font-bold mb-4 text-[#C025D3]">
