@@ -21,7 +21,7 @@ import AuthContextProvider from "./context/Auth/AuthContext.jsx";
 import AuthForm from "./components/form/AuthForm.jsx";
 import MeetTheTeam from "./components/common/MeetTheTeam.jsx";
 
-const comingSoon = true;
+const comingSoon = false;
 
 const App = () => {
   if (comingSoon) {
