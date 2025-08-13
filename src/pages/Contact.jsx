@@ -1,4 +1,5 @@
 import ContactMe from "../components/form/ContactMe.jsx";
+import MeetTheTeam from "../components/common/MeetTheTeam.jsx";
 
 const Contact = () => {
   return (
