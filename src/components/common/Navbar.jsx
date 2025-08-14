@@ -13,7 +13,11 @@ import { menuLinks } from "./MenuLinks.jsx";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [openShoppingCart, setOpenShoppingCart] = useState(false);
+  const [activeItem, setActiveItem] = useState("Home");
 
+  const handleActiveItem = (item) => {
+    setActiveItem(item);
+  };
   const handleShow = useCallback(() => {
     setOpenShoppingCart((prevState) => {
       return !prevState;
@@ -40,9 +44,19 @@ const Navbar = () => {
             <Link
               key={link.id}
               to={link.path}
-              className="flex cursor-pointer flex-col items-center justify-center"
+              className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
             >
-              <p className=" font-nunito font-black  text-lg hover:text-[#C025D3] hover:border-b-[5px] border-fuchsia-600">
+              <p
+                onClick={() => handleActiveItem(link.label)}
+                className={` ${
+                  activeItem === link.label &&
+                  "text-[#C025D3] border-b-[5px] border-fuchsia-600"
+                }  `}
+              >
+                {/*  className={`text-black ${
+                activeItem === "Home" && "font-bold text-red-600"
+              }`*/}
+
                 {link.label}
               </p>
             </Link>
