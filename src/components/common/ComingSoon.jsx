@@ -30,16 +30,16 @@ export default function ComingSoon() {
             src={dailyIllustration.image}
             alt="Daily Pocman Drop"
           />
+          <a
+            className=" font-nunito p-4 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://instagram.com/thepocman"
+          >
+            for More Cool Illustrations
+          </a>
         </div>
       )}
-      <a
-        className=" font-nunito p-4 underline"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://instagram.com/thepocman"
-      >
-        for More Cool Illustrations
-      </a>
     </div>
   );
 }
