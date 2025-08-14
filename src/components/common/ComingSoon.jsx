@@ -24,7 +24,7 @@ export default function ComingSoon() {
 
       {dailyIllustration && (
         <div className="aspect-w-16 aspect-h-9">
-          <h2 className="text-white">Please check back soon.</h2>
+          <h2 className=" font-nunito p-4">Please check back soon.</h2>
           <img
             className=" w-96 object-cover"
             src={dailyIllustration.image}
@@ -32,6 +32,14 @@ export default function ComingSoon() {
           />
         </div>
       )}
+      <a
+        className=" font-nunito p-4 underline"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://instagram.com/thepocman"
+      >
+        for More Cool Illustrations
+      </a>
     </div>
   );
 }
