@@ -1,8 +1,34 @@
+import { useEffect, useState } from "react";
+
 const ContactMe = () => {
+  const initialState = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+  const [date, setDate] = useState(initialState);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetchData();
+    console.log("event", event.target);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const testing = await fetch()
+      .then((response) => response.json())
+      .then((data) => setDate(data));
+  };
+
   return (
     <>
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-5">
             <label
               htmlFor="name"
@@ -64,7 +90,10 @@ const ContactMe = () => {
             ></textarea>
           </div>
           <div>
-            <button className=" font-nunito hover:shadow-form rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-semibold text-white outline-none">
+            <button
+              type="submit"
+              className="font-nunito hover:shadow-form rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-semibold text-white outline-none"
+            >
               Submit
             </button>
           </div>

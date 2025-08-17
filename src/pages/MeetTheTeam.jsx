@@ -1,4 +1,4 @@
-import firstuserImage from "/src/assets/images/ribertRodriguez.jpg";
+import firstUserImage from "/src/assets/images/ribertRodriguez.jpg";
 import secondUserImage from "/src/assets/images/adrianbueno.jpg";
 import thirdUserImage from "/src/assets/images/jonathanSaona.jpeg";
 
@@ -6,7 +6,7 @@ const MeetTheTeam = () => {
   return (
     <div className="py-10 px-5">
       <div className="max-w-4xl mx-auto">
-        <div className="">
+        <div>
           <h1 className="font-nunito text-[30px] font-bold  text-gray-800 mb-6">
             who we are?
           </h1>
@@ -28,7 +28,7 @@ const MeetTheTeam = () => {
             <div className="text-center px-4 mb-6">
               <img
                 className="w-32 h-32 object-cover rounded-full mx-auto"
-                src={firstuserImage}
+                src={firstUserImage}
                 alt="image of Ribert"
               />
               <p className=" font-nunito text-xl mt-2">Ribert</p>

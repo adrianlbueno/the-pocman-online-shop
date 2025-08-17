@@ -19,7 +19,7 @@ export default function ComingSoon() {
   const dailyIllustration = getDailyIllustration();
 
   return (
-    <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] font-sans bg-[#F406E6] text-white">
+    <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] bg-[#F406E6] text-white">
       {isLoading && <p>Loading...</p>}
 
       {dailyIllustration && (
