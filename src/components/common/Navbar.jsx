@@ -53,10 +53,6 @@ const Navbar = () => {
                   "text-[#C025D3] border-b-[5px] border-fuchsia-600"
                 }  `}
               >
-                {/*  className={`text-black ${
-                activeItem === "Home" && "font-bold text-red-600"
-              }`*/}
-
                 {link.label}
               </p>
             </Link>

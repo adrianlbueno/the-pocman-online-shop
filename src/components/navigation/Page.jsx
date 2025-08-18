@@ -9,6 +9,7 @@ const titles = {
   "/login": "Log In - The Pocman",
   "/forgotPassword": "Forgot Password - The Pocman",
   "/admin": "Admin - The Pocman",
+  "/team": "Meet The Team - The Pocman",
 };
 
 const Page = ({ children }) => {
