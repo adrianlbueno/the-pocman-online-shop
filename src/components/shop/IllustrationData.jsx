@@ -12,7 +12,7 @@ const IllustrationData = ({ data }) => {
             <ShopItem
               id={illustration.id}
               url={illustration.image}
-              name={illustration.name}
+              name={illustration.title}
             />
           </Link>
         </div>
