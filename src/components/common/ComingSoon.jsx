@@ -11,7 +11,7 @@ const ComingSoon = () => {
     const dayOfYear = Math.floor(
       (today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24)
     );
-
+    
     const index = dayOfYear % illustrations.length;
     return illustrations[index];
   };
@@ -29,7 +29,7 @@ const ComingSoon = () => {
           <img
             className=" w-96 object-cover"
             src={dailyIllustration.image}
-            alt="Daily Pocman Drop"
+            alt={dailyIllustration.title}
           />
           <div className="font-nunito underline sm:whitespace-nowrap uppercase text-[24px]">
             <a
