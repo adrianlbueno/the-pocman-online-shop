@@ -23,16 +23,14 @@ export default function ComingSoon() {
       {isLoading && <p>Loading...</p>}
       {dailyIllustration && (
         <div className="aspect-w-16 aspect-h-9">
-          <h2 className="font-nunito whitespace-nowrap">
-            Please check back soon.
-          </h2>
+          <h2 className="font-nunito ">Please check back soon.</h2>
           <img
             className=" w-96 object-cover"
             src={dailyIllustration.image}
             alt="Daily Pocman Drop"
           />
           <a
-            className="font-nunito underline"
+            className="font-nunito underline whitespace-nowrap "
             target="_blank"
             rel="noopener noreferrer"
             href="https://instagram.com/thepocman"
