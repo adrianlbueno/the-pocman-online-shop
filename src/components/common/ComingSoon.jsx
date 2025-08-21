@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFetchIllustrations } from '../../hooks/useFetchIllustrations';
 
-export default function ComingSoon() {
+const ComingSoon = () => {
   const [illustrations, isLoading] = useFetchIllustrations();
 
   const getDailyIllustration = () => {
@@ -19,7 +19,7 @@ export default function ComingSoon() {
   const dailyIllustration = getDailyIllustration();
 
   return (
-    <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px]  bg-[#F406E6] text-white">
+    <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] bg-[#F406E6] text-white">
       {isLoading && <p>Loading...</p>}
       {dailyIllustration && (
         <div className="aspect-w-16 aspect-h-9">
@@ -29,16 +29,19 @@ export default function ComingSoon() {
             src={dailyIllustration.image}
             alt="Daily Pocman Drop"
           />
-          <a
-            className="font-nunito underline whitespace-nowrap "
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://instagram.com/thepocman"
-          >
-            for More Cool Illustrations
-          </a>
+          <div className="font-nunito underline sm:whitespace-nowrap ">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://instagram.com/thepocman"
+            >
+              More Cool Illustrations
+            </a>
+          </div>
         </div>
       )}
     </div>
   );
-}
+};
+
+export default ComingSoon;
