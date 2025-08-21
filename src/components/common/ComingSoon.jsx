@@ -21,7 +21,6 @@ export default function ComingSoon() {
   return (
     <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] bg-[#F406E6] text-white">
       {isLoading && <p>Loading...</p>}
-
       {dailyIllustration && (
         <div className="aspect-w-16 aspect-h-9">
           <h2 className=" font-nunito p-4">Please check back soon.</h2>
