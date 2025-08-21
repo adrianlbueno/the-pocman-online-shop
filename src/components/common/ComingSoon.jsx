@@ -23,13 +23,15 @@ const ComingSoon = () => {
       {isLoading && <p>Loading...</p>}
       {dailyIllustration && (
         <div className="aspect-w-16 aspect-h-9">
-          <h2 className="font-nunito ">Please check back soon.</h2>
+          <div className="font-nunito uppercase text-[24px]">
+            <h2>Please check back soon.</h2>
+          </div>
           <img
             className=" w-96 object-cover"
             src={dailyIllustration.image}
             alt="Daily Pocman Drop"
           />
-          <div className="font-nunito underline sm:whitespace-nowrap ">
+          <div className="font-nunito underline sm:whitespace-nowrap uppercase text-[24px]">
             <a
               target="_blank"
               rel="noopener noreferrer"
