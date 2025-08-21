@@ -1,5 +1,5 @@
-import React from "react";
-import { useFetchIllustrations } from "../../hooks/useFetchIllustrations";
+import React from 'react';
+import { useFetchIllustrations } from '../../hooks/useFetchIllustrations';
 
 export default function ComingSoon() {
   const [illustrations, isLoading] = useFetchIllustrations();
@@ -19,7 +19,7 @@ export default function ComingSoon() {
   const dailyIllustration = getDailyIllustration();
 
   return (
-    <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] bg-[#F406E6] text-white">
+    <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] sm:text-[16px] bg-[#F406E6] text-white">
       {isLoading && <p>Loading...</p>}
       {dailyIllustration && (
         <div className="aspect-w-16 aspect-h-9">
