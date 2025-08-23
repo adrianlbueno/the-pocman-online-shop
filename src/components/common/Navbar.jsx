@@ -2,18 +2,18 @@ import {
   faBars,
   faCartShopping,
   faUser,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useCallback, useState } from "react";
-import { Link } from "react-router-dom";
-import CartSidebar from "../cart/CartSidebar.jsx";
-import PocmanLogo from "./PocmanLogo.jsx";
-import { menuLinks } from "./MenuLinks.jsx";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
+import CartSidebar from '../cart/CartSidebar.jsx';
+import PocmanLogo from './PocmanLogo.jsx';
+import { menuLinks } from './MenuLinks.jsx';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [openShoppingCart, setOpenShoppingCart] = useState(false);
-  const [activeItem, setActiveItem] = useState("Home");
+  const [activeItem, setActiveItem] = useState('Home');
 
   const handleActiveItem = (item) => {
     setActiveItem(item);
@@ -50,8 +50,8 @@ const Navbar = () => {
                 onClick={() => handleActiveItem(link.label)}
                 className={` ${
                   activeItem === link.label &&
-                  "text-[#C025D3] border-b-[5px] border-fuchsia-600"
-                }  `}
+                  'text-[#C025D3] border-b-[5px] border-fuchsia-600'
+                }  hover:text-[#C025D3] `}
               >
                 {link.label}
               </p>
