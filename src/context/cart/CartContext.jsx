@@ -1,13 +1,12 @@
-import {createContext, useContext} from "react";
-
+import { createContext, useContext } from 'react';
 
 export const CartContext = createContext(null);
-export const CartDispatchContext = createContext(null)
+export const CartDispatchContext = createContext(null);
 
 export function useCartItems() {
-    return useContext(CartContext);
+  return useContext(CartContext);
 }
 
 export function useItemsDispatch() {
-    return useContext(CartDispatchContext);
+  return useContext(CartDispatchContext);
 }

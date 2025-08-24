@@ -1,7 +1,4 @@
-import { useCartItems } from "../../context/cart/CartContext.jsx";
-
 const ShopItem = ({ url, name }) => {
-  const { addToCart } = useCartItems();
   return (
     <div className="group relative lg:w-1/3 sm:w-1/2 p-4">
       <div className="flex w-96 flex-col text-gray-700 shadow-md">
@@ -21,7 +18,7 @@ const ShopItem = ({ url, name }) => {
               "
           >
             <div className="absolute inset-0 p-6 flex flex-col justify-end">
-              <span className="text-sm text-cyan-400">{name}</span>
+              <span className="text-sm text-white">{name}</span>
             </div>
           </div>
         </div>
