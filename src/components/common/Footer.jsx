@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBehance,
   faGithub,
   faInstagram,
   faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+} from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const getYear = () => {
   return new Date().getFullYear();
@@ -40,10 +40,9 @@ const githubLink = (
 const Footer = () => {
   return (
     <>
-      <footer>
-        <div className="w-full max-w-full sm:w-3/4 mx-auto text-center">
+      <footer className="w-full sm:w-3/4 mx-auto text-center">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
           <span className=" font-nunito text-sm text-gray-600 py-1">
-            {" "}
             &copy;{getYear()} All Rights Reversed by Adrian Bueno
           </span>
           <div className="flex gap-3 justify-center py-1">

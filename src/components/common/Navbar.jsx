@@ -44,6 +44,7 @@ const Navbar = () => {
             <Link
               key={link.id}
               to={link.path}
+              viewTransition
               className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
             >
               <p
