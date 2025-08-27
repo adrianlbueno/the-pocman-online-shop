@@ -40,11 +40,13 @@ const githubLink = (
 const Footer = () => {
   return (
     <>
-      <footer className="w-full sm:w-3/4 mx-auto text-center">
-        <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
-          <span className=" font-nunito text-sm text-gray-600 py-1">
-            &copy;{getYear()} All Rights Reversed by Adrian Bueno
-          </span>
+      <footer className="w-full border-t border-gray-300 px-4 py-6 mt-10 ">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
+          <div>
+            <span className=" font-nunito text-sm text-gray-600 py-1">
+              &copy;{getYear()} All Rights Reversed by Adrian Bueno
+            </span>
+          </div>
           <div className="flex gap-3 justify-center py-1">
             <span>{instagramLink}</span>
             <span>{linkedinLink}</span>
