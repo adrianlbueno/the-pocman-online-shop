@@ -5,6 +5,7 @@ import {
   faInstagram,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const getYear = () => {
@@ -37,6 +38,8 @@ const githubLink = (
   </Link>
 );
 
+const heartIcon = <FontAwesomeIcon className="text-red-600" icon={faHeart} />;
+
 const Footer = () => {
   return (
     <>
@@ -44,9 +47,12 @@ const Footer = () => {
         <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
           <div>
             <span className=" font-nunito text-sm text-gray-600 py-1">
-              &copy;{getYear()} All Rights Reversed by Adrian Bueno
+              &copy; {getYear()} Studio Pocman
             </span>
           </div>
+          <span className=" font-nunito text-sm text-gray-600 py-1">
+            Made with {heartIcon} in Münster
+          </span>
           <div className="flex gap-3 justify-center py-1">
             <span>{instagramLink}</span>
             <span>{linkedinLink}</span>
