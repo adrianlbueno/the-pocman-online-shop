@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   return (
@@ -44,9 +44,9 @@ const SignIn = () => {
           <div className="flex items-center justify-between mb-5">
             <button
               type="button"
-              className=" font-nunito rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-normal text-white outline-none"
+              className=" font-nunito  rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-bold text-white outline-none"
             >
-              Sign In
+              Log in
             </button>
             <Link
               to="../forgotPassword"
@@ -58,12 +58,12 @@ const SignIn = () => {
         </form>
 
         <p className=" font-nunito mt-8 text-center text-sm text-gray-500">
-          Don't have an account?{" "}
+          Don't have an account?{' '}
           <Link
             to="../signup"
-            className=" font-nunito font-semibold text-indigo-600 hover:text-indigo-500"
+            className=" font-nunito font-semibold text-blue-500 hover:text-indigo-500"
           >
-            Sign Up
+            Sign up
           </Link>
         </p>
       </div>

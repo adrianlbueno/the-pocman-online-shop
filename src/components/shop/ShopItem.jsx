@@ -6,7 +6,7 @@ const ShopItem = ({ url, name }) => {
     <div className="group relative lg:w-1/3 sm:w-1/2 p-4">
       <div className="flex w-96 flex-col text-gray-700 shadow-md">
         <div className="group relative">
-          <div className={styles.scrollList}>
+          <div>
             <LazyImage
               src={url}
               alt={name}
