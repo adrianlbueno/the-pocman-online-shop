@@ -1,5 +1,6 @@
 import LazyImage from './LazyImage.jsx';
 import styles from './lazyImage.module.css';
+import { lazy } from 'react';
 
 const ShopItem = ({ url, name }) => {
   return (

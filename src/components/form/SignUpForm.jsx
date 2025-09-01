@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { PasswordInput } from '../common/PasswordInput.jsx';
 
 const SignUp = () => {
   return (
@@ -42,39 +43,8 @@ const SignUp = () => {
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
-
-          <div className="mb-5">
-            <label
-              htmlFor="password"
-              className=" font-nunito mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-            />
-          </div>
-
-          <div className="mb-5">
-            <label
-              htmlFor="confirm_password"
-              className=" font-nunito mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              id="confirm_password"
-              name="confirm_password"
-              placeholder="Confirm your password"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-            />
-          </div>
-
+          <PasswordInput labelText="Password" id="password" />
+          <PasswordInput labelText="Confirm Password" id="confirm-password" />
           <div className="flex items-center justify-between mb-5">
             <button
               type="submit"
