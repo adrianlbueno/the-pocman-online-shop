@@ -1,7 +1,27 @@
 import { Link } from 'react-router-dom';
 import { PasswordInput } from '../common/PasswordInput.jsx';
+import { isEmail } from '../../helper/isEmail.js';
+import { useCallback, useState } from 'react';
 
 const SignUp = () => {
+  const intialValues = {
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  };
+  const [data, setData] = useState(intialValues);
+  const handleDataChange = (event) => {
+    const { name, value } = event.target;
+    const updateValues = { ...data, [name]: value };
+    setData(updateValues);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center p-12">
       <div className="mx-auto w-full max-w-[550px]">
@@ -11,7 +31,7 @@ const SignUp = () => {
         <p className="text-center text-gray-600 mb-6">
           Please fill in your details below
         </p>
-        <form noValidate>
+        <form onSubmit={handleSubmit} noValidate>
           <div className="mb-5">
             <label
               htmlFor="fullname"
@@ -20,9 +40,11 @@ const SignUp = () => {
               Full Name
             </label>
             <input
+              onChange={handleDataChange}
+              value={data.fullName}
               type="text"
-              id="fullname"
-              name="fullname"
+              id="fullName"
+              name="fullName"
               placeholder="Enter your full name"
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
@@ -36,6 +58,8 @@ const SignUp = () => {
               Email Address
             </label>
             <input
+              onChange={handleDataChange}
+              value={data.email}
               type="email"
               id="email"
               name="email"
@@ -43,8 +67,18 @@ const SignUp = () => {
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
-          <PasswordInput labelText="Password" id="password" />
-          <PasswordInput labelText="Confirm Password" id="confirm-password" />
+          <PasswordInput
+            labelText="Password"
+            id="password"
+            value={data.password}
+            handleDataChange={handleDataChange}
+          />
+          <PasswordInput
+            labelText="Confirm Password"
+            id="confirm-password"
+            value={data.confirmPassword}
+            handleDataChange={handleDataChange}
+          />
           <div className="flex items-center justify-between mb-5">
             <button
               type="submit"

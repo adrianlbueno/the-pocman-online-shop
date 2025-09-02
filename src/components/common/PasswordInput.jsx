@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-export const PasswordInput = ({ labelText, id }) => {
+export const PasswordInput = ({
+  labelText,
+  id,
+  formValue,
+  handleDataChange,
+}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleToggle = () => {
@@ -35,8 +40,10 @@ export const PasswordInput = ({ labelText, id }) => {
           {!isVisible ? eyeIcon : closeEyeIcon}
         </span>
         <input
+          onChange={handleDataChange}
           type={!isVisible ? 'password' : 'text'}
           id={id}
+          value={formValue}
           autoComplete="on"
           name="password"
           placeholder="Enter your password"
