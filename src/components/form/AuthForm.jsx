@@ -6,11 +6,18 @@ import { AuthContext } from '../../context/Auth/AuthContext.jsx';
 import SignInForm from './SignInForm.jsx';
 
 const AuthForm = ({ isLogin }) => {
+  const defaultValues = {
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  };
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ defaultValues });
+
   const navigate = useNavigate();
   const { saveToken } = useContext(AuthContext);
   const { error, setError } = useState(null);
@@ -31,7 +38,6 @@ const AuthForm = ({ isLogin }) => {
         body: JSON.stringify(data),
       });
 
-      console.log();
       if (response.status === 201) {
         navigate('/login');
       }

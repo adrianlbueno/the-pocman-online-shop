@@ -7,6 +7,7 @@ export const PasswordInput = ({
   id,
   formValue,
   handleDataChange,
+  register,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -40,12 +41,13 @@ export const PasswordInput = ({
           {!isVisible ? eyeIcon : closeEyeIcon}
         </span>
         <input
+          {...register(labelText, { required: true })}
           onChange={handleDataChange}
           type={!isVisible ? 'password' : 'text'}
           id={id}
           value={formValue}
           autoComplete="on"
-          name="password"
+          name={labelText}
           placeholder="Enter your password"
           className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />

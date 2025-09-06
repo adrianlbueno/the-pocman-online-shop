@@ -1,24 +1,7 @@
 import { Link } from 'react-router-dom';
 import { PasswordInput } from '../common/PasswordInput.jsx';
-import { isEmail } from '../../helper/isEmail.js';
-import { useCallback, useEffect, useState } from 'react';
-import AuthForm from './AuthForm.jsx';
 
-const SignUp = ({ onSubmit, handleSubmit }) => {
-  const intialValues = {
-    fullName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  };
-
-  const [data, setData] = useState(intialValues);
-  const handleDataChange = (event) => {
-    const { name, value } = event.target;
-    const updateValues = { ...data, [name]: value };
-    setData(updateValues);
-  };
-
+const SignUp = ({ onSubmit, handleSubmit, register }) => {
   return (
     <div className="flex min-h-screen items-center justify-center p-12">
       <div className="mx-auto w-full max-w-[550px]">
@@ -37,8 +20,7 @@ const SignUp = ({ onSubmit, handleSubmit }) => {
               Full Name
             </label>
             <input
-              onChange={handleDataChange}
-              value={data.fullName}
+              {...register('fullName', { required: true })}
               type="text"
               id="fullName"
               name="fullName"
@@ -55,8 +37,7 @@ const SignUp = ({ onSubmit, handleSubmit }) => {
               Email Address
             </label>
             <input
-              onChange={handleDataChange}
-              value={data.email}
+              {...register('email', { required: true })}
               type="email"
               id="email"
               name="email"
@@ -67,14 +48,12 @@ const SignUp = ({ onSubmit, handleSubmit }) => {
           <PasswordInput
             labelText="Password"
             id="password"
-            value={data.password}
-            handleDataChange={handleDataChange}
+            register={register}
           />
           <PasswordInput
             labelText="Confirm Password"
             id="confirm-password"
-            value={data.confirmPassword}
-            handleDataChange={handleDataChange}
+            register={register}
           />
           <div className="flex items-center justify-between mb-5">
             <button
