@@ -18,8 +18,6 @@ const AuthForm = ({ isLogin }) => {
   const onSubmit = async (data) => {
     if (error) return;
     try {
-      //todo: validate data before sending it to the server
-
       console.log('env file value', process.env.VITE_APP_MONGODB_URI);
       const URL = `${process.env.VITE_APP_MONGODB_URI}/auth/${
         isLogin ? 'login' : 'signup'
