@@ -1,25 +1,22 @@
 import { Link } from 'react-router-dom';
 import { PasswordInput } from '../common/PasswordInput.jsx';
 import { isEmail } from '../../helper/isEmail.js';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import AuthForm from './AuthForm.jsx';
 
-const SignUp = () => {
+const SignUp = ({ onSubmit, handleSubmit }) => {
   const intialValues = {
     fullName: '',
     email: '',
     password: '',
     confirmPassword: '',
   };
+
   const [data, setData] = useState(intialValues);
   const handleDataChange = (event) => {
     const { name, value } = event.target;
     const updateValues = { ...data, [name]: value };
     setData(updateValues);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(data);
   };
 
   return (
@@ -31,7 +28,7 @@ const SignUp = () => {
         <p className="text-center text-gray-600 mb-6">
           Please fill in your details below
         </p>
-        <form onSubmit={handleSubmit} noValidate>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-5">
             <label
               htmlFor="fullname"

@@ -1,5 +1,4 @@
-import SignUpForm from "../components/form/SignUpForm";
-import AuthForm from "../components/form/AuthForm.jsx";
+import AuthForm from '../components/form/AuthForm.jsx';
 
 const SignUpPage = () => {
   return (

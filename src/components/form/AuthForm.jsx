@@ -1,14 +1,14 @@
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import SignUpForm from "./SignUpForm.jsx";
-import { AuthContext } from "../../context/Auth/AuthContext.jsx";
-import SignInForm from "./SignInForm.jsx";
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import SignUpForm from './SignUpForm.jsx';
+import { AuthContext } from '../../context/Auth/AuthContext.jsx';
+import SignInForm from './SignInForm.jsx';
 
 const AuthForm = ({ isLogin }) => {
   const {
     register,
-    handelSubmit,
+    handleSubmit,
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
@@ -19,22 +19,27 @@ const AuthForm = ({ isLogin }) => {
     if (error) return;
     try {
       //todo: validate data before sending it to the server
+
       const URL = `${import.meta.env.REACT_APP_MONGODB_URI}/auth/${
-        isLogin ? "login" : "signup"
+        isLogin ? 'login' : 'signup'
       }`;
 
+      console.log('url..', URL);
+
       const response = await fetch(URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
+      console.log();
       if (response.status === 201) {
-        navigate("/login");
+        navigate('/login');
       }
 
       if (response.status === 200) {
         const parsed = await response.json();
+        console.log('parsed', parsed);
         saveToken(parsed.token);
       }
     } catch (error) {
@@ -42,7 +47,20 @@ const AuthForm = ({ isLogin }) => {
     }
   };
 
-  return <div>{!isLogin ? <SignUpForm /> : <SignInForm />}</div>;
+  return (
+    <div>
+      {!isLogin ? (
+        <SignUpForm
+          register={register}
+          errors={errors}
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
+        />
+      ) : (
+        <SignInForm />
+      )}
+    </div>
+  );
 };
 
 export default AuthForm;
