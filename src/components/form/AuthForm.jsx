@@ -5,7 +5,7 @@ import SignUpForm from './SignUpForm.jsx';
 import { AuthContext } from '../../context/Auth/AuthContext.jsx';
 import SignInForm from './SignInForm.jsx';
 
-const AuthForm = ({ isLogin }) => {
+const AuthForm = ({ isLogin = false }) => {
   const defaultValues = {
     fullName: '',
     email: '',
@@ -30,8 +30,7 @@ const AuthForm = ({ isLogin }) => {
         isLogin ? 'login' : 'signup'
       }`;
 
-      console.log('url..', URL);
-
+      console.log('data', data);
       const response = await fetch(URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -44,7 +43,6 @@ const AuthForm = ({ isLogin }) => {
 
       if (response.status === 200) {
         const parsed = await response.json();
-        console.log('parsed', parsed);
         saveToken(parsed.token);
       }
     } catch (error) {

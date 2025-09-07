@@ -52,7 +52,7 @@ const SignUp = ({ onSubmit, handleSubmit, register }) => {
           />
           <PasswordInput
             labelText="Confirm Password"
-            id="confirm-password"
+            id="confirmPassword"
             register={register}
           />
           <div className="flex items-center justify-between mb-5">

@@ -5,7 +5,6 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 export const PasswordInput = ({
   labelText,
   id,
-  formValue,
   handleDataChange,
   register,
 }) => {
@@ -45,7 +44,6 @@ export const PasswordInput = ({
           onChange={handleDataChange}
           type={!isVisible ? 'password' : 'text'}
           id={id}
-          value={formValue}
           autoComplete="on"
           name={labelText}
           placeholder="Enter your password"
