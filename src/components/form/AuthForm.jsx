@@ -6,17 +6,18 @@ import { AuthContext } from '../../context/Auth/AuthContext.jsx';
 import SignInForm from './SignInForm.jsx';
 
 const AuthForm = ({ isLogin = false }) => {
-  const defaultValues = {
-    fullName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  };
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues });
+  } = useForm({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+  });
 
   const navigate = useNavigate();
   const { saveToken } = useContext(AuthContext);

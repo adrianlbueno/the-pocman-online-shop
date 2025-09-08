@@ -43,18 +43,25 @@ const SignUp = ({ onSubmit, handleSubmit, register }) => {
               name="email"
               placeholder="Enter your email"
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              autoComplete={'email'}
             />
           </div>
           <PasswordInput
             labelText="Password"
             id="password"
-            register={register}
+            {...register('password', {
+              required: 'Password is required',
+              minLength: { value: 6, message: 'At least 6 characters' },
+            })}
           />
           <PasswordInput
             labelText="Confirm Password"
             id="confirmPassword"
-            register={register}
+            {...register('confirmPassword', {
+              required: 'Please confirm password',
+            })}
           />
+
           <div className="flex items-center justify-between mb-5">
             <button
               type="submit"
