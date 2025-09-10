@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import SignUpForm from './SignUpForm.jsx';
@@ -6,11 +6,7 @@ import { AuthContext } from '../../context/Auth/AuthContext.jsx';
 import SignInForm from './SignInForm.jsx';
 
 const AuthForm = ({ isLogin = false }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const methods = useForm({
     defaultValues: {
       fullName: '',
       email: '',
@@ -50,19 +46,13 @@ const AuthForm = ({ isLogin = false }) => {
       console.log(error);
     }
   };
-
   return (
     <div>
-      {!isLogin ? (
-        <SignUpForm
-          register={register}
-          errors={errors}
-          handleSubmit={handleSubmit}
-          onSubmit={onSubmit}
-        />
-      ) : (
-        <SignInForm />
-      )}
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          {!isLogin ? <SignUpForm /> : <SignInForm />}
+        </form>
+      </FormProvider>
     </div>
   );
 };
