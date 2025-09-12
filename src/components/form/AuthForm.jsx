@@ -40,6 +40,7 @@ const AuthForm = ({ isLogin = false }) => {
 
       if (response.status === 200) {
         const parsed = await response.json();
+        console.log('Token', parsed.token);
         saveToken(parsed.token);
       }
     } catch (error) {
