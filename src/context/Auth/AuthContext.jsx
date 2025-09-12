@@ -1,18 +1,20 @@
-import { createContext, useEffect, useState } from "react";
-import { jwtDecode } from "jwt-decode";
+import { createContext, useEffect, useState } from 'react';
+import { jwtDecode } from 'jwt-decode';
 
 export const AuthContext = createContext({});
 
 const AuthContextProvider = ({ children }) => {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [userId, setUserId] = useState("");
+  const [userId, setUserId] = useState('');
 
   const saveToken = (tokenFromLogin) => {
     setToken(tokenFromLogin);
     setIsAuthenticated(true);
-    window.localStorage.setItem("authToken", tokenFromLogin);
+
+    window.localStorage.setItem('authToken', tokenFromLogin);
+
     const { userId } = jwtDecode(tokenFromLogin);
 
     setUserId(userId);
@@ -31,23 +33,23 @@ const AuthContextProvider = ({ children }) => {
         setUserId(userId);
       } else {
         setIsLoading(false);
-        window.localStorage.removeItem("authToken");
+        window.localStorage.removeItem('authToken');
       }
     } catch (error) {
       console.log(error);
       setIsLoading(false);
-      window.localStorage.removeItem("authToken");
+      window.localStorage.removeItem('authToken');
     }
   };
 
-  const fetchWithToken = async (endpoint, method = "GET", payload) => {
+  const fetchWithToken = async (endpoint, method = 'GET', payload) => {
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api${endpoint}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-type": "application/json",
+            'Authorization': `Bearer ${token}`,
+            'Content-type': 'application/json',
           },
           body: JSON.stringify(payload),
           method,
@@ -59,14 +61,14 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const logout = () => {
-    setToken("");
-    window.localStorage.removeItem("authToken");
+    setToken('');
+    window.localStorage.removeItem('authToken');
     setIsAuthenticated(false);
-    setUserId("");
+    setUserId('');
   };
 
   useEffect(() => {
-    const tokenFromLocalStorage = window.localStorage.getItem("authToken");
+    const tokenFromLocalStorage = window.localStorage.getItem('authToken');
     if (tokenFromLocalStorage) {
       // We have a token, we need to verify it
       verifyToken(tokenFromLocalStorage);

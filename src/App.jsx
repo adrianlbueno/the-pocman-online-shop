@@ -11,7 +11,6 @@ import Footer from './components/common/Footer.jsx';
 import Navbar from './components/common/Navbar.jsx';
 import AddIllustration from './components/admin/AddIllustration.jsx';
 import { CartProvider } from './context/cart/CartProvider.jsx';
-import { IllustrationsProvider } from './context/admin/IllustrationsProvider.jsx';
 import AdminPage from './pages/AdminPage.jsx';
 import ForgotPasswordForm from './components/form/ForgotPasswordForm.jsx';
 import ComingSoon from './components/common/ComingSoon.jsx';
@@ -19,7 +18,7 @@ import Page from './components/navigation/Page.jsx';
 import AuthForm from './components/form/AuthForm.jsx';
 import MeetTheTeam from './pages/MeetTheTeam.jsx';
 
-const comingSoon = true;
+const comingSoon = false;
 const App = () => {
   if (comingSoon) {
     return <ComingSoon />;
@@ -55,14 +54,6 @@ const App = () => {
                     element={
                       <Page>
                         <Contact />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/team"
-                    element={
-                      <Page>
-                        <MeetTheTeam />
                       </Page>
                     }
                   />
@@ -137,7 +128,6 @@ const App = () => {
               <Footer />
             </BrowserRouter>
           </CartProvider>
-          <IllustrationsProvider></IllustrationsProvider>
         </div>
       </div>
     </>
