@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { PasswordInput } from '../common/PasswordInput.jsx';
+import { useFormContext } from 'react-hook-form';
 
 const SignIn = () => {
+  const { onSubmit, handleSubmit, register } = useFormContext();
   return (
     <div className="flex min-h-screen  items-center justify-center p-12">
       <div className="mx-auto w-full max-w-[550px]">
@@ -13,20 +15,21 @@ const SignIn = () => {
         </p>
         <div className="mb-5">
           <label
-            htmlFor="inputEmail"
+            htmlFor="email"
             className=" font-nunito mb-3 block text-base font-medium text-[#07074D]"
           >
             E-mail address
           </label>
           <input
+            {...register('email', { required: true })}
             type="email"
-            id="inputEmail"
+            id="email"
             name="email"
             placeholder="Enter your email"
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
-        <PasswordInput labelText="Password" />
+        <PasswordInput labelText="Password" id="password" name="password" />
         <div className="flex items-center justify-between mb-5">
           <button
             type="button"

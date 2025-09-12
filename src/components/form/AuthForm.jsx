@@ -22,12 +22,12 @@ const AuthForm = ({ isLogin = false }) => {
   const onSubmit = async (data) => {
     if (error) return;
     try {
-      console.log('env file value', process.env.VITE_APP_MONGODB_URI);
-      const URL = `${process.env.VITE_APP_MONGODB_URI}/auth/${
+      const URL = `${process.env.VITE_APP_ONRENDER_URI}/api/users/${
         isLogin ? 'login' : 'signup'
       }`;
 
       console.log('data', data);
+
       const response = await fetch(URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
