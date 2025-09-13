@@ -18,13 +18,9 @@ const loginDefaultValues = {
 };
 
 const AuthForm = ({ isLogin = false }) => {
-  console.log('isLogin', isLogin);
-
   const methods = useForm({
     defaultValues: isLogin ? loginDefaultValues : signupDefaultValues,
   });
-
-  console.log('methods', methods);
 
   const navigate = useNavigate();
   const { saveToken } = useContext(AuthContext);

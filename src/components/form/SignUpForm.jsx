@@ -3,8 +3,8 @@ import { PasswordInput } from '../common/PasswordInput.jsx';
 import { FormProvider, useForm, useFormContext } from 'react-hook-form';
 
 const SignUp = () => {
-  const { onSubmit, handleSubmit, register } = useFormContext();
-  console.log('onSubmit', onSubmit);
+  const { register } = useFormContext();
+
   return (
     <div className="flex min-h-screen items-center justify-center p-12">
       <div className="mx-auto w-full max-w-[550px]">

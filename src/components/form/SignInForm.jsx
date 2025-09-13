@@ -21,6 +21,7 @@ const SignIn = () => {
             E-mail address
           </label>
           <input
+            autoComplete="username email"
             {...register('email', { required: true })}
             type="email"
             id="email"
