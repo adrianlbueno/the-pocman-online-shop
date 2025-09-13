@@ -32,7 +32,7 @@ const SignIn = () => {
         <PasswordInput labelText="Password" id="password" name="password" />
         <div className="flex items-center justify-between mb-5">
           <button
-            type="button"
+            type="submit"
             className=" font-nunito  rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-bold text-white outline-none"
           >
             Log in
