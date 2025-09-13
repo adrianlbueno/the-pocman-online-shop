@@ -51,6 +51,7 @@ const AuthForm = ({ isLogin = false }) => {
         const parsed = await response.json();
         console.log('Token', parsed.token);
         saveToken(parsed.token);
+        navigate('/admin');
       }
     } catch (error) {
       setError(error);

@@ -22,9 +22,13 @@ const AuthContextProvider = ({ children }) => {
 
   const verifyToken = async (tokenFromLocalStorage) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/verify`, {
-        headers: { Authorization: `Bearer ${tokenFromLocalStorage}` },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_APP_ONRENDER_URI}/api/users/verify`,
+        {
+          headers: { Authorization: `Bearer ${tokenFromLocalStorage}` },
+        }
+      );
+
       if (res.status === 200) {
         setIsAuthenticated(true);
         setToken(tokenFromLocalStorage);
@@ -45,7 +49,7 @@ const AuthContextProvider = ({ children }) => {
   const fetchWithToken = async (endpoint, method = 'GET', payload) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api${endpoint}`,
+        `${import.meta.env.VITE_APP_ONRENDER_URI}/api${endpoint}`,
         {
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -69,6 +73,7 @@ const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const tokenFromLocalStorage = window.localStorage.getItem('authToken');
+
     if (tokenFromLocalStorage) {
       // We have a token, we need to verify it
       verifyToken(tokenFromLocalStorage);
