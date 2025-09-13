@@ -1,19 +1,30 @@
-import { FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, set, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import SignUpForm from './SignUpForm.jsx';
 import { AuthContext } from '../../context/Auth/AuthContext.jsx';
 import SignInForm from './SignInForm.jsx';
 
+const signupDefaultValues = {
+  fullName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
+};
+
+const loginDefaultValues = {
+  email: '',
+  password: '',
+};
+
 const AuthForm = ({ isLogin = false }) => {
+  console.log('isLogin', isLogin);
+
   const methods = useForm({
-    defaultValues: {
-      fullName: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-    },
+    defaultValues: isLogin ? loginDefaultValues : signupDefaultValues,
   });
+
+  console.log('methods', methods);
 
   const navigate = useNavigate();
   const { saveToken } = useContext(AuthContext);
@@ -25,8 +36,6 @@ const AuthForm = ({ isLogin = false }) => {
       const URL = `${process.env.VITE_APP_ONRENDER_URI}/api/users/${
         isLogin ? 'login' : 'signup'
       }`;
-
-      console.log('data', data);
 
       const response = await fetch(URL, {
         method: 'POST',
@@ -44,6 +53,7 @@ const AuthForm = ({ isLogin = false }) => {
         saveToken(parsed.token);
       }
     } catch (error) {
+      setError(error);
       console.log(error);
     }
   };
