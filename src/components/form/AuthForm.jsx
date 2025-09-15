@@ -39,15 +39,12 @@ const AuthForm = ({ isLogin = false }) => {
         body: JSON.stringify(data),
       });
 
-      console.log('response', response);
-
       if (response.status === 201) {
         navigate('/login');
       }
 
       if (response.status === 200) {
         const { authToken } = await response.json();
-        console.log('Token', authToken);
         saveToken(authToken);
         navigate('/admin');
       }
