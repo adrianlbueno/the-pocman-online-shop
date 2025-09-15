@@ -18,7 +18,7 @@ import Page from './components/navigation/Page.jsx';
 import AuthForm from './components/form/AuthForm.jsx';
 import ProtectedRoute from './routes/ProtectedRoute.jsx';
 
-const comingSoon = true;
+const comingSoon = false;
 const App = () => {
   if (comingSoon) {
     return <ComingSoon />;
@@ -33,30 +33,96 @@ const App = () => {
               <div>
                 <Navbar />
                 <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/login" element={<LogInPage />} />
-                  <Route path="/signUp" element={<SignUpPage />} />
+                  <Route
+                    path="/"
+                    element={
+                      <Page>
+                        <HomePage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/about"
+                    element={
+                      <Page>
+                        <AboutPage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/contact"
+                    element={
+                      <Page>
+                        <Contact />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/login"
+                    element={
+                      <Page>
+                        <LogInPage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/signUp"
+                    element={
+                      <Page>
+                        <SignUpPage />
+                      </Page>
+                    }
+                  />
                   <Route
                     path="/forgotPassword"
-                    element={<ForgotPasswordForm />}
+                    element={
+                      <Page>
+                        <ForgotPasswordForm />
+                      </Page>
+                    }
                   />
                   <Route
                     path="/admin"
                     element={
-                      <ProtectedRoute>
-                        <AdminPage />
-                      </ProtectedRoute>
+                      <Page>
+                        <ProtectedRoute>
+                          <AdminPage />
+                        </ProtectedRoute>
+                      </Page>
                     }
                   />
-                  <Route path="/add" element={<AddIllustration />} />
-                  <Route path="/edit/:editId" element={<EditIllustration />} />
+                  <Route
+                    path="/add"
+                    element={
+                      <Page>
+                        <AddIllustration />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/edit/:editId"
+                    element={
+                      <Page>
+                        <EditIllustration />
+                      </Page>
+                    }
+                  />
                   <Route
                     path="/illustrations/:illustrationId"
-                    element={<ItemDetailsPage />}
+                    element={
+                      <Page>
+                        <ItemDetailsPage />
+                      </Page>
+                    }
                   />
-                  <Route path="*" element={<NotFoundPage />} />
+                  <Route
+                    path="*"
+                    element={
+                      <Page>
+                        <NotFoundPage />
+                      </Page>
+                    }
+                  />
                 </Routes>
               </div>
               <Footer />
