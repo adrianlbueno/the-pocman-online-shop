@@ -32,96 +32,30 @@ const App = () => {
               <div>
                 <Navbar />
                 <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <Page>
-                        <HomePage />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/about"
-                    element={
-                      <Page>
-                        <AboutPage />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/contact"
-                    element={
-                      <Page>
-                        <Contact />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/login"
-                    element={
-                      <Page>
-                        <LogInPage />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/signUp"
-                    element={
-                      <Page>
-                        <SignUpPage />
-                      </Page>
-                    }
-                  />
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/login" element={<LogInPage />} />
+                  <Route path="/signUp" element={<SignUpPage />} />
                   <Route
                     path="/forgotPassword"
-                    element={
-                      <Page>
-                        <ForgotPasswordForm />
-                      </Page>
-                    }
+                    element={<ForgotPasswordForm />}
                   />
                   <Route
                     path="/admin"
                     element={
-                      <Page>
-                        <AuthForm>
-                          <AdminPage />
-                        </AuthForm>
-                      </Page>
+                      <AuthForm>
+                        <AdminPage />
+                      </AuthForm>
                     }
                   />
-                  <Route
-                    path="/add"
-                    element={
-                      <Page>
-                        <AddIllustration />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/edit/:editId"
-                    element={
-                      <Page>
-                        <EditIllustration />
-                      </Page>
-                    }
-                  />
+                  <Route path="/add" element={<AddIllustration />} />
+                  <Route path="/edit/:editId" element={<EditIllustration />} />
                   <Route
                     path="/illustrations/:illustrationId"
-                    element={
-                      <Page>
-                        <ItemDetailsPage />
-                      </Page>
-                    }
+                    element={<ItemDetailsPage />}
                   />
-                  <Route
-                    path="*"
-                    element={
-                      <Page>
-                        <NotFoundPage />
-                      </Page>
-                    }
-                  />
+                  <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </div>
               <Footer />
