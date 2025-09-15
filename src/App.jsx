@@ -16,7 +16,6 @@ import ForgotPasswordForm from './components/form/ForgotPasswordForm.jsx';
 import ComingSoon from './components/common/ComingSoon.jsx';
 import Page from './components/navigation/Page.jsx';
 import AuthForm from './components/form/AuthForm.jsx';
-import MeetTheTeam from './pages/MeetTheTeam.jsx';
 
 const comingSoon = false;
 const App = () => {
