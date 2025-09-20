@@ -49,7 +49,7 @@ const ContactMe = () => {
               htmlFor="email"
               className=" font-nunito mb-3 block text-base font-medium text-[#07074D]"
             >
-              Email Address
+              Email
             </label>
             <input
               type="email"
