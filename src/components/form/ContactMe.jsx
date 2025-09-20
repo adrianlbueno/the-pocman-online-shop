@@ -1,34 +1,34 @@
-import { useEffect, useState } from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactMe = () => {
-  const initialState = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
-  const [date, setDate] = useState(initialState);
+  const form = useRef();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchData();
-    console.log("event", event.target);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const testing = await fetch()
-      .then((response) => response.json())
-      .then((data) => setDate(data));
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        process.env.VITA_SERVICE_ID,
+        process.env.VITA_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: 'GprlUtSnDnQbt_Hqf',
+        }
+      )
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
   };
 
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form ref={form} onSubmit={sendEmail}>
           <div className="mb-5">
             <label
               htmlFor="name"

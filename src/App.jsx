@@ -17,7 +17,7 @@ import ComingSoon from './components/common/ComingSoon.jsx';
 import Page from './components/navigation/Page.jsx';
 import ProtectedRoute from './routes/ProtectedRoute.jsx';
 
-const comingSoon = true;
+const comingSoon = false;
 const App = () => {
   if (comingSoon) {
     return <ComingSoon />;
