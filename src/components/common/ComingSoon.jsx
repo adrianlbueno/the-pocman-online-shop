@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFetchIllustrations } from '../../hooks/useFetchIllustrations';
+import Loading from './Loading.jsx';
 
 const ComingSoon = () => {
   const [illustrations, isLoading] = useFetchIllustrations();
@@ -11,7 +12,7 @@ const ComingSoon = () => {
     const dayOfYear = Math.floor(
       (today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24)
     );
-    
+
     const index = dayOfYear % illustrations.length;
     return illustrations[index];
   };
@@ -20,7 +21,7 @@ const ComingSoon = () => {
 
   return (
     <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] bg-[#F406E6] text-white">
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loading />}
       {dailyIllustration && (
         <div className="aspect-w-16 aspect-h-9">
           <div className="font-nunito uppercase text-[24px]">
