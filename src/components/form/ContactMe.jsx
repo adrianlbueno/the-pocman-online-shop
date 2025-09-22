@@ -58,7 +58,7 @@ const ContactMe = () => {
               name="name"
               id="name"
               placeholder="Full Name"
-              className=" w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              className=" font-nunito w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               value={formData.name}
               onChange={handleChange}
             />
@@ -76,7 +76,7 @@ const ContactMe = () => {
               value={formData.email}
               id="email"
               placeholder="example@domain.com"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              className="font-nunito w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               onChange={handleChange}
             />
           </div>
@@ -93,7 +93,7 @@ const ContactMe = () => {
               value={formData.title}
               id="title"
               placeholder="Enter your subject"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              className="font-nunito w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               onChange={handleChange}
             />
           </div>
@@ -110,7 +110,7 @@ const ContactMe = () => {
               value={formData.message}
               id="message"
               placeholder="Type your message"
-              className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              className="font-nunito w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               onChange={handleChange}
             ></textarea>
           </div>
