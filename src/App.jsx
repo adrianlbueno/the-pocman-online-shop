@@ -1,23 +1,24 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AddIllustration from './components/admin/AddIllustration.jsx';
 import { EditIllustration } from './components/admin/EditIllustration';
+import ComingSoon from './components/common/ComingSoon.jsx';
+import Footer from './components/common/Footer.jsx';
+import Navbar from './components/common/Navbar.jsx';
+import ForgotPasswordForm from './components/form/ForgotPasswordForm.jsx';
+import Page from './components/navigation/Page.jsx';
+import { CartProvider } from './context/cart/CartProvider.jsx';
 import AboutPage from './pages/AboutPage';
+import AdminPage from './pages/AdminPage.jsx';
 import Contact from './pages/Contact';
 import HomePage from './pages/HomePage';
 import ItemDetailsPage from './pages/ItemDetailsPage';
 import LogInPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import SignUpPage from './pages/SignUpPage';
-import Footer from './components/common/Footer.jsx';
-import Navbar from './components/common/Navbar.jsx';
-import AddIllustration from './components/admin/AddIllustration.jsx';
-import { CartProvider } from './context/cart/CartProvider.jsx';
-import AdminPage from './pages/AdminPage.jsx';
-import ForgotPasswordForm from './components/form/ForgotPasswordForm.jsx';
-import ComingSoon from './components/common/ComingSoon.jsx';
-import Page from './components/navigation/Page.jsx';
 import ProtectedRoute from './routes/ProtectedRoute.jsx';
 
 const comingSoon = true;
+
 const App = () => {
   if (comingSoon) {
     return <ComingSoon />;
