@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PasswordInput } from '../common/PasswordInput.jsx';
-import { FormProvider, useForm, useFormContext } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 
 const SignUp = () => {
   const { register } = useFormContext();
