@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export const useFetchIllustrations = () => {
-  const URL_API = "https://the-pocman-backend-1.onrender.com/illustrations";
+  const URL_API = `${process.env.VITE_APP_ONRENDER_URI}/illustrations`;
   const [illustrations, setIllustrations] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -15,7 +15,7 @@ export const useFetchIllustrations = () => {
         setIllustrations(data);
       }
     } catch (error) {
-      console.error("Error fetching illustrations:", error);
+      console.error('Error fetching illustrations:', error);
     }
   };
 
