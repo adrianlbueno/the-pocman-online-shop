@@ -1,8 +1,15 @@
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import { setTag } from '@sentry/react';
 
 const ContactMe = () => {
   const form = useRef();
+  const [message, setMessage] = useState({
+    display: false,
+    message: '',
+    type: '',
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,15 +22,22 @@ const ContactMe = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const toggleAlert = (message, type) => {
+    setMessage({ display: false, message, type });
+    setTimeout(() => {
+      setMessage({ display: false, message: '', type: '' });
+    }, 5000);
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
       .sendForm(
-        process.env.VITA_SERVICE_ID,
-        process.env.VITA_TEMPLATE_ID,
+        process.env.VITE_SERVICE_ID,
+        process.env.VITE_TEMPLATE_ID,
         form.current,
         {
-          publicKey: 'GprlUtSnDnQbt_Hqf',
+          publicKey: process.env.VITE_PUBLC_KEY,
         }
       )
       .then(
@@ -34,10 +48,12 @@ const ContactMe = () => {
             title: '',
             message: '',
           });
+          toggleAlert('Thank you  for your message', 'success');
           console.log('SUCCESS!');
         },
         (error) => {
           console.log('FAILED...', error.text);
+          toggleAlert('Uh oh. Something went wrong.', 'danger');
         }
       );
   };
@@ -45,7 +61,7 @@ const ContactMe = () => {
   return (
     <>
       <div>
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={sendEmail} noValidate>
           <div className="mb-5">
             <label
               htmlFor="name"
@@ -123,6 +139,14 @@ const ContactMe = () => {
             </button>
           </div>
         </form>
+        <div className="font-nunito text-green-700">
+          <div
+            className={`alert alert-${message.type} alert-dismissible mt-5`}
+            role="alert"
+          >
+            {message.message}
+          </div>
+        </div>
       </div>
     </>
   );
