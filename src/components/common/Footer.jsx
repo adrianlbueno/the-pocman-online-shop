@@ -50,7 +50,7 @@ const Footer = () => {
               &copy; {getYear()} Studio Pocman
             </span>
           </div>
-          <span className=" font-nunito text-sm text-gray-600 py-1">
+          <span className="font-nunito text-xs text-gray-600 py-1">
             Made with {heartIcon} in Münster
           </span>
           <div className="flex gap-3 justify-center py-1">
