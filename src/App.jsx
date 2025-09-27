@@ -17,7 +17,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import SignUpPage from './pages/SignUpPage';
 import ProtectedRoute from './routes/ProtectedRoute.jsx';
 
-const comingSoon = false;
+const comingSoon = true;
 
 const App = () => {
   if (comingSoon) {
