@@ -8,10 +8,11 @@ const Shop = () => {
   return (
     <>
       <div className="container mx-auto">
-        <div className="flex flex-col text-center w-full mb-20"></div>
-        <div className="flex flex-wrap -m-4 justify-center">
-          {isLoading && <Loading />}
-          <IllustrationData data={illustrations} />
+        <div className="flex justify-center w-full ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {isLoading && <Loading />}
+            <IllustrationData data={illustrations} />
+          </div>
         </div>
       </div>
     </>
