@@ -9,13 +9,13 @@ const ItemDetailsPage = () => {
     (illustration) => illustration.id === +illustrationId
   );
   const { addToCart } = useCartItems();
-  
+
   if (!illustration) return;
 
   return (
     <>
-      <div className="container px-5 py-24 mx-auto">
-        <div className="lg:w-4/5 mx-auto flex flex-wrap">
+      <div className="container mx-auto px-5 py-24">
+        <div className="flex flex-wrap lg:w-4/5 mx-auto">
           <img
             alt="ecommerce"
             className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
