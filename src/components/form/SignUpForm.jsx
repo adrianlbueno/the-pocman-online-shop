@@ -3,7 +3,10 @@ import { PasswordInput } from '../common/PasswordInput.jsx';
 import { useFormContext } from 'react-hook-form';
 
 const SignUp = () => {
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
 
   return (
     <div className="flex min-h-screen items-center justify-center p-12">
@@ -22,13 +25,23 @@ const SignUp = () => {
             Full Name
           </label>
           <input
-            {...register('fullName', { required: true })}
+            {...register('fullName', {
+              required: {
+                value: true,
+                message: 'Please enter your full name',
+              },
+            })}
             type="text"
             id="fullName"
             name="fullName"
             placeholder="Enter your full name"
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
+          {errors.fullName && (
+            <span className="text-sm text-red-500">
+              {errors.fullName.message}
+            </span>
+          )}
         </div>
 
         <div className="mb-5">
@@ -39,7 +52,12 @@ const SignUp = () => {
             Email Address
           </label>
           <input
-            {...register('email', { required: true })}
+            {...register('email', {
+              required: {
+                value: true,
+                message: 'Please enter a valid email address',
+              },
+            })}
             type="email"
             id="email"
             name="email"
@@ -47,6 +65,9 @@ const SignUp = () => {
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             autoComplete={'email'}
           />
+          {errors.email && (
+            <span className="text-sm text-red-500">{errors.email.message}</span>
+          )}
         </div>
         <PasswordInput labelText="Password" id="password" name="password" />
         <PasswordInput
