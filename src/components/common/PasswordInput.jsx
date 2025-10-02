@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useFormContext } from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
 
 export const PasswordInput = ({ name, labelText, id }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +12,7 @@ export const PasswordInput = ({ name, labelText, id }) => {
     watch,
     formState: { errors },
   } = useFormContext();
-  console.log('errors', errors);
+
   return (
     <div className="mb-5">
       <label
@@ -37,23 +38,21 @@ export const PasswordInput = ({ name, labelText, id }) => {
           id={id}
           {...register(name, {
             required: true,
-            validate: (value) => {
-              if (
-                name === 'confirmPassword' &&
-                value !== getValues('password')
-              ) {
-                return 'Your passwords do no match';
-              }
-            },
+            validate: (value) =>
+              value === watch('password') || 'Your passwords do not match',
           })}
           type={isVisible ? 'text' : 'password'}
           autoComplete="new-password"
           placeholder="Enter your password"
           className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
-        {errors?.name && (
-          <span className="text-sm text-red-600">errors?.name?.message</span>
-        )}
+        <ErrorMessage
+          errors={errors}
+          name={name}
+          render={({ message }) => (
+            <p className="text-sm text-red-600">{message}</p>
+          )}
+        />
       </div>
     </div>
   );

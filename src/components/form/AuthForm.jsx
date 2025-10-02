@@ -33,6 +33,8 @@ const AuthForm = ({ isLogin = false }) => {
         isLogin ? 'login' : 'signup'
       }`;
 
+      console.log('testing', JSON.stringify(data));
+      console.log('url', URL);
       const response = await fetch(URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
