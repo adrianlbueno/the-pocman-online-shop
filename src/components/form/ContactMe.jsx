@@ -83,7 +83,7 @@ const ContactMe = () => {
               })}
             />
             {errors.name && (
-              <span className="text-sm text-red-500">
+              <span className="text-sm text-[#bf1650]">
                 {errors.name.message}
               </span>
             )}
@@ -108,7 +108,7 @@ const ContactMe = () => {
               className="font-nunito w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
             {errors.email && (
-              <span className="text-sm text-red-500">
+              <span className="text-sm text-[#bf1650]">
                 Please enter a valid email address
               </span>
             )}
@@ -138,7 +138,7 @@ const ContactMe = () => {
               className="font-nunito w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
             {errors.title && (
-              <span className="text-sm text-red-500">
+              <span className="text-sm text-[#bf1650]">
                 {errors.title.message}
               </span>
             )}
@@ -161,7 +161,7 @@ const ContactMe = () => {
               className="font-nunito w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             ></textarea>
             {errors.message && (
-              <span className="text-sm text-red-500">
+              <span className="text-sm text-[#bf1650]">
                 Please enter a message
               </span>
             )}
