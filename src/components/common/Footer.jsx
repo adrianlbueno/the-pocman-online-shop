@@ -43,24 +43,26 @@ const heartIcon = <FontAwesomeIcon className="text-red-600" icon={faHeart} />;
 const Footer = () => {
   return (
     <>
-      <footer className="w-full border-t border-gray-300 px-4 py-6 mt-10 ">
-        <div className="max-w-4xl mx-auto flex flex-col items-center justify    -center">
-          <div>
-            <span className=" font-nunito text-sm text-gray-600 py-1">
-              &copy; {getYear()} Studio Pocman
+      <div>
+        <footer className="w-full px-4 py-6 mt-10">
+          <div className="max-w-4xl mx-auto flex flex-col items-center justify    -center">
+            <div>
+              <span className=" font-nunito text-sm text-gray-600 py-1">
+                &copy; {getYear()} Studio Pocman
+              </span>
+            </div>
+            <span className="font-nunito text-xs text-gray-600 py-1">
+              Made with {heartIcon} in Münster
             </span>
+            <div className="flex gap-3 justify-center py-1">
+              <span>{instagramLink}</span>
+              <span>{linkedinLink}</span>
+              <span>{githubLink}</span>
+              <span>{behanceLink}</span>
+            </div>
           </div>
-          <span className="font-nunito text-xs text-gray-600 py-1">
-            Made with {heartIcon} in Münster
-          </span>
-          <div className="flex gap-3 justify-center py-1">
-            <span>{instagramLink}</span>
-            <span>{linkedinLink}</span>
-            <span>{githubLink}</span>
-            <span>{behanceLink}</span>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </>
   );
 };

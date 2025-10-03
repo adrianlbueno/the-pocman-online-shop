@@ -50,7 +50,7 @@ export const PasswordInput = ({ name, labelText, id }) => {
           errors={errors}
           name={name}
           render={({ message }) => (
-            <p className="text-sm text-red-600">{message}</p>
+            <p className="text-sm text-[#bf1650]">{message}</p>
           )}
         />
       </div>

@@ -38,7 +38,7 @@ const SignUp = () => {
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
           {errors.fullName && (
-            <span className="text-sm text-red-500">
+            <span className="text-sm text-[#bf1650]">
               {errors.fullName.message}
             </span>
           )}
@@ -66,7 +66,9 @@ const SignUp = () => {
             autoComplete={'email'}
           />
           {errors.email && (
-            <span className="text-sm text-red-500">{errors.email.message}</span>
+            <span className="text-sm text-[#bf1650]">
+              {errors.email.message}
+            </span>
           )}
         </div>
         <PasswordInput labelText="Password" id="password" name="password" />
