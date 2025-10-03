@@ -1,29 +1,18 @@
-import {
-  faBars,
-  faCartShopping,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CartSidebar from '../cart/CartSidebar.jsx';
 import PocmanLogo from './PocmanLogo.jsx';
 import { menuLinks } from './MenuLinks.jsx';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const [openShoppingCart, setOpenShoppingCart] = useState(false);
   const [activeItem, setActiveItem] = useState('Home');
 
   const handleActiveItem = (item) => {
     setActiveItem(item);
   };
-  const handleShow = useCallback(() => {
-    setOpenShoppingCart((prevState) => {
-      return !prevState;
-    });
-  }, []);
-
+  
   const handleClick = useCallback(() => {
     setOpenMenu((prevState) => {
       return !prevState;
@@ -61,29 +50,25 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
-          <button onClick={handleShow}>
-            <FontAwesomeIcon icon={faCartShopping} />
-          </button>
-          <Link to="/admin">
-            <button>
-              <FontAwesomeIcon icon={faUser} />
-            </button>
-          </Link>
-          <CartSidebar open={openShoppingCart} toggleCart={handleShow} />
-          <div className="md:hidden">
-            <button onClick={handleClick}>
+          <div className="md:hidden" onClick={handleClick}>
+            {openMenu ? (
+              <FontAwesomeIcon icon={faXmark} />
+            ) : (
               <FontAwesomeIcon icon={faBars} />
-            </button>
+            )}
           </div>
         </div>
       </nav>
 
       {openMenu && (
         <div className="md:hidden absolute left-0 right-0 z-50 h-screen w-full bg-white">
-          <div className="mx-auto">
-            <ul className="text-center font-medium">
+          <div className="flex flex-col items-start mx-5 ">
+            <ul>
               {menuLinks.map((link) => (
-                <li key={link.id} className="py-2 cursor-pointer">
+                <li
+                  key={link.id}
+                  className="cursor-pointer font-nunito text-[52px] font-extrabold"
+                >
                   <Link to={link.path} onClick={handleClick}>
                     {link.label}
                   </Link>
