@@ -12,7 +12,7 @@ const Navbar = () => {
   const handleActiveItem = (item) => {
     setActiveItem(item);
   };
-  
+
   const handleClick = useCallback(() => {
     setOpenMenu((prevState) => {
       return !prevState;
@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
-          <div className="md:hidden" onClick={handleClick}>
+          <div className="md:hidden text-[32px]" onClick={handleClick}>
             {openMenu ? (
               <FontAwesomeIcon icon={faXmark} />
             ) : (
