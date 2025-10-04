@@ -30,22 +30,24 @@ const Navbar = () => {
         </div>
         <div className="hidden gap-3 md:!flex">
           {menuLinks.map((link) => (
-            <Link
-              key={link.id}
-              to={link.path}
-              viewTransition
-              className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
-            >
-              <p
-                onClick={() => handleActiveItem(link.label)}
-                className={` ${
-                  activeItem === link.label &&
-                  'text-[#C025D3] border-b-[5px] border-fuchsia-600'
-                }  hover:text-[#C025D3] `}
+            <ul>
+              <Link
+                key={link.id}
+                to={link.path}
+                viewTransition
+                className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
               >
-                {link.label}
-              </p>
-            </Link>
+                <li
+                  onClick={() => handleActiveItem(link.label)}
+                  className={` ${
+                    activeItem === link.label &&
+                    'text-[#C025D3] border-b-[5px] border-fuchsia-600'
+                  }  hover:text-[#C025D3] `}
+                >
+                  {link.label}
+                </li>
+              </Link>
+            </ul>
           ))}
         </div>
 
