@@ -9,6 +9,7 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [activeItem, setActiveItem] = useState('Home');
 
+  console.log('openMenu', openMenu);
   const handleActiveItem = (item) => {
     setActiveItem(item);
   };
@@ -27,7 +28,6 @@ const Navbar = () => {
             <PocmanLogo />
           </Link>
         </div>
-
         <div className="hidden gap-3 md:!flex">
           {menuLinks.map((link) => (
             <Link
@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
-          <div className="md:hidden text-[32px]" onClick={handleClick}>
+          <div className=" md:hidden text-[32px]" onClick={handleClick}>
             {openMenu ? (
               <FontAwesomeIcon icon={faXmark} />
             ) : (
@@ -61,20 +61,26 @@ const Navbar = () => {
       </nav>
 
       {openMenu && (
-        <div className="md:hidden absolute left-0 right-0 z-50 h-screen w-full bg-white">
-          <div className="flex flex-col items-start mx-5 ">
-            <ul>
-              {menuLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className="cursor-pointer font-nunito text-[52px] font-extrabold"
-                >
-                  <Link to={link.path} onClick={handleClick}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div>
+          <div
+            className={`md:hidden absolute left-0 top-16 z-50  bg-gray-200 w-full overflow-hidden  transition-all duration-300${
+              openMenu ? 'translate-y-0  h-screen opacity-100' : 'h-0'
+            }`}
+          >
+            <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
+              <ul>
+                {menuLinks.map((link) => (
+                  <li
+                    key={link.id}
+                    className="cursor-pointer font-nunito text-[52px] font-extrabold"
+                  >
+                    <Link to={link.path} onClick={handleClick}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       )}
