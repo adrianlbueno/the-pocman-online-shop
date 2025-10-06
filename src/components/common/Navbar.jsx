@@ -9,8 +9,6 @@ import style from './Navbar.module.css';
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [activeItem, setActiveItem] = useState('Home');
-
-  console.log('openMenu', openMenu);
   const handleActiveItem = (item) => {
     setActiveItem(item);
   };
@@ -68,8 +66,8 @@ const Navbar = () => {
 
       {openMenu && (
         <div
-          className={`absolute right-0 top-16 z-50 w-full bg-fuchsia-50 md:hidden overflow-hidden transition ease-in-out ${
-            openMenu ? 'h-screen-40' : 'max-h-0'
+          className={`absolute right-0 top-16 z-50 w-full bg-white md:hidden overflow-hidden transition ease-in-out ${
+            openMenu ? 'h-screen' : 'max-h-0'
           }`}
         >
           <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
