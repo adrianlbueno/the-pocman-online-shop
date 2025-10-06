@@ -21,14 +21,6 @@ const Navbar = () => {
     });
   }, []);
 
-  const style1 = ' h-screen-40';
-  const style2 = 'max-h-0';
-
-  const testing = `absolute right-0 top-16 z-50 w-full bg-fuchsia-50 md:hidden  ${
-    openMenu ? style1 : style2
-  }`;
-
-  console.log('Testing', testing);
   return (
     <>
       <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
@@ -75,12 +67,13 @@ const Navbar = () => {
       </nav>
 
       {openMenu && (
-        <div className={testing}>
-          <div
-            id={style['menu']}
-            className="flex flex-col items-start mx-5 mt-4 space-y-4"
-          >
-            <ul id="list">
+        <div
+          className={`absolute right-0 top-16 z-50 w-full bg-fuchsia-50 md:hidden overflow-hidden transition ease-in-out ${
+            openMenu ? 'h-screen-40' : 'max-h-0'
+          }`}
+        >
+          <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
+            <ul>
               {menuLinks.map((link) => (
                 <li
                   key={link.id}
