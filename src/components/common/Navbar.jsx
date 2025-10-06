@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PocmanLogo from './PocmanLogo.jsx';
 import { menuLinks } from './MenuLinks.jsx';
+import style from './Navbar.module.css';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -20,6 +21,14 @@ const Navbar = () => {
     });
   }, []);
 
+  const style1 = ' h-screen-40';
+  const style2 = 'max-h-0';
+
+  const testing = `absolute right-0 top-16 z-50 w-full bg-fuchsia-50 md:hidden  ${
+    openMenu ? style1 : style2
+  }`;
+
+  console.log('Testing', testing);
   return (
     <>
       <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
@@ -52,37 +61,37 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
-          <div className=" md:hidden text-[32px]" onClick={handleClick}>
+          <button
+            className=" md:hidden text-[32px]"
+            onClick={() => handleClick()}
+          >
             {openMenu ? (
               <FontAwesomeIcon icon={faXmark} />
             ) : (
               <FontAwesomeIcon icon={faBars} />
             )}
-          </div>
+          </button>
         </div>
       </nav>
 
       {openMenu && (
-        <div>
+        <div className={testing}>
           <div
-            className={`md:hidden absolute left-0 top-16 z-50  bg-gray-200 w-full overflow-hidden  transition-all duration-300${
-              openMenu ? 'translate-y-0  h-screen opacity-100' : 'h-0'
-            }`}
+            id={style['menu']}
+            className="flex flex-col items-start mx-5 mt-4 space-y-4"
           >
-            <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
-              <ul>
-                {menuLinks.map((link) => (
-                  <li
-                    key={link.id}
-                    className="cursor-pointer font-nunito text-[52px] font-extrabold"
-                  >
-                    <Link to={link.path} onClick={handleClick}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul id="list">
+              {menuLinks.map((link) => (
+                <li
+                  key={link.id}
+                  className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 "
+                >
+                  <Link to={link.path} onClick={handleClick}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

@@ -13,6 +13,9 @@ module.exports = {
       colors: {
         ...colors,
       },
+      transitionProperty: {
+        'max-height': 'max-height',
+      },
       screens: {
         'sm': '640px',
         // => @media (min-width: 640px) { ... }
