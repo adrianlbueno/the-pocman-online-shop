@@ -28,24 +28,25 @@ const Navbar = () => {
         </div>
         <div className="hidden gap-3 md:!flex">
           {menuLinks.map((link) => (
-            <ul>
-              <Link
-                to={link.path}
-                viewTransition
-                className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
-              >
-                <li
-                  key={link.id}
-                  onClick={() => handleActiveItem(link.label)}
-                  className={` ${
-                    activeItem === link.label &&
-                    'text-[#C025D3] border-b-[5px] border-fuchsia-600'
-                  }  hover:text-[#C025D3] `}
+            <div key={link.id}>
+              <ul>
+                <Link
+                  to={link.path}
+                  viewTransition
+                  className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
                 >
-                  {link.label}
-                </li>
-              </Link>
-            </ul>
+                  <li
+                    onClick={() => handleActiveItem(link.label)}
+                    className={` ${
+                      activeItem === link.label &&
+                      'text-[#C025D3] border-b-[5px] border-fuchsia-600'
+                    }  hover:text-[#C025D3] `}
+                  >
+                    {link.label}
+                  </li>
+                </Link>
+              </ul>
+            </div>
           ))}
         </div>
 
@@ -62,26 +63,27 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-
       {openMenu && (
         <div
           className={`absolute right-0 top-16 z-50 w-full bg-white md:hidden overflow-hidden transition ease-in-out ${
             openMenu ? 'h-screen' : 'max-h-0'
           }`}
         >
-          <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
-            <ul>
-              {menuLinks.map((link) => (
-                <Link to={link.path} onClick={handleClick}>
-                  <li
-                    key={link.label}
-                    className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 "
-                  >
-                    {link.label}
-                  </li>
-                </Link>
-              ))}
-            </ul>
+          <div>
+            {menuLinks.map((link) => (
+              <div
+                key={link.id}
+                className="flex flex-col items-start mx-5 mt-4 space-y-4"
+              >
+                <ul>
+                  <Link to={link.path} onClick={handleClick}>
+                    <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 ">
+                      {link.label}
+                    </li>
+                  </Link>
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       )}
