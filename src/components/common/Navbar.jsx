@@ -4,7 +4,6 @@ import { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PocmanLogo from './PocmanLogo.jsx';
 import { menuLinks } from './MenuLinks.jsx';
-import style from './Navbar.module.css';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -31,12 +30,12 @@ const Navbar = () => {
           {menuLinks.map((link) => (
             <ul>
               <Link
-                key={link.id}
                 to={link.path}
                 viewTransition
                 className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
               >
                 <li
+                  key={link.id}
                   onClick={() => handleActiveItem(link.label)}
                   className={` ${
                     activeItem === link.label &&
@@ -73,14 +72,14 @@ const Navbar = () => {
           <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
             <ul>
               {menuLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 "
-                >
-                  <Link to={link.path} onClick={handleClick}>
+                <Link to={link.path} onClick={handleClick}>
+                  <li
+                    key={link.label}
+                    className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 "
+                  >
                     {link.label}
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>
