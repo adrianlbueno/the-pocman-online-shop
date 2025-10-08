@@ -17,7 +17,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import SignUpPage from './pages/SignUpPage';
 import ProtectedRoute from './routes/ProtectedRoute.jsx';
 
-const comingSoon = true;
+const comingSoon = false;
 
 const App = () => {
   if (comingSoon) {
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <>
       <div>
-        <div>
+        <div className="flex flex-col h-screen justify-between">
           <CartProvider>
             <BrowserRouter>
               <div>
