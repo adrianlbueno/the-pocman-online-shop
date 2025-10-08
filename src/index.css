@@ -10,3 +10,7 @@
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
 }
+
+:root:has(.no-doc-scroll) {
+    overflow: hidden;
+}
