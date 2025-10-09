@@ -2,34 +2,39 @@ import aboutImage from '../assets/the-pocman-img.jpg';
 
 const AboutPage = () => {
   return (
-    <div className="container mx-auto flex px-5 md:px-40 py-24 flex-row items-center">
-      <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-        <h1 className="title-font sm:text-xl text-lg mb-4 font-medium tracking-tighter text-[#BF25D3]">
-          Hi! My name is Adrian Bueno
-        </h1>
-        <p>
-          Born in Ecuador and shaped by rich colors and traditions, I later
-          moved to New York, where I spent years working, studying, and
-          following my dreams. Today, Münster is home, the place where The
-          Pocman began. What started as a small hobby slowly grew into something
-          that could live anywhere — on a t-shirt, on the street, or in the
-          digital world.
-        </p>
-
-        <p>
-          I’m now working toward a new chapter: founding my own animation
-          studio, where art, stories, and technology come together to help
-          others bring their ideas to life.
-        </p>
+    <section className="text-gray-600 body-font bg-white">
+      <div className="container mx-auto flex px-5 md:px-40 py-24 md:flex-row flex-col items-center items-stretch inline-block">
+        <div className=" font-nunito lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1 className="title-font sm:text-5xl text-3xl mb-4 font-bold text-gray-900 tracking-normal whitespace-normal">
+            Hi!, I am Adrian Bueno
+          </h1>
+          <p className="mt-5 mb-8 leading-relaxed text-xl 2xl:whitespace-normal">
+            <span className="font-bold text-2xl">
+              Born in Ecuador and shaped by rich colors and traditions, I later
+              moved to New York, where I spent years working, studying, and
+              following my dreams. Today, Münster is home, the place where The
+              Pocman began. What started as a small hobby slowly grew into
+              something that could live anywhere — on a t-shirt, on the street,
+              or in the digital world.
+            </span>
+          </p>
+          <p className="mt-5 mb-8 leading-relaxed text-xl 2xl:whitespace-normal">
+            <span className="font-bold text-2xl">
+              I’m now working toward a new chapter: founding my own animation
+              studio, where art, stories, and technology come together to help
+              others bring their ideas to life.
+            </span>
+          </p>
+        </div>
+        <div>
+          <img
+            className="object-cover object-center rounded"
+            alt="tip_book"
+            src={aboutImage}
+          />
+        </div>
       </div>
-      <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-        <img
-          className="object-cover object-center rounded"
-          src={aboutImage}
-          alt=""
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 
