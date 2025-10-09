@@ -8,7 +8,7 @@ const AboutPage = () => {
           <h1 className="title-font sm:text-5xl text-3xl mb-4 font-bold text-gray-900 tracking-normal whitespace-normal">
             Hi!, I am Adrian Bueno
           </h1>
-          <p className="mt-4 mb-8 leading-relaxed text-xl ">
+          <p className="mt-4 mb-4 leading-relaxed text-xl ">
             <span className=" text-2xl">
               Born in Ecuador and shaped by rich colors and traditions, I later
               moved to New York, where I spent years working, studying, and
