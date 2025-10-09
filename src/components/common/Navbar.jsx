@@ -65,7 +65,7 @@ const Navbar = () => {
       </nav>
       {openMenu && (
         <div
-          className={`absolute right-0 top-16 z-50 w-full bg-white md:hidden no-doc-scroll transition ease-in-out ${
+          className={`absolute right-0 top-16 z-50 w-full bg-gray-800 md:hidden no-doc-scroll transition duration-300 ease-in-out ${
             openMenu ? 'h-screen' : 'max-h-0'
           }`}
         >
