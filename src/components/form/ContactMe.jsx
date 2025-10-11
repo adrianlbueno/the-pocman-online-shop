@@ -169,7 +169,7 @@ const ContactMe = () => {
           <div>
             <button
               type="submit"
-              className="font-nunito hover:shadow-form rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-semibold text-white outline-none"
+              className="font-nunito hover:shadow-form rounded-md hover:bg-[#F50379] bg-[#C025D3] py-3 px-8 text-base font-semibold text-white outline-none"
             >
               {!isSubmitting ? 'Submit' : 'Submitting...'}
             </button>

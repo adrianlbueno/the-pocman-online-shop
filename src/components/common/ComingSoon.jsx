@@ -1,48 +1,11 @@
 import React from 'react';
 import { useFetchIllustrations } from '../../hooks/useFetchIllustrations';
-import Loading from './Loading.jsx';
+import WelcomePage from './WelcomePage.jsx';
 
-const ComingSoon = () => {
-  const [illustrations, isLoading] = useFetchIllustrations();
-
-  const getDailyIllustration = () => {
-    if (illustrations.length === 0) return null;
-
-    const today = new Date();
-    const dayOfYear = Math.floor(
-      (today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24)
-    );
-
-    const index = dayOfYear % illustrations.length;
-    return illustrations[index];
-  };
-
-  const dailyIllustration = getDailyIllustration();
-
+const ComingSoon = ({ isLoading }) => {
   return (
     <div className="font-nunito flex flex-col justify-center items-center min-h-screen p-5 text-center text-[32px] bg-[#F406E6] text-white">
-      {isLoading && <Loading />}
-      {dailyIllustration && (
-        <div className="aspect-w-16 aspect-h-9">
-          <div className="font-nunito uppercase text-[24px]">
-            <h2>Please check back soon.</h2>
-          </div>
-          <img
-            className=" w-96 object-cover"
-            src={dailyIllustration.image}
-            alt={dailyIllustration.title}
-          />
-          <div className="font-nunito underline sm:whitespace-nowrap uppercase text-[24px]">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://instagram.com/thepocman"
-            >
-              More Cool Illustrations
-            </a>
-          </div>
-        </div>
-      )}
+      {isLoading && <WelcomePage />}
     </div>
   );
 };

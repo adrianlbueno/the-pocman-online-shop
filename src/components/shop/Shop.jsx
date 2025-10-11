@@ -1,12 +1,12 @@
 import { useFetchIllustrations } from '../../hooks/useFetchIllustrations.js';
 import IllustrationData from './IllustrationData.jsx';
-import Loading from '../common/Loading.jsx';
+import WelcomePage from '../common/WelcomePage.jsx';
 
 const Shop = () => {
   const [illustrations, isLoading] = useFetchIllustrations();
 
   if (isLoading) {
-    return <Loading />;
+    return <WelcomePage />;
   }
 
   return (
