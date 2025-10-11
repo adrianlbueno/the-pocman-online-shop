@@ -1,27 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddIllustration from './components/admin/AddIllustration.jsx';
 import { EditIllustration } from './components/admin/EditIllustration';
-import ComingSoon from './components/common/ComingSoon.jsx';
 import Footer from './components/common/Footer.jsx';
 import Navbar from './components/common/Navbar.jsx';
-import ForgotPasswordForm from './components/form/ForgotPasswordForm.jsx';
 import Page from './components/navigation/Page.jsx';
 import { CartProvider } from './context/cart/CartProvider.jsx';
 import AboutPage from './pages/AboutPage';
-import AdminPage from './pages/AdminPage.jsx';
 import Contact from './pages/Contact';
 import HomePage from './pages/HomePage';
-import ItemDetailsPage from './pages/ItemDetailsPage';
-import LogInPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
-import SignUpPage from './pages/SignUpPage';
-import ProtectedRoute from './routes/ProtectedRoute.jsx';
-
-const comingSoon = true;
+import WorkInProgress from './components/common/WorkInProgress.jsx';
+import { useFetchIllustrations } from './hooks/useFetchIllustrations.js';
+import WelcomePage from './components/common/WelcomePage.jsx';
 
 const App = () => {
-  if (comingSoon) {
-    return <ComingSoon />;
+  const [illustrations, isLoading] = useFetchIllustrations();
+  if (isLoading) {
+    return <WelcomePage isLoading={isLoading} />;
   }
 
   return (
@@ -59,40 +54,6 @@ const App = () => {
                     }
                   />
                   <Route
-                    path="/login"
-                    element={
-                      <Page>
-                        <LogInPage />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/signUp"
-                    element={
-                      <Page>
-                        <SignUpPage />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/forgotPassword"
-                    element={
-                      <Page>
-                        <ForgotPasswordForm />
-                      </Page>
-                    }
-                  />
-                  <Route
-                    path="/admin"
-                    element={
-                      <Page>
-                        <ProtectedRoute>
-                          <AdminPage />
-                        </ProtectedRoute>
-                      </Page>
-                    }
-                  />
-                  <Route
                     path="/add"
                     element={
                       <Page>
@@ -112,7 +73,7 @@ const App = () => {
                     path="/illustrations/:illustrationId"
                     element={
                       <Page>
-                        <ItemDetailsPage />
+                        <WorkInProgress />
                       </Page>
                     }
                   />
