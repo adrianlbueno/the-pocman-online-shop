@@ -9,7 +9,7 @@ const AboutPage = () => {
             Hi!, I am Adrian Bueno
           </h1>
           <p className="mt-4 mb-4 leading-relaxed text-xl ">
-            <span className=" text-2xl">
+            <span className="text-2xl">
               Born in Ecuador and shaped by rich colors and traditions, I later
               moved to New York, where I spent years working, studying, and
               following my dreams. Today, Münster is home, the place where The

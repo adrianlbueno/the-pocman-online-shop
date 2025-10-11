@@ -20,7 +20,7 @@ const ContactMe = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: initialValues,
   });
@@ -171,7 +171,7 @@ const ContactMe = () => {
               type="submit"
               className="font-nunito hover:shadow-form rounded-md hover:bg-blue-500 bg-[#C025D3] py-3 px-8 text-base font-semibold text-white outline-none"
             >
-              Submit
+              {!isSubmitting ? 'Submit' : 'Submitting...'}
             </button>
           </div>
         </form>

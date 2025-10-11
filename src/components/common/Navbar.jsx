@@ -65,26 +65,24 @@ const Navbar = () => {
       </nav>
       {openMenu && (
         <div
-          className={`absolute right-0 top-16 z-50 w-full bg-gray-800 md:hidden no-doc-scroll transition duration-300 ease-in-out ${
+          className={`absolute right-0 top-16 z-50 w-full md:hidden no-doc-scroll transition duration-1000 ease-in-out bg-gray-100 ${
             openMenu ? 'h-screen' : 'max-h-0'
           }`}
         >
-          <div>
-            {menuLinks.map((link) => (
-              <div
-                key={link.id}
-                className="flex flex-col items-start mx-5 mt-4 space-y-4"
-              >
-                <ul>
-                  <Link to={link.path} onClick={handleClick}>
-                    <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 ">
-                      {link.label}
-                    </li>
-                  </Link>
-                </ul>
-              </div>
-            ))}
-          </div>
+          {menuLinks.map((link) => (
+            <div
+              key={link.id}
+              className="flex flex-col items-start mx-5 mt-4 space-y-4"
+            >
+              <ul>
+                <Link to={link.path} onClick={handleClick}>
+                  <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 ">
+                    {link.label}
+                  </li>
+                </Link>
+              </ul>
+            </div>
+          ))}
         </div>
       )}
     </>
