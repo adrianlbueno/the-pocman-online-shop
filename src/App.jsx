@@ -15,6 +15,7 @@ import WelcomePage from './components/common/WelcomePage.jsx';
 
 const App = () => {
   const [illustrations, isLoading] = useFetchIllustrations();
+
   if (isLoading) {
     return <WelcomePage isLoading={isLoading} />;
   }
