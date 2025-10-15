@@ -30,26 +30,25 @@ const Navbar = () => {
           {menuLinks.map((link) => (
             <div key={link.id}>
               <ul>
-                <Link
-                  to={link.path}
-                  viewTransition
-                  className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
+                <li
+                  onClick={() => handleActiveItem(link.label)}
+                  className={` ${
+                    activeItem === link.label &&
+                    'text-[#C025D3] border-b-[5px] border-fuchsia-600'
+                  }  hover:text-[#C025D3] `}
                 >
-                  <li
-                    onClick={() => handleActiveItem(link.label)}
-                    className={` ${
-                      activeItem === link.label &&
-                      'text-[#C025D3] border-b-[5px] border-fuchsia-600'
-                    }  hover:text-[#C025D3] `}
+                  <Link
+                    to={link.path}
+                    viewTransition
+                    className="flex cursor-pointer flex-col items-center justify-center font-nunito font-black text-lg "
                   >
                     {link.label}
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               </ul>
             </div>
           ))}
         </div>
-
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
           <button
             className=" md:hidden text-[32px]"
@@ -65,7 +64,7 @@ const Navbar = () => {
       </nav>
       {openMenu && (
         <div
-          className={`absolute right-0 top-16 z-50 w-full md:hidden no-doc-scroll transition duration-1000 ease-in-out bg-gray-100 ${
+          className={`absolute right-0 top-16 z-50 w-full md:hidden no-doc-scroll transition duration-1000 ease-in-out bg-white ${
             openMenu ? 'h-screen' : 'max-h-0'
           }`}
         >
@@ -75,11 +74,11 @@ const Navbar = () => {
               className="flex flex-col items-start mx-5 mt-4 space-y-4"
             >
               <ul>
-                <Link to={link.path} onClick={handleClick}>
-                  <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hovertext-gray-300 ">
+                <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none  hover:text-[#C025D3] ">
+                  <Link to={link.path} onClick={handleClick}>
                     {link.label}
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               </ul>
             </div>
           ))}
