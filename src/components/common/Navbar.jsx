@@ -62,28 +62,24 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      {openMenu && (
-        <div
-          className={`absolute right-0 top-16 z-50 w-full md:hidden no-doc-scroll transition duration-1000 ease-in-out bg-white ${
-            openMenu ? 'h-screen' : 'max-h-0'
-          }`}
-        >
+
+      <div
+        className={`absolute  inset-0  no-doc-scroll right-0 top-16 z-50 w-full md:hidden bg-white overflow-hidden transition-max-height duration-500 ease-in-out ${
+          openMenu ? 'max-h-[100vh]' : 'max-h-0'
+        }`}
+      >
+        <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
           {menuLinks.map((link) => (
-            <div
-              key={link.id}
-              className="flex flex-col items-start mx-5 mt-4 space-y-4"
-            >
-              <ul>
-                <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none  hover:text-[#C025D3] ">
-                  <Link to={link.path} onClick={handleClick}>
-                    {link.label}
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ul key={link.id} className="w-full">
+              <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hover:text-[#C025D3]">
+                <Link to={link.path} onClick={handleClick}>
+                  {link.label}
+                </Link>
+              </li>
+            </ul>
           ))}
         </div>
-      )}
+      </div>
     </>
   );
 };

@@ -8,7 +8,6 @@ const Shop = () => {
   if (isLoading) {
     return <WelcomePage />;
   }
-
   return (
     <>
       <div className="container mx-auto px-5 overflow-hidden">
