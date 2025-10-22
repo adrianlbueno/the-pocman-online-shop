@@ -61,25 +61,24 @@ const Navbar = () => {
             )}
           </button>
         </div>
-      </nav>
-
-      <div
-        className={`absolute  inset-0  no-doc-scroll right-0 top-16 z-50 w-full md:hidden bg-white overflow-hidden transition-max-height duration-500 ease-in-out ${
-          openMenu ? 'max-h-[100vh]' : 'max-h-0'
-        }`}
-      >
-        <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
-          {menuLinks.map((link) => (
-            <ul key={link.id} className="w-full">
-              <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hover:text-[#C025D3]">
-                <Link to={link.path} onClick={handleClick}>
-                  {link.label}
-                </Link>
-              </li>
-            </ul>
-          ))}
+        <div
+          className={`absolute inset-0 right-0 top-16 z-50 w-full md:hidden bg-white overflow-hidden transition-max-height duration-500 ease-in-out ${
+            openMenu ? 'max-h-[100vh]' : 'max-h-0'
+          }`}
+        >
+          <div className="flex flex-col items-start mx-5 mt-4 space-y-4">
+            {menuLinks.map((link) => (
+              <ul key={link.id} className="w-full">
+                <li className="cursor-pointer font-nunito text-[52px] font-extrabold leading-none hover:text-[#C025D3]">
+                  <Link to={link.path} onClick={handleClick}>
+                    {link.label}
+                  </Link>
+                </li>
+              </ul>
+            ))}
+          </div>
         </div>
-      </div>
+      </nav>
     </>
   );
 };

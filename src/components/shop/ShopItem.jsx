@@ -2,19 +2,16 @@ import LazyImage from './LazyImage.jsx';
 
 const ShopItem = ({ url, name }) => {
   return (
-    <div className="group relative ">
-      <div className="flex w-full md:w-96 lg:w-96 flex-col text-gray-700 shadow-md ">
-        <div className="group relative">
-          <div>
-            <LazyImage
-              src={url}
-              alt={name}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div
-            className="
-                absolute inset-0
+    <div className="group relative">
+      <div>
+        <LazyImage
+          src={url}
+          alt={name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        className="absolute inset-0
                 bg-black/60
                 opacity-0
                 group-hover:opacity-100
@@ -24,11 +21,9 @@ const ShopItem = ({ url, name }) => {
                 backdrop-saturate-100  
                 group-hover:backdrop-saturate-200  
               "
-          >
-            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-              <span className="text-sm text-white">{name}</span>
-            </div>
-          </div>
+      >
+        <div className="absolute inset-0 p-6 flex flex-col justify-end">
+          <span className="text-sm text-white">{name}</span>
         </div>
       </div>
     </div>
