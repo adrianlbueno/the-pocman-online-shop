@@ -4,11 +4,11 @@ const AboutPage = () => {
   return (
     <section className="text-gray-600 body-font bg-white">
       <div className="container mx-auto flex px-5 md:px-40 py-20 md:flex-row flex-col items-center">
-        <div className="font-nunito lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <div className="font-nunito lg:flex-grow md:w-full lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
           <h1 className="title-font sm:text-5xl text-3xl mb-4 font-bold text-gray-900 tracking-normal whitespace-normal">
             Hi!, I am Adrian Bueno
           </h1>
-          <p className="mt-4 mb-4 leading-relaxed text-xl ">
+          <p className="mt-4 mb-4 leading-relaxed text-xl w-full ">
             <span className="text-2xl">
               Born in Ecuador and shaped by rich colors and traditions, I later
               moved to New York, where I spent years working, studying, and
@@ -26,10 +26,10 @@ const AboutPage = () => {
             </span>
           </p>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full">
+        <div className="md:shrink">
           <img
             className="object-cover object-center rounded"
-            alt="tip_book"
+            alt="A person looking into the camera"
             src={aboutImage}
           />
         </div>
