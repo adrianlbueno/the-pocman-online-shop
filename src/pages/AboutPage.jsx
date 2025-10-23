@@ -2,13 +2,13 @@ import aboutImage from '../assets/the-pocman-img.jpg';
 
 const AboutPage = () => {
   return (
-    <section className="text-gray-600 body-font bg-white">
+    <section className="text-gray-700 body-font">
       <div className="container mx-auto flex px-5 md:px-40 py-20 md:flex-row flex-col items-center">
-        <div className="font-nunito lg:flex-grow md:w-full lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="title-font sm:text-5xl text-3xl mb-4 font-bold text-gray-900 tracking-normal whitespace-normal">
+        <div className="md:w-2/3  font-nunito lg:flex-grow  lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-11 md:mb-0 items-center text-center">
+          <h1 className="sm:text-5xl text-3xl mb-4 font-bold text-gray-900 tracking-normal whitespace-normal md:text-4xl ">
             Hi!, I am Adrian Bueno
           </h1>
-          <p className="mt-4 mb-4 leading-relaxed text-xl w-full ">
+          <p className="mt-4 mb-4 leading-relaxed text-xl w-full">
             <span className="text-2xl">
               Born in Ecuador and shaped by rich colors and traditions, I later
               moved to New York, where I spent years working, studying, and
@@ -26,9 +26,9 @@ const AboutPage = () => {
             </span>
           </p>
         </div>
-        <div className="md:shrink">
+        <div className="md:w-1/3 ">
           <img
-            className="object-cover object-center rounded"
+            className=" object-cover w-full h-full"
             alt="A person looking into the camera"
             src={aboutImage}
           />
