@@ -23,7 +23,9 @@ const ShopItem = ({ url, name }) => {
               "
       >
         <div className="absolute inset-0  flex flex-col justify-center  text-center">
-          <span className="text-3xl text-white">{name}</span>
+          <span className="font-nunito font-extrabold text-3xl text-white">
+            {name}
+          </span>
         </div>
       </div>
     </div>
