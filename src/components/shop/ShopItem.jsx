@@ -22,8 +22,8 @@ const ShopItem = ({ url, name }) => {
                 group-hover:backdrop-saturate-200  
               "
       >
-        <div className="absolute inset-0 p-6 flex flex-col justify-end">
-          <span className="text-sm text-white">{name}</span>
+        <div className="absolute inset-0  flex flex-col justify-center  text-center">
+          <span className="text-3xl text-white">{name}</span>
         </div>
       </div>
     </div>
