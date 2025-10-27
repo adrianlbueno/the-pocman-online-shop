@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
           <button
-            className=" md:hidden text-[32px]"
+            className="md:hidden text-[32px]"
             onClick={() => handleClick()}
           >
             {openMenu ? (
@@ -62,7 +62,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className={`absolute inset-0 right-0 top-16 z-50 w-full md:hidden bg-white overflow-hidden transition-max-height duration-500 ease-in-out ${
+          className={`absolute inset-0 right-0 top-16 z-50 max-w-full md:hidden bg-white overflow-hidden  transition-max-height duration-500 ease-in-out ${
             openMenu ? 'max-h-[100vh]' : 'max-h-0'
           }`}
         >
