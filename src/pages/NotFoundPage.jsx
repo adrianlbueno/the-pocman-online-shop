@@ -1,14 +1,19 @@
 import { Link } from 'react-router-dom';
+import coolCharacter from '../assets/svg-files/not-found-page-character.svg';
 
 const NotFound = () => {
   return (
     <>
       <div className="w-full px-16 md:px-0 h-screen flex items-center justify-center">
         <div className="flex flex-col items-center justify-center px-4 md:px-8 lg:px-24 py-8">
+          <img src={coolCharacter} alt="cool character" />
           <p className=" font-nunito font-light text-6xl md:text-7xl lg:text-7xl  tracking-wider text-[#C025D3]">
             404
           </p>
-          <p className="text-2xl md:text-3xl lg:text-5xl font-nunito font-extrabold tracking-wider mt-4">
+          <p
+            className="text-2xl md:text-3xl lg:text-5xl font-nunito font-extrabold tracking-wider mt-4 text-nowrap
+"
+          >
             Oops, Page Not Found
           </p>
 
