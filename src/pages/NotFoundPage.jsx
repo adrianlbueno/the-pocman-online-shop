@@ -20,7 +20,7 @@ const NotFound = () => {
           <Link to="/">
             <button
               type="button"
-              className=" font-nunito flex items-center space-x-2 bg-[#C025D3] hover: font-extrabold text-white px-4 py-2 mt-6 rounded transition duration-150"
+              className="font-nunito flex items-center space-x-2 bg-[#C025D3] hover:bg-[#4EBA77] font-extrabold text-white px-4 py-2 mt-6 rounded transition duration-150"
             >
               Return Home
             </button>
