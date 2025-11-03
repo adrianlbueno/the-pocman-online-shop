@@ -33,12 +33,14 @@ const AuthForm = ({ isLogin = false }) => {
         isLogin ? 'login' : 'signup'
       }`;
 
-      const response = await fetch(URL, {
+      const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
-      });
+      };
       
+      const response = await fetch(URL, requestOptions);
+
       if (response.status === 201) {
         navigate('/login');
       }
