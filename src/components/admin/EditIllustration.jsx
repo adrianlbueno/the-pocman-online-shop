@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useFetchIllustrations } from '../../hooks/useFetchIllustrations.js';
-import { set } from 'react-hook-form';
 
 export const EditIllustration = () => {
   const [illustrations] = useFetchIllustrations();
