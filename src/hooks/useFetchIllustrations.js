@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 
 export const useFetchIllustrations = () => {
-  const URL_API = `${process.env.VITE_APP_ONRENDER_URI}/illustrations`;
+  const URL_API = `${process.env.VITE_APP_ONRENDER_URI}/api/illustrations`;
   const [illustrations, setIllustrations] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 

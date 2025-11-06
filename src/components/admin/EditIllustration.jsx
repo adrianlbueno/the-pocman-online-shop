@@ -33,7 +33,7 @@ export const EditIllustration = () => {
       },
     };
     try {
-      const URL_API = `https://the-pocman-backend.onrender.com/illustrations/${formData._id}`;
+      const URL_API = `${process.env.VITE_APP_ONRENDER_URI}/api/illustrations/${formData._id}`;
       const response = await fetch(URL_API, requestOptions);
       if (response.ok) {
         navigate('/admin');

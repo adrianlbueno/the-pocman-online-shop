@@ -1,4 +1,4 @@
-import { FormProvider, set, useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import SignUpForm from './SignUpForm.jsx';
@@ -38,7 +38,7 @@ const AuthForm = ({ isLogin = false }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       };
-      
+
       const response = await fetch(URL, requestOptions);
 
       if (response.status === 201) {
