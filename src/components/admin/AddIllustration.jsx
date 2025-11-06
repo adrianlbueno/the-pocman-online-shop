@@ -1,6 +1,6 @@
 import AddForm from '../form/AddForm.jsx';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
@@ -10,7 +10,7 @@ const initialValues = {
   image: '',
 };
 const AddIllustration = () => {
-  const { handleSubmit } = useForm({ defaultValues: initialValues });
+  const methods = useForm({ defaultValues: initialValues });
   const [formData, setFormData] = useState(initialValues);
   const navigate = useNavigate();
   const handleChange = (event) => {
@@ -43,13 +43,11 @@ const AddIllustration = () => {
   return (
     <>
       <div className="w-full max-w-sm container mt-20 mx-auto">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <AddForm
-            onSubmit={handleSubmit}
-            form={formData}
-            handleChange={handleChange}
-          />
-        </form>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <AddForm form={formData} handleChange={handleChange} />
+          </form>
+        </FormProvider>
       </div>
     </>
   );

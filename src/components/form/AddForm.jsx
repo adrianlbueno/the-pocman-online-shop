@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import AddIllustrationButton from '../common/buttons/AddIllustrationButton.jsx';
+import { useFormContext } from 'react-hook-form';
 
-const AddForm = ({ form, handleChange }) => {
+const AddForm = () => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <div>
       <div className="w-full mb-5">
@@ -12,9 +17,13 @@ const AddForm = ({ form, handleChange }) => {
           Title
         </label>
         <input
+          {...register('title', {
+            required: {
+              value: true,
+              message: 'Please enter a title',
+            },
+          })}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-gray-600"
-          value={form.title}
-          onChange={handleChange}
           type="text"
           placeholder="Enter title"
           name="title"
@@ -28,9 +37,13 @@ const AddForm = ({ form, handleChange }) => {
           Description
         </label>
         <input
+          {...register('description', {
+            required: {
+              value: true,
+              message: 'Please enter a description',
+            },
+          })}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gform.ray-700 leading-tight focus:text-gray-600 focus:shadow-outline"
-          value={form.description}
-          onChange={handleChange}
           type="text"
           placeholder="Enter description"
           name="description"
@@ -44,9 +57,13 @@ const AddForm = ({ form, handleChange }) => {
           Price
         </label>
         <input
+          {...register('price', {
+            required: {
+              value: true,
+              message: 'Please enter a price',
+            },
+          })}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-gray-600"
-          value={form.price}
-          onChange={handleChange}
           type="text"
           placeholder="Enter price"
           name="price"
@@ -60,9 +77,13 @@ const AddForm = ({ form, handleChange }) => {
           Image URL
         </label>
         <input
+          {...register('image', {
+            required: {
+              value: true,
+              message: 'Please enter a price',
+            },
+          })}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline"
-          value={form.image}
-          onChange={handleChange}
           type="text"
           placeholder="Enter image URL"
           name="image"
