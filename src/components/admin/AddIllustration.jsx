@@ -11,15 +11,8 @@ const initialValues = {
 };
 const AddIllustration = () => {
   const methods = useForm({ defaultValues: initialValues });
-  const [formData, setFormData] = useState(initialValues);
-  const navigate = useNavigate();
-  const handleChange = (event) => {
-    setFormData((prev) => ({
-      ...prev,
-      [event.target.name]: event.target.value,
-    }));
-  };
   const token = localStorage.getItem('authToken');
+
   const onSubmit = async (data) => {
     try {
       const API_URL = `${process.env.VITE_APP_ONRENDER_URI}/api/illustrations`;
@@ -31,8 +24,9 @@ const AddIllustration = () => {
         },
         body: JSON.stringify(data),
       };
+
       const response = await fetch(API_URL, requestOptions);
-      console.log(response);
+
       if (response.ok) {
         navigate('/admin');
       }
@@ -45,7 +39,7 @@ const AddIllustration = () => {
       <div className="w-full max-w-sm container mt-20 mx-auto">
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
-            <AddForm form={formData} handleChange={handleChange} />
+            <AddForm />
           </form>
         </FormProvider>
       </div>

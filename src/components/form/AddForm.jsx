@@ -7,6 +7,9 @@ const AddForm = () => {
     register,
     formState: { errors },
   } = useFormContext();
+  let buttonStyle =
+    'mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline';
+
   return (
     <div>
       <div className="w-full mb-5">
@@ -90,7 +93,9 @@ const AddForm = () => {
         />
       </div>
       <div className="flex items-center justify-between">
-        <AddIllustrationButton />
+        <button className={buttonStyle} type="submit">
+          Add Illustration
+        </button>
       </div>
       <div className="text-center mt-4 text-gray-500">
         <Link to="/">Cancel</Link>
