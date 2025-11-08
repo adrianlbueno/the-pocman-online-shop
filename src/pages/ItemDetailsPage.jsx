@@ -6,7 +6,7 @@ const ItemDetailsPage = () => {
   const [illustrations] = useFetchIllustrations();
   const { illustrationId } = useParams();
   const illustration = illustrations.find(
-    (illustration) => illustration.id === +illustrationId
+    (illustration) => illustration.id === illustrationId
   );
   const { addToCart } = useCartItems();
 
@@ -25,19 +25,23 @@ const ItemDetailsPage = () => {
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
               {illustration.title}
             </h2>
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              Random Text
-            </h1>
+            {/**
+             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+             Random Text
+             </h1>
+             */}
             <p className="leading-relaxed">{illustration.description}</p>
             <div className="flex flex-col md:flex-row justify-between items-center text-gray-900">
-              <span className="font-bold text-xl">€{illustration.price}</span>
-              <button
-                type="button"
-                className="px-6 py-2 transition ease-in duration-200 uppercase  hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
-                onClick={() => addToCart(illustration)}
-              >
-                Add to cart
-              </button>
+              {/**
+               <span className="font-bold text-xl">€{illustration.price}</span>
+               <button
+               type="button"
+               className="px-6 py-2 transition ease-in duration-200 uppercase  hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
+               onClick={() => addToCart(illustration)}
+               >
+               Add to cart
+               </button>
+               */}
             </div>
           </div>
         </div>
