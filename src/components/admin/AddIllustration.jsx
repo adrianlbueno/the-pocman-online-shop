@@ -12,7 +12,7 @@ const initialValues = {
 const AddIllustration = () => {
   const methods = useForm({ defaultValues: initialValues });
   const token = localStorage.getItem('authToken');
-
+  const navigate = useNavigate();
   const onSubmit = async (data) => {
     try {
       const API_URL = `${process.env.VITE_APP_ONRENDER_URI}/api/illustrations`;
