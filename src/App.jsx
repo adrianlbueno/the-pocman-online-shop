@@ -9,13 +9,8 @@ import AboutPage from './pages/AboutPage';
 import Contact from './pages/Contact';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-import WorkInProgress from './components/common/WorkInProgress.jsx';
 import { useFetchIllustrations } from './hooks/useFetchIllustrations.js';
 import WelcomePage from './components/common/WelcomePage.jsx';
-import AdminPage from './pages/AdminPage.jsx';
-import LogInPage from './pages/LoginPage.jsx';
-import SignUpPage from './pages/SignUpPage.jsx';
-import ProtectedRoute from './routes/ProtectedRoute.jsx';
 import ItemDetailsPage from './pages/ItemDetailsPage.jsx';
 
 const App = () => {

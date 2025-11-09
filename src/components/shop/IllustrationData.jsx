@@ -1,8 +1,8 @@
-import ShopItem from "./ShopItem";
-import { Link } from "react-router-dom";
+import ShopItem from './ShopItem';
+import { Link } from 'react-router-dom';
 
-const IllustrationData = ({ data }) => {
-  if (!data || data.length === 0) return;
+const IllustrationData = ({ data, isLoading }) => {
+  if (isLoading) return;
 
   return (
     <>
