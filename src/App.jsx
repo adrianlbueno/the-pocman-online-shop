@@ -12,11 +12,16 @@ import NotFoundPage from './pages/NotFoundPage';
 import WorkInProgress from './components/common/WorkInProgress.jsx';
 import { useFetchIllustrations } from './hooks/useFetchIllustrations.js';
 import WelcomePage from './components/common/WelcomePage.jsx';
+import AdminPage from './pages/AdminPage.jsx';
+import LogInPage from './pages/LoginPage.jsx';
+import SignUpPage from './pages/SignUpPage.jsx';
+import ProtectedRoute from './routes/ProtectedRoute.jsx';
+import ItemDetailsPage from './pages/ItemDetailsPage.jsx';
 
 const App = () => {
   const [illustrations, isLoading] = useFetchIllustrations();
 
-  if (isLoading) {
+  if (isLoading && illustrations.length !== null) {
     return <WelcomePage isLoading={isLoading} />;
   }
 
@@ -54,6 +59,36 @@ const App = () => {
                       </Page>
                     }
                   />
+                  {/*
+                  <Route
+                    path="/login"
+                    element={
+                      <Page>
+                        <LogInPage />
+                      </Page>
+                    }
+                  />
+                  <Route
+                    path="/signUp"
+                    element={
+                      <Page>
+                        <SignUpPage />
+                      </Page>
+                    }
+                  />
+
+                     <Route
+                     path="/admin"
+                     element={
+                     <Page>
+                     <ProtectedRoute>
+                     <AdminPage />
+                     </ProtectedRoute>
+                     </Page>
+                     }
+                     />
+                     */}
+
                   <Route
                     path="/add"
                     element={
@@ -74,7 +109,7 @@ const App = () => {
                     path="/illustrations/:illustrationId"
                     element={
                       <Page>
-                        <WorkInProgress />
+                        <ItemDetailsPage />
                       </Page>
                     }
                   />
