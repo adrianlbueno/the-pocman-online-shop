@@ -48,7 +48,7 @@ const ContactMe = () => {
       console.log('SUCCESS!');
     } catch (e) {
       console.error(e);
-      toggleAlert('Uh oh. Something went wrong.', 'danger');
+      toggleAlert('Uh oh. Something went wrong. Try again later', 'danger');
     } finally {
       reset();
     }
