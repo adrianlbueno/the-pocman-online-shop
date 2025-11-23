@@ -1,14 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { useFetchIllustrations } from '../hooks/useFetchIllustrations';
-import { useCartItems } from '../context/cart/CartContext.jsx';
 
 const ItemDetailsPage = () => {
   const [illustrations] = useFetchIllustrations();
-  const { illustrationId } = useParams();
+
+  const { _illustrationId } = useParams();
+
   const illustration = illustrations.find(
-    (illustration) => illustration.id === illustrationId
+    (illustration) => illustration._id === _illustrationId
   );
-  const { addToCart } = useCartItems();
 
   if (!illustration) return;
 

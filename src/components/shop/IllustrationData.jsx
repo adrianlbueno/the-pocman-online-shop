@@ -8,7 +8,7 @@ const IllustrationData = ({ data, isLoading }) => {
     <>
       {[...data].reverse().map((illustration) => (
         <div key={illustration._id}>
-          <Link to={`/illustrations/${illustration.id}`}>
+          <Link to={`/illustrations/${illustration._id}`}>
             <ShopItem
               id={illustration.id}
               url={illustration.image}
