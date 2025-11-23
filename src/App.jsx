@@ -12,6 +12,10 @@ import NotFoundPage from './pages/NotFoundPage';
 import { useFetchIllustrations } from './hooks/useFetchIllustrations.js';
 import WelcomePage from './components/common/WelcomePage.jsx';
 import ItemDetailsPage from './pages/ItemDetailsPage.jsx';
+import LogInPage from './pages/LoginPage.jsx';
+import SignUpPage from './pages/SignUpPage.jsx';
+import ProtectedRoute from './routes/ProtectedRoute.jsx';
+import AdminPage from './pages/AdminPage.jsx';
 
 const App = () => {
   const [illustrations, isLoading] = useFetchIllustrations();
@@ -54,7 +58,7 @@ const App = () => {
                       </Page>
                     }
                   />
-                  {/*
+
                   <Route
                     path="/login"
                     element={
@@ -71,17 +75,18 @@ const App = () => {
                       </Page>
                     }
                   />
-
-                     <Route
-                     path="/admin"
-                     element={
-                     <Page>
-                     <ProtectedRoute>
-                     <AdminPage />
-                     </ProtectedRoute>
-                     </Page>
-                     }
-                     />
+                  {/*
+                    <Route
+                      path="/admin"
+                      element={
+                        <Page>
+                          <ProtectedRoute>
+                            <AdminPage />
+                          </ProtectedRoute>
+                        </Page>
+                      }
+                    />
+                    
                      */}
 
                   <Route
@@ -101,7 +106,7 @@ const App = () => {
                     }
                   />
                   <Route
-                    path="/illustrations/:illustrationId"
+                    path="/illustrations/:_illustrationId"
                     element={
                       <Page>
                         <ItemDetailsPage />
