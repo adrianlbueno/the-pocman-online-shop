@@ -8,17 +8,11 @@ const ItemDetailsPage = () => {
   const { _illustrationId } = useParams();
   const navigate = useNavigate();
 
-  if (isLoading || !illustrations || illustrations.length === 0) {
-    return <div className="p-8 text-center">Loading…</div>;
-  }
+  if (illustrations.length === 0) return;
 
   const currentIndex = illustrations.findIndex(
     (item) => item._id === _illustrationId
   );
-  
-  if (currentIndex === -1) {
-    return <div className="p-8 text-center">Illustration not found.</div>;
-  }
 
   const illustration = illustrations[currentIndex];
 
@@ -41,7 +35,6 @@ const ItemDetailsPage = () => {
           <p className="leading-relaxed">{illustration.description}</p>
         </div>
       </div>
-
       <div className="flex justify-between mt-8 lg:w-4/5 mx-auto">
         <button
           className="px-4 py-2 bg-[#C025D3] text-white hover:bg-teal-500"
