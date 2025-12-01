@@ -15,7 +15,7 @@ const ItemDetailsPage = () => {
   const currentIndex = illustrations.findIndex(
     (item) => item._id === _illustrationId
   );
-
+  
   if (currentIndex === -1) {
     return <div className="p-8 text-center">Illustration not found.</div>;
   }
