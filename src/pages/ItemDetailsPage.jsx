@@ -9,7 +9,7 @@ const ItemDetailsPage = () => {
   const navigate = useNavigate();
 
   if (illustrations.length === 0) return;
-
+  
   const currentIndex = illustrations.findIndex(
     (item) => item._id === _illustrationId
   );

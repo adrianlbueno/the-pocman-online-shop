@@ -21,6 +21,7 @@ const Shop = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleVisibleButton);
   }, []);
+
   return (
     <>
       <div className="container mx-auto px-5">

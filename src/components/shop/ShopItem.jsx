@@ -18,8 +18,8 @@ const ShopItem = ({ url, name }) => {
                 transition-opacity
                 duration-300
                 backdrop-filter
-                backdrop-saturate-100  
-                group-hover:backdrop-saturate-200  
+                backdrop-saturate-100
+                group-hover:backdrop-saturate-200
               "
       >
         <div className="absolute inset-0  flex flex-col justify-center  text-center">
