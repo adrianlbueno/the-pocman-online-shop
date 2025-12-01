@@ -1,52 +1,67 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useFetchIllustrations } from '../hooks/useFetchIllustrations';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const ItemDetailsPage = () => {
-  const [illustrations] = useFetchIllustrations();
-
+  const [illustrations, isLoading] = useFetchIllustrations();
   const { _illustrationId } = useParams();
+  const navigate = useNavigate();
 
-  const illustration = illustrations.find(
-    (illustration) => illustration._id === _illustrationId
+  if (isLoading || !illustrations || illustrations.length === 0) {
+    return <div className="p-8 text-center">Loading…</div>;
+  }
+
+  const currentIndex = illustrations.findIndex(
+    (item) => item._id === _illustrationId
   );
 
-  if (!illustration) return;
+  if (currentIndex === -1) {
+    return <div className="p-8 text-center">Illustration not found.</div>;
+  }
+
+  const illustration = illustrations[currentIndex];
+
+  const nextIndex = (currentIndex + 1) % illustrations.length;
+  const prevIndex =
+    (currentIndex - 1 + illustrations.length) % illustrations.length;
 
   return (
-    <>
-      <div className="container mx-auto px-5 py-24">
-        <div className="flex flex-wrap lg:w-4/5 mx-auto">
-          <img
-            alt="ecommerce"
-            className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-            src={illustration.image}
-          />
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-            <h2 className="text-sm title-font text-gray-500 tracking-widest">
-              {illustration.title}
-            </h2>
-            {/**
-             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-             Random Text
-             </h1>
-             */}
-            <p className="leading-relaxed">{illustration.description}</p>
-            <div className="flex flex-col md:flex-row justify-between items-center text-gray-900">
-              {/**
-               <span className="font-bold text-xl">€{illustration.price}</span>
-               <button
-               type="button"
-               className="px-6 py-2 transition ease-in duration-200 uppercase  hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
-               onClick={() => addToCart(illustration)}
-               >
-               Add to cart
-               </button>
-               */}
-            </div>
-          </div>
+    <div className="container mx-auto px-5 py-24">
+      <div className="flex flex-wrap lg:w-4/5 mx-auto">
+        <img
+          alt={illustration.title}
+          className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
+          src={illustration.image}
+        />
+        <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+          <h2 className="text-sm title-font text-gray-500 tracking-widest">
+            {illustration.title}
+          </h2>
+          <p className="leading-relaxed">{illustration.description}</p>
         </div>
       </div>
-    </>
+
+      <div className="flex justify-between mt-8 lg:w-4/5 mx-auto">
+        <button
+          className="px-4 py-2 bg-[#C025D3] text-white hover:bg-teal-500"
+          onClick={() =>
+            navigate(`/illustrations/${illustrations[prevIndex]._id}`)
+          }
+        >
+          <FontAwesomeIcon icon={faAngleLeft} />
+        </button>
+
+        <button
+          className="px-4 py-2 bg-[#C025D3] text-white hover:bg-teal-500"
+          onClick={() =>
+            navigate(`/illustrations/${illustrations[nextIndex]._id}`)
+          }
+        >
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      </div>
+    </div>
   );
 };
 
