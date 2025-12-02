@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
-import { useFetchIllustrations } from "../../hooks/useFetchIllustrations.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
+import { useFetchIllustrations } from '../../hooks/useFetchIllustrations.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const IllustrationList = () => {
   const [illustrations] = useFetchIllustrations();
 
   if (!illustrations || illustrations.length === 0) return;
+  
   return (
     <>
       {!illustrations || illustrations.length === 0 ? (
@@ -14,12 +15,9 @@ const IllustrationList = () => {
           No illustrations available.
         </p>
       ) : (
-        illustrations.map(({ id, title, description, price, image }) => (
-          <div key={id} className=" flex justify-center mb-3">
-            <div
-              className="flex flex-col items-center basis-3xs border rounded-lg shadow-sm md:flex-row md:max-w-xl "
-              key={id}
-            >
+        illustrations.map(({ _id, title, description, price, image }) => (
+          <div key={_id} className=" flex justify-center mb-3">
+            <div className="flex flex-col items-center basis-3xs border rounded-lg shadow-sm md:flex-row md:max-w-xl ">
               <img
                 src={image}
                 alt={description}
@@ -34,7 +32,7 @@ const IllustrationList = () => {
               </div>
 
               <div className="flex-auto text-gray-800 text-right px-4 py-2 m-2">
-                <Link to={`/edit/${id}`} title="Edit Illustration">
+                <Link to={`/edit/${_id}`} title="Edit Illustration">
                   <FontAwesomeIcon icon={faEdit} />
                 </Link>
                 <FontAwesomeIcon icon={faTrash} />

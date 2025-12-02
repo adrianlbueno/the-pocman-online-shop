@@ -9,7 +9,7 @@ const ItemDetailsPage = () => {
   const navigate = useNavigate();
 
   if (illustrations.length === 0) return;
-  
+
   const currentIndex = illustrations.findIndex(
     (item) => item._id === _illustrationId
   );
@@ -29,29 +29,33 @@ const ItemDetailsPage = () => {
           src={illustration.image}
         />
         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-          <h2 className="text-sm title-font text-gray-500 tracking-widest">
+          <h2 className="text-lg title-font text-gray-500 tracking-widest font-nunito font-bold">
             {illustration.title}
           </h2>
-          <p className="leading-relaxed">{illustration.description}</p>
+          <p className="leading-relaxed font-nunito">
+            {illustration.description}
+          </p>
         </div>
       </div>
-      <div className="flex justify-between mt-8 lg:w-4/5 mx-auto">
+      <div className="flex items-center justify-center mt-4 lg:w-4/5 mx-auto font-nunito">
         <button
-          className="px-4 py-2 bg-[#C025D3] text-white hover:bg-teal-500"
+          className="px-4 py-2 text-black"
           onClick={() =>
             navigate(`/illustrations/${illustrations[prevIndex]._id}`)
           }
         >
-          <FontAwesomeIcon icon={faAngleLeft} />
+          {/*<FontAwesomeIcon icon={faAngleLeft} />*/}
+          Prev
         </button>
-
+        <span>/</span>
         <button
-          className="px-4 py-2 bg-[#C025D3] text-white hover:bg-teal-500"
+          className="px-4 py-2  text-black"
           onClick={() =>
             navigate(`/illustrations/${illustrations[nextIndex]._id}`)
           }
         >
-          <FontAwesomeIcon icon={faAngleRight} />
+          {/*<FontAwesomeIcon icon={faAngleRight} />*/}
+          Next
         </button>
       </div>
     </div>

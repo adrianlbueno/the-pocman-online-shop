@@ -6,13 +6,14 @@ export const EditIllustration = () => {
   const [illustrations] = useFetchIllustrations();
   const [formData, setFormData] = useState(null);
   const { error, setError } = useState(null);
-  const { editId } = useParams();
+  const { _editId } = useParams();
+
   const navigate = useNavigate();
-  const illustrationId = editId;
+  const illustrationId = _editId;
   const token = localStorage.getItem('authToken');
 
   const illustrationToUpdate = illustrations.find(
-    (illustration) => illustration.id === illustrationId
+    (illustration) => illustration._id === illustrationId
   );
 
   useEffect(() => {
@@ -52,7 +53,7 @@ export const EditIllustration = () => {
     });
   };
 
-  if (!formData || !formData.id) {
+  if (!formData || !formData._id) {
     return <div>Loading illustration...</div>;
   }
 
