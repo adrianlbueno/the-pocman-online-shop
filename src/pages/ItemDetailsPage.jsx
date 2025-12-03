@@ -21,11 +21,15 @@ const ItemDetailsPage = () => {
     (currentIndex - 1 + illustrations.length) % illustrations.length;
 
   return (
-    <div className="container mx-auto px-5 py-24">
-      <div className="flex flex-wrap lg:w-4/5 mx-auto">
+    <div className="container mx-auto px-5 pt-6">
+      <div className="flex flex-wrap lg:w-2/3 mx-auto">
         <img
           alt={illustration.title}
-          className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
+          className="max-h-[60vh]
+              w-auto
+              lg:max-w-[60vh]
+              object-contain
+              rounded"
           src={illustration.image}
         />
         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -39,7 +43,7 @@ const ItemDetailsPage = () => {
       </div>
       <div className="flex items-center justify-center mt-4 lg:w-4/5 mx-auto font-nunito">
         <button
-          className="px-4 py-2 text-black"
+          className=" px-4 py-2 text-black"
           onClick={() =>
             navigate(`/illustrations/${illustrations[prevIndex]._id}`)
           }
