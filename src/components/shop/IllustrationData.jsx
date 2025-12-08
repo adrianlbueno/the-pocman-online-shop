@@ -6,7 +6,7 @@ const IllustrationData = ({ data, isLoading }) => {
 
   return (
     <>
-      {[...data].reverse().map((illustration) => (
+      {data.map((illustration) => (
         <div key={illustration._id}>
           <Link to={`/illustrations/${illustration._id}`}>
             <ShopItem
