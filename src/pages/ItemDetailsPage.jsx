@@ -1,24 +1,22 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useFetchIllustrations } from '../hooks/useFetchIllustrations';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 
 const ItemDetailsPage = () => {
-  const [illustrations, isLoading] = useFetchIllustrations();
+  const [illustrations] = useFetchIllustrations();
   const { _illustrationId } = useParams();
   const navigate = useNavigate();
+  const [isDisabled, setIsDisabled] = useState(false);
 
-  if (isLoading || !illustrations || illustrations.length === 0) return;
+  if (illustrations.length === 0) return;
 
   const currentIndex = illustrations.findIndex(
     (illustration) => illustration._id === _illustrationId
   );
-
+  
   const illustration = illustrations[currentIndex];
-
-  const nextIndex = (currentIndex + 1) % illustrations.length;
-  const prevIndex =
-    (currentIndex - 1 + illustrations.length) % illustrations.length;
+  const nextIndex = currentIndex + 1;
+  const prevIndex = currentIndex - 1;
 
   return (
     <div className="container mx-auto px-5 pt-6">
@@ -47,10 +45,11 @@ const ItemDetailsPage = () => {
 
       <div className="flex items-center justify-center mt-4 lg:w-4/5 mx-auto font-nunito">
         <button
-          className="px-4 py-2 text-black"
+          className="px-4 py-2 text-black "
           onClick={() =>
             navigate(`/illustrations/${illustrations[prevIndex]._id}`)
           }
+          disabled={isDisabled}
         >
           Prev
         </button>
