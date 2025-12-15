@@ -1,8 +1,8 @@
 .img-placeholder {
     content: 'Placeholder!';
+    width: 100%;
     max-width: 400px;
     height: 300px;
-    border: 1px none black;
     background-color: #D4EBDC;
 }
 
