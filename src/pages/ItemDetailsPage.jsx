@@ -1,19 +1,17 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useFetchIllustrations } from '../hooks/useFetchIllustrations';
-import { useEffect, useState } from 'react';
 
 const ItemDetailsPage = () => {
   const [illustrations] = useFetchIllustrations();
   const { _illustrationId } = useParams();
   const navigate = useNavigate();
-  const [isDisabled, setIsDisabled] = useState(false);
 
   if (illustrations.length === 0) return;
 
   const currentIndex = illustrations.findIndex(
     (illustration) => illustration._id === _illustrationId
   );
-  
+
   const illustration = illustrations[currentIndex];
   const nextIndex = currentIndex + 1;
   const prevIndex = currentIndex - 1;
@@ -45,15 +43,19 @@ const ItemDetailsPage = () => {
 
       <div className="flex items-center justify-center mt-4 lg:w-4/5 mx-auto font-nunito">
         <button
-          className="px-4 py-2 text-black "
+          className={`px-4 py-2 ${
+            currentIndex > 0 ? 'text-black' : 'text-gray-500'
+          }`}
           onClick={() =>
             navigate(`/illustrations/${illustrations[prevIndex]._id}`)
           }
-          disabled={isDisabled}
+          disabled={currentIndex < 0}
         >
           Prev
         </button>
+
         <span>/</span>
+
         <button
           className="px-4 py-2 text-black"
           onClick={() =>
