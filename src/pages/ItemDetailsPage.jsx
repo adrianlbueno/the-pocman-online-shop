@@ -16,6 +16,9 @@ const ItemDetailsPage = () => {
   const nextIndex = currentIndex + 1;
   const prevIndex = currentIndex - 1;
 
+  console.log(currentIndex);
+  console.log(currentIndex <= 0);
+  console.log(illustrations.length);
   return (
     <div className="container mx-auto px-5 pt-6">
       <div className="lg:w-2/3 mx-auto">
@@ -44,12 +47,12 @@ const ItemDetailsPage = () => {
       <div className="flex items-center justify-center mt-4 lg:w-4/5 mx-auto font-nunito">
         <button
           className={`px-4 py-2 ${
-            currentIndex > 0 ? 'text-black' : 'text-gray-500'
+            currentIndex <= 0 ? 'text-gray-500' : 'text-black'
           }`}
           onClick={() =>
             navigate(`/illustrations/${illustrations[prevIndex]._id}`)
           }
-          disabled={currentIndex < 0}
+          disabled={currentIndex <= 0}
         >
           Prev
         </button>
@@ -57,10 +60,15 @@ const ItemDetailsPage = () => {
         <span>/</span>
 
         <button
-          className="px-4 py-2 text-black"
+          className={`px-4 py-2 ${
+            currentIndex >= illustrations.length - 1
+              ? 'text-gray-500'
+              : 'text-black'
+          }`}
           onClick={() =>
             navigate(`/illustrations/${illustrations[nextIndex]._id}`)
           }
+          disabled={currentIndex >= illustrations.length - 1}
         >
           Next
         </button>
