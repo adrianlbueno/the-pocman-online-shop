@@ -16,11 +16,8 @@ const ItemDetailsPage = () => {
   const nextIndex = currentIndex + 1;
   const prevIndex = currentIndex - 1;
 
-  console.log(currentIndex);
-  console.log(currentIndex <= 0);
-  console.log(illustrations.length);
   return (
-    <div className="container mx-auto px-5 pt-6">
+  <div className="container mx-auto px-5 pt-6">
       <div className="lg:w-2/3 mx-auto">
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2">
