@@ -5,7 +5,7 @@ import PreviousAndNextButton from '../components/common/buttons/PreviousAndNextB
 const ItemDetailsPage = () => {
   const [illustrations] = useFetchIllustrations();
   const { _illustrationId } = useParams();
-  
+
   if (illustrations.length === 0) return;
 
   const currentIndex = illustrations.findIndex(
@@ -17,7 +17,7 @@ const ItemDetailsPage = () => {
   const prevIndex = currentIndex - 1;
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-5 pt-6">
       <div className="lg:w-2/3 mx-auto">
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2">
